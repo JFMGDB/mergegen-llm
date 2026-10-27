@@ -78,4 +78,4 @@ DOI: [10.1109/ASE56229.2023.00155](https://doi.org/10.1109/ASE56229.2023.00155)
 
 ## Authors
 
-José Felipe and Rafael, MSc students at CIn/UFPE.
+José Felipe and Rafael Figueirôa, MSc students at CIn/UFPE.
