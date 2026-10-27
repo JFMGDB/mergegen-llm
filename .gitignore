@@ -1,0 +1,25 @@
+# Secrets
+.env
+*.key
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.pytest_cache/
+.ipynb_checkpoints/
+
+# Raw data and model weights (too large / license terms)
+data/raw/
+RAW_DATA/
+PROCESSED/
+*.pt
+*.pth
+*.bin
+*.zip
+
+# OS and editors
+.DS_Store
+.idea/
+.vscode/
