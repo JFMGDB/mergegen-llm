@@ -1,0 +1,29 @@
+[
+  {
+    "id": "toy-01",
+    "difficulty": "easy",
+    "source": "synthetic (placeholder, replace/extend with paper figures and dataset cases)",
+    "base": "int total = price;",
+    "a": "int total = price + tax;",
+    "b": "int total = price;",
+    "resolution": "int total = price + tax;"
+  },
+  {
+    "id": "toy-02",
+    "difficulty": "easy",
+    "source": "synthetic (placeholder)",
+    "base": "log(\"start\");",
+    "a": "log(\"start\");\nlog(\"a\");",
+    "b": "log(\"start\");\nlog(\"b\");",
+    "resolution": "log(\"start\");\nlog(\"a\");\nlog(\"b\");"
+  },
+  {
+    "id": "toy-03",
+    "difficulty": "medium",
+    "source": "synthetic (placeholder)",
+    "base": "return compute(x);",
+    "a": "return compute(x, true);",
+    "b": "return compute(x * 2);",
+    "resolution": "return compute(x * 2, true);"
+  }
+]

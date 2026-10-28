@@ -1,0 +1,13 @@
+You are resolving a Java merge conflict.
+
+The conflict is given in the MergeGen structured representation:
+<bos> starts the input and <eos> ends it.
+<boc> starts a conflict, <eoc> ends it. Inside a conflict there are three parts separated by <soc>:
+  <boc> version A <soc> BASE <soc> version B <eoc>
+
+Produce the code that replaces the whole conflict (the merged result), keeping the code outside the conflict as it is.
+
+Rules:
+- Answer with the merged code ONLY, with no explanation, no markers and no markdown fences.
+
+{structured}
