@@ -55,7 +55,16 @@ For each conflict, we record:
 
 ## Getting started
 
-Setup and run instructions will be added as the pipeline is implemented.
+Run the LLM over the conflicts in `data/toys.json` (one CSV per run is saved in `results/`):
+
+```bash
+python3 src/run_experiment.py --backend cli --model sonnet --variants A B   # Claude Code, logged-in account
+python3 src/run_experiment.py --backend api --model <model-id>              # Anthropic API (needs LLM_API_KEY)
+python3 src/run_experiment.py --backend mock                                # offline test, no cost
+```
+
+Pass `--mergegen mergegen_output.json` (`{id: resolution}`) to also compare with the MergeGen output.
+Note: with the `cli` backend, input tokens include Claude Code's fixed overhead.
 
 Configuration is done with environment variables. Copy the example file and fill it in:
 
