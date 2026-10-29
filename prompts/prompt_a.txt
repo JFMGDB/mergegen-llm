@@ -1,0 +1,17 @@
+You are resolving a Java merge conflict.
+
+Below are three versions of the same code region: the BASE (common ancestor), the version from branch A, and the version from branch B.
+Produce the merged code that combines the intended changes of A and B.
+
+Rules:
+- Answer with the merged code ONLY, with no explanation and no markdown fences.
+- Keep the original formatting and indentation style.
+
+### BASE
+{base}
+
+### A
+{a}
+
+### B
+{b}
