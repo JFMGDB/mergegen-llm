@@ -35,13 +35,14 @@ def clean(text: str) -> str:
 def call_with_retry(fn, prompt, model, retries, timeout):
     last = None
     for attempt in range(1, retries + 1):
+        if attempt > 1:
+            time.sleep(2 ** (attempt - 1))
         try:
             start = time.perf_counter()
             out = fn(prompt, model, timeout)
             return out, time.perf_counter() - start, attempt, ""
         except Exception as e:  # noqa: BLE001 - we record any failure and retry
             last = str(e)
-            time.sleep(2 ** attempt)
     return None, 0.0, retries, last
 
 
@@ -64,6 +65,9 @@ def main():
     raw_dir.mkdir(parents=True, exist_ok=True)
     out_csv = ROOT / "results" / f"run-{run_id}-{args.backend}-{args.model}.csv"
     fn = BACKENDS[args.backend]
+    if args.backend == "cli":
+        from backends import cli_version
+        (raw_dir / "VERSION.txt").write_text(f"claude code {cli_version()}\nmodel alias: {args.model}\n")
 
     with out_csv.open("w", newline="", encoding="utf-8") as f:
         w = csv.DictWriter(f, fieldnames=FIELDS)

@@ -64,7 +64,7 @@ python3 src/run_experiment.py --backend mock                                # of
 ```
 
 Pass `--mergegen mergegen_output.json` (`{id: resolution}`) to also compare with the MergeGen output.
-Note: with the `cli` backend, input tokens include Claude Code's fixed overhead.
+Note: the `cli` backend runs isolated (no user settings, MCP or tools); the remaining fixed overhead is ~2.4k input tokens per call. The Claude Code version is saved in `results/raw/<run>/VERSION.txt`.
 
 Configuration is done with environment variables. Copy the example file and fill it in:
 

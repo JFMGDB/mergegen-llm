@@ -10,6 +10,15 @@ import tempfile
 SYSTEM_PROMPT = "You are a code merge assistant. Follow the user's output rules exactly."
 
 
+def cli_version() -> str:
+    """Claude Code version, saved with each run (the CLI changes over time)."""
+    try:
+        return subprocess.run(["claude", "--version"], capture_output=True, text=True,
+                              timeout=30).stdout.strip()
+    except Exception:  # noqa: BLE001
+        return "unknown"
+
+
 def claude_cli(prompt: str, model: str, timeout: int = 300) -> dict:
     """Claude Code in non-interactive mode, using the logged-in account.
 
@@ -23,6 +32,11 @@ def claude_cli(prompt: str, model: str, timeout: int = 300) -> dict:
         "--system-prompt", SYSTEM_PROMPT,
         "--no-session-persistence",
         "--disable-slash-commands",
+        # isolation: no user settings/CLAUDE.md/hooks, no MCP servers, no code-running tools.
+        # Measured on 2026-10-28: this cut the fixed input overhead from ~14.8k to ~2.4k tokens.
+        "--setting-sources", "project",
+        "--strict-mcp-config",
+        "--restricted",
     ]
     with tempfile.TemporaryDirectory() as empty_dir:
         proc = subprocess.run(
