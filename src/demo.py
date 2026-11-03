@@ -49,7 +49,7 @@ def main():
     p.add_argument("--models", nargs="+", default=["claude-opus-5-5", "claude-haiku-5-5"])
     p.add_argument("--mergegen-jsonl", required=True)
     p.add_argument("--mergegen-limits")
-    p.add_argument("--examples", type=int, default=3, help="disagreement examples to show")
+    p.add_argument("--examples", type=int, default=3, help="disagreement examples to show (one per pattern)")
     p.add_argument("--project", type=int, nargs="*", default=[400, 63199],
                    help="conflict counts to project the cost to (default: 400 and all 63,199 valid Java conflicts)")
     args = p.parse_args()
@@ -132,28 +132,38 @@ def main():
         same = sum(norm(data[a][i]["resolution_claude"]) == norm(data[b][i]["resolution_claude"]) for i in common)
         print(f"{a} and {b} give the same answer in {same}/{n}")
 
+    # who gets each conflict right: one pattern per combination of tools
+    tools = args.models + ["MergeGen"]
+
+    def right(i):
+        flags = tuple(is_true(data[m][i]["claude_eq_dataset"]) for m in args.models)
+        return flags + (is_true(first[i]["mergegen_eq_dataset"]),)
+
+    patterns = {}
+    for i in common:
+        patterns.setdefault(right(i), []).append(i)
+    print(f"\n=== Who gets each conflict right ({n} conflicts) ===")
+    print("".join(f"{t:<18}" for t in tools) + f"{'conflicts':>10}   examples")
+    for key, idx in sorted(patterns.items(), key=lambda kv: -len(kv[1])):
+        cells = "".join(f"{'right' if ok else 'wrong':<18}" for ok in key)
+        print(f"{cells}{len(idx):>10}   {', '.join(map(str, idx[:6]))}{' ...' if len(idx) > 6 else ''}")
+
     if args.examples:
-        m = args.models[0]
-        d = data[m]
-        groups = [
-            (f"{m} right, MergeGen wrong",
-             [i for i in common if is_true(d[i]["claude_eq_dataset"]) and not is_true(d[i]["mergegen_eq_dataset"])]),
-            (f"MergeGen right, {m} wrong",
-             [i for i in common if is_true(d[i]["mergegen_eq_dataset"]) and not is_true(d[i]["claude_eq_dataset"])]),
-            ("both wrong",
-             [i for i in common if not is_true(d[i]["claude_eq_dataset"]) and not is_true(d[i]["mergegen_eq_dataset"])]),
-        ]
-        print(f"\n=== Disagreement examples ({m}) ===")
-        for title, idx in groups:
-            for i in idx[: max(1, args.examples // len(groups))]:
-                r = d[i]
-                print(f"\n--- conflict {i}: {title} ---")
-                for label, key in (("A (with context)", "scenario_a"), ("B (with context)", "scenario_b"),
-                                   ("dataset (developer)", "resolution_dataset"),
-                                   ("MergeGen (context + region)", "resolution_mergegen"),
-                                   (m, "resolution_claude")):
-                    print(f"  {label}:")
-                    print(short(r[key]))
+        divergent = [(key, idx) for key, idx in sorted(patterns.items(), key=lambda kv: -len(kv[1]))
+                     if any(key) and not all(key)]
+        print(f"\n=== Where the tools disagree: one example per pattern (up to {args.examples}) ===")
+        for key, idx in divergent[: args.examples]:
+            i = idx[0]
+            r = first[i]
+            verdict = ", ".join(f"{t} {'right' if ok else 'wrong'}" for t, ok in zip(tools, key))
+            print(f"\n--- conflict {i}: {verdict} ---")
+            rows = [("A (with context)", r["scenario_a"]), ("B (with context)", r["scenario_b"]),
+                    ("dataset (developer)", r["resolution_dataset"])]
+            rows += [(m, data[m][i]["resolution_claude"]) for m in args.models]
+            rows.append(("MergeGen (context + region)", r["resolution_mergegen"]))
+            for label, text in rows:
+                print(f"  {label}:")
+                print(short(text))
 
     print("\nSetup: Claude via API with adaptive thinking, effort 'medium', same prompt for every model;"
           "\nno temperature/top_p/top_k sent (rejected by the current Claude models, per the API docs)."

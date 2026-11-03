@@ -83,3 +83,17 @@ def test_compare_puts_context_around_reference_for_mergegen():
         assert "MergeGen = dataset : 1/1" in out
         assert "Claude   = MergeGen: 1/1" in out
         assert "Only the 1 of them within the MergeGen limits" in out
+
+
+def test_demo_counts_who_gets_each_conflict_right():
+    with tempfile.TemporaryDirectory() as d:
+        tmp = Path(d)
+        _fake_run(tmp)
+        out = subprocess.run(
+            [sys.executable, str(ROOT / "src/demo.py"), "--run", str(tmp), "--name", "t", "--models", "m",
+             "--mergegen-jsonl", str(tmp / "mg.jsonl"), "--examples", "1"],
+            capture_output=True, text=True, check=True, cwd=tmp).stdout
+        assert "=== Who gets each conflict right (2 conflicts) ===" in out
+        assert out.count("right             right") == 1   # conflict 0: both right
+        assert out.count("right             wrong") == 1   # conflict 1: only Claude right
+        assert "--- conflict 1: m right, MergeGen wrong ---" in out
