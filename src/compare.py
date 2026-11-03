@@ -14,12 +14,21 @@ Writes results/compare-<run>-<model>.csv and prints the summary.
 
 "Equal" = same text after collapsing whitespace (' '.join(s.split())), as in MergeGen.
 MergeGen is only evaluated on the test split.
+
+The course MergeGen model (--mergegen-jsonl) answers the conflict region WITH the context
+lines around it, while the dataset resolution and Claude's answer are only the region. So,
+for MergeGen, the same context (src/conflict_context.py) is put around the dataset resolution
+and around Claude's answer before comparing (--mergegen-context-lines 0 turns this off).
+With --mergegen-limits (from mergegen_limits.py), the comparison is also shown only for the
+conflicts within the MergeGen length limits (500 input / 200 output tokens).
 """
 import argparse
 import csv
 import json
 import math
 from pathlib import Path
+
+from conflict_context import split_context, with_context
 
 SEP = "---------------------------------"
 
@@ -67,6 +76,28 @@ def read_mergegen(run: Path) -> dict:
     return out
 
 
+def print_paired(both: list, title: str):
+    """Claude x MergeGen x dataset on the conflicts both tools answered."""
+    m = len(both)
+    print(f"--- {title} ---")
+    if not m:
+        return
+    cds = sum(r["claude_eq_dataset"] for r in both)
+    md = sum(r["mergegen_eq_dataset"] for r in both)
+    cm = sum(r["claude_eq_mergegen"] for r in both)
+    only_c = sum(r["claude_eq_dataset"] and not r["mergegen_eq_dataset"] for r in both)
+    only_m = sum(r["mergegen_eq_dataset"] and not r["claude_eq_dataset"] for r in both)
+    both_ok = sum(r["claude_eq_dataset"] and r["mergegen_eq_dataset"] for r in both)
+    print(f"Claude   = dataset : {fmt(cds, m)}")
+    print(f"MergeGen = dataset : {fmt(md, m)}")
+    print(f"Claude   = MergeGen: {cm}/{m}")
+    print(f"both right {both_ok} | only Claude {only_c} | only MergeGen {only_m} | neither {m - both_ok - only_c - only_m}")
+    print(f"paired exact McNemar test (only Claude vs only MergeGen): p = {mcnemar_exact(only_c, only_m):.4f}")
+    mt = [r["mergegen_time_s"] for r in both if r["mergegen_time_s"] != ""]
+    if mt:
+        print(f"MergeGen time (local CPU): mean {sum(mt) / len(mt):.2f}s per conflict")
+
+
 def main():
     p = argparse.ArgumentParser()
     p.add_argument("--run", required=True, help="run folder, e.g. runs/toy400-java")
@@ -74,6 +105,9 @@ def main():
     p.add_argument("--split", default="test")
     p.add_argument("--mergegen-jsonl", help="MergeGen outputs from run_mergegen_infer.py "
                    "(instead of OUTPUT/test_OUTPUT; then any split works)")
+    p.add_argument("--mergegen-context-lines", type=int, default=2,
+                   help="context lines the MergeGen output carries around the region (0: none)")
+    p.add_argument("--mergegen-limits", help="limits.jsonl from mergegen_limits.py")
     p.add_argument("--out", help="CSV path (default: results/compare-<run>-<model>.csv)")
     args = p.parse_args()
 
@@ -96,6 +130,11 @@ def main():
                 mergegen_time[r["index"]] = r.get("time_s", "")
     else:
         mergegen = read_mergegen(run) if args.split == "test" else {}
+    limits = {}
+    if args.mergegen_limits:
+        for line in Path(args.mergegen_limits).read_text(encoding="utf-8").splitlines():
+            r = json.loads(line)
+            limits[r["index"]] = r
 
     rows = []
     for i in sorted(claude):
@@ -103,18 +142,26 @@ def main():
         ref = norm(refs[i])
         c_out = norm(c["output"])
         m_out = norm(mergegen[i]) if i in mergegen else None
+        before, after = (split_context(bases[i], a_s[i], b_s[i], args.mergegen_context_lines)
+                         if args.mergegen_jsonl and args.mergegen_context_lines else ("", ""))
+        m_ref = norm(with_context(before, refs[i], after))
+        c_ctx = norm(with_context(before, c["output"], after))
+        lim = limits.get(i, {})
         rows.append({
             "index": i, "lang": langs[i] if langs else "",
             "scenario_base": bases[i], "scenario_a": a_s[i], "scenario_b": b_s[i],
             "resolution_dataset": refs[i],
             "resolution_mergegen": mergegen.get(i, ""), "resolution_claude": c["output"],
             "claude_eq_dataset": c_out == ref,
-            "mergegen_eq_dataset": (m_out == ref) if m_out is not None else "",
-            "claude_eq_mergegen": (c_out == m_out) if m_out is not None else "",
+            "mergegen_eq_dataset": (m_out == m_ref) if m_out is not None else "",
+            "claude_eq_mergegen": (c_ctx == m_out) if m_out is not None else "",
             "time_s": c.get("time_s", ""), "input_tokens": c["input_tokens"],
             "output_tokens": c["output_tokens"], "model": c.get("model", ""),
             "claude_parse_error": c.get("parse_error", ""), "claude_stop_reason": c.get("stop_reason", ""),
             "mergegen_time_s": mergegen_time.get(i, ""),
+            "conflict_tokens": lim.get("conflict_tokens", ""),
+            "reference_tokens": lim.get("reference_tokens", ""),
+            "within_mergegen_limits": lim.get("within_limits", ""),
         })
 
     out = Path(args.out) if args.out else Path("results") / f"compare-{run.name}-{args.model}.csv"
@@ -136,22 +183,11 @@ def main():
     print(f"Claude   = dataset : {fmt(cd, n)}")
     both = [r for r in rows if r["mergegen_eq_dataset"] != ""]
     if both:
-        m = len(both)
-        cds = sum(r["claude_eq_dataset"] for r in both)
-        md = sum(r["mergegen_eq_dataset"] for r in both)
-        cm = sum(r["claude_eq_mergegen"] for r in both)
-        only_c = sum(r["claude_eq_dataset"] and not r["mergegen_eq_dataset"] for r in both)
-        only_m = sum(r["mergegen_eq_dataset"] and not r["claude_eq_dataset"] for r in both)
-        both_ok = sum(r["claude_eq_dataset"] and r["mergegen_eq_dataset"] for r in both)
-        print(f"--- Same {m} conflicts for both tools (the fair comparison) ---")
-        print(f"Claude   = dataset : {fmt(cds, m)}")
-        print(f"MergeGen = dataset : {fmt(md, m)}")
-        print(f"Claude   = MergeGen: {cm}/{m}")
-        print(f"both right {both_ok} | only Claude {only_c} | only MergeGen {only_m} | neither {m - both_ok - only_c - only_m}")
-        print(f"paired exact McNemar test (only Claude vs only MergeGen): p = {mcnemar_exact(only_c, only_m):.4f}")
-        mt = [r["mergegen_time_s"] for r in both if r["mergegen_time_s"] != ""]
-        if mt:
-            print(f"MergeGen time (local CPU): mean {sum(mt) / len(mt):.2f}s per conflict")
+        print_paired(both, f"Same {len(both)} conflicts for both tools (the fair comparison)")
+        inside = [r for r in both if r["within_mergegen_limits"] is True]
+        if limits:
+            print_paired(inside, f"Only the {len(inside)} of them within the MergeGen limits "
+                                 "(500 input / 200 output tokens)")
     times = [r["time_s"] for r in rows if r["time_s"] != ""]
     if times:
         print(f"Claude time (API call): total {sum(times):.1f}s, mean {sum(times) / len(times):.2f}s per call")

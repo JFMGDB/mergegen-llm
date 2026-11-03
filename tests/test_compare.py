@@ -49,3 +49,37 @@ def test_compare_end_to_end_ignores_failed_mergegen():
         assert "Same 2 conflicts" in out          # the conflict where MergeGen failed is not compared
         assert "Claude   = dataset : 2/3" in out  # whitespace-normalised equality
         assert "only Claude 1 | only MergeGen 0" in out
+
+
+def test_split_context_takes_equal_lines_on_each_side():
+    from conflict_context import split_context, with_context
+    base = "c1\nc2\nc3\nold\nd1\nd2\n"
+    a = "c1\nc2\nc3\nnew a\nd1\nd2\n"
+    b = "c1\nc2\nc3\nnew b\nd1\nd2\n"
+    before, after = split_context(base, a, b)
+    assert before == "c1\nc2\n" and after == "d1\nd2\n"   # at most 2 lines each side
+    assert split_context(base, a, b, 0) == ("", "")
+    assert with_context("x;", "y;", "") == "x;\ny;"        # tokens never glued together
+
+
+def test_compare_puts_context_around_reference_for_mergegen():
+    with tempfile.TemporaryDirectory() as d:
+        tmp = Path(d)
+        (tmp / "RAW_DATA").mkdir()
+        (tmp / "OUTPUT/claude/m/test").mkdir(parents=True)
+        json.dump([["c1\nold\nd1\n"], ["c1\nnew a\nd1\n"], ["c1\nnew b\nd1\n"], ["new a\n"]],
+                  open(tmp / "RAW_DATA/raw_data", "w"))
+        row = {"index": 0, "output": "new a", "input_tokens": 1, "output_tokens": 1, "time_s": 1.0,
+               "model": "m", "parse_error": False, "stop_reason": "end_turn"}
+        (tmp / "OUTPUT/claude/m/test/results.jsonl").write_text(json.dumps(row) + "\n")
+        (tmp / "mg.jsonl").write_text(json.dumps({"index": 0, "output": "c1 new a d1", "time_s": 0.1, "error": ""}) + "\n")
+        (tmp / "lim.jsonl").write_text(json.dumps({"index": 0, "conflict_tokens": 9, "reference_tokens": 5,
+                                                    "within_limits": True}) + "\n")
+        out = subprocess.run(
+            [sys.executable, str(ROOT / "src/compare.py"), "--run", str(tmp), "--model", "m",
+             "--mergegen-jsonl", str(tmp / "mg.jsonl"), "--mergegen-limits", str(tmp / "lim.jsonl"),
+             "--out", str(tmp / "o.csv")],
+            capture_output=True, text=True, check=True).stdout
+        assert "MergeGen = dataset : 1/1" in out
+        assert "Claude   = MergeGen: 1/1" in out
+        assert "Only the 1 of them within the MergeGen limits" in out
