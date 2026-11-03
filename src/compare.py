@@ -4,7 +4,8 @@ Reads a run folder produced by the ase-merge fork (e.g. runs/toy400-java):
   RAW_DATA/raw_data               [bases, as, bs, resolutions]
   RAW_DATA/raw_data_ids.json      language per conflict (optional)
   all_index                       split -> conflict indexes
-  OUTPUT/test_OUTPUT/SUCCEED|FAIL one file per MergeGen test example (MergeGen output)
+  OUTPUT/test_OUTPUT/SUCCEED|FAIL one file per MergeGen test example (MergeGen output),
+                                  or --mergegen-jsonl from run_mergegen_infer.py
   OUTPUT/claude/<model>/<split>/results.jsonl   Claude output, time and tokens
 
 Example:
@@ -45,6 +46,8 @@ def main():
     p.add_argument("--run", required=True, help="run folder, e.g. runs/toy400-java")
     p.add_argument("--model", default="claude-opus-5-5")
     p.add_argument("--split", default="test")
+    p.add_argument("--mergegen-jsonl", help="MergeGen outputs from run_mergegen_infer.py "
+                   "(instead of OUTPUT/test_OUTPUT; then any split works)")
     p.add_argument("--out", help="CSV path (default: results/compare-<run>-<model>.csv)")
     args = p.parse_args()
 
@@ -57,7 +60,14 @@ def main():
     for line in claude_path.read_text(encoding="utf-8").splitlines():
         r = json.loads(line)
         claude[r["index"]] = r
-    mergegen = read_mergegen(run) if args.split == "test" else {}
+    if args.mergegen_jsonl:
+        mergegen = {}
+        for line in Path(args.mergegen_jsonl).read_text(encoding="utf-8").splitlines():
+            r = json.loads(line)
+            if not r.get("error"):
+                mergegen[r["index"]] = r["output"]
+    else:
+        mergegen = read_mergegen(run) if args.split == "test" else {}
 
     rows = []
     for i in sorted(claude):
