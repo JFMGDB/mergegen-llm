@@ -11,7 +11,8 @@ Example (from the fork folder that has RAW_DATA/raw_data):
         --mergegen-dir ../miningframework/dependencies/dependencies/mergegen --limit 5
 
 Output: <run>/OUTPUT/mergegen_course/results.jsonl, one line per conflict
-({index, output, time_s, error}). It is resumable: indexes already there are skipped.
+({index, output, time_s, error}). It is resumable: indexes already solved are skipped,
+conflicts that failed are tried again.
 Then: python3 src/compare.py --run <run> --model <claude model> \
         --mergegen-jsonl <run>/OUTPUT/mergegen_course/results.jsonl
 """
@@ -54,7 +55,9 @@ def main():
     out.parent.mkdir(parents=True, exist_ok=True)
     done = set()
     if out.exists():
-        done = {json.loads(line)["index"] for line in out.read_text(encoding="utf-8").splitlines() if line}
+        # conflicts that failed are NOT done: a new run tries them again
+        done = {r["index"] for r in map(json.loads, out.read_text(encoding="utf-8").splitlines())
+                if r.get("output") and not r.get("error")}
     todo = [i for i in indexes if i not in done]
     print(f"{len(indexes)} conflicts, {len(done)} already done, {len(todo)} to run", flush=True)
 
