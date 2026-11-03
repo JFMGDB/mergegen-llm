@@ -74,6 +74,33 @@ cp .env.example .env
 
 Never commit your `.env` file or any API key.
 
+## Comparing Claude, MergeGen and the dataset
+
+These scripts work on a run folder of the [ase-merge fork](https://github.com/RafaFigueiroa/ase-merge) (`RAW_DATA/raw_data` plus the Claude outputs from its `run_claude.py`). The MergeGen scripts need the course MergeGen folder (`mergegen_inference.py`, `codet5-small-local/`, `best_model.pt`) and a Python 3.10 environment with the versions from the course Dockerfile.
+
+```bash
+# 1. MergeGen output, one conflict at a time (resumable)
+python3 src/run_mergegen_infer.py --run ../ase-merge --mergegen-dir ../mergegen --limit 100
+# 2. Which conflicts fit the MergeGen limits (500 input / 200 output tokens)
+python3 src/mergegen_limits.py --run ../ase-merge --mergegen-dir ../mergegen --limit 100
+# 3. One Claude model vs MergeGen vs dataset (CSV in results/)
+python3 src/compare.py --run ../ase-merge --model claude-opus-5-5 \
+    --mergegen-jsonl ../ase-merge/OUTPUT/mergegen_course/results.jsonl \
+    --mergegen-limits ../ase-merge/OUTPUT/mergegen_course/limits.jsonl
+# 4. Demo: summary table for several Claude models, plus disagreement examples
+python3 src/demo.py --run ../ase-merge --name java100 --models claude-opus-5-5 claude-haiku-5-5 \
+    --mergegen-jsonl ../ase-merge/OUTPUT/mergegen_course/results.jsonl \
+    --mergegen-limits ../ase-merge/OUTPUT/mergegen_course/limits.jsonl
+```
+
+Notes on the comparison:
+
+- **Equal** means exact match with the developer resolution after collapsing whitespace, as in MergeGen. Answers that are equivalent but written differently (for example, modifiers or imports in another order) count as different.
+- **Context:** in `raw_data`, base, A and B carry up to 2 context lines on each side, but the developer resolution is only the conflict region. The course MergeGen model answers context + region, so the same context (`src/conflict_context.py`) is put around the dataset resolution and around Claude's answer before comparing them with MergeGen.
+- **Length limits:** MergeGen cuts the input at 500 tokens and generates at most 200, so it cannot give the full resolution of longer conflicts. The comparison is shown for all conflicts and for those within the limits.
+- **Claude settings:** adaptive thinking with effort `medium`; no `temperature`, `top_p` or `top_k` is sent, since the current Claude models reject them (per the Anthropic API docs).
+- MergeGen CPU time and Claude API latency are not directly comparable.
+
 ## Data and model weights
 
 The dataset and the MergeGen weights are not stored in this repository. See [`data/README.md`](data/README.md) for where to get them.
