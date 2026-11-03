@@ -50,6 +50,8 @@ def main():
     p.add_argument("--mergegen-jsonl", required=True)
     p.add_argument("--mergegen-limits")
     p.add_argument("--examples", type=int, default=3, help="disagreement examples to show")
+    p.add_argument("--project", type=int, nargs="*", default=[400, 63199],
+                   help="conflict counts to project the cost to (default: 400 and all 63,199 valid Java conflicts)")
     args = p.parse_args()
 
     data = {}
@@ -92,6 +94,27 @@ def main():
           f"{'-':<18}0 (local)")
     print(f"(95% Wilson CI in parentheses; {len(inside)} of {n} conflicts fit the MergeGen limits "
           "of 500 input / 200 output tokens)")
+
+    print(f"\n=== Cost (Anthropic API list prices; Batch API = 50% off, results within 24h) ===")
+    head = f"{'tool':<18}{'total':>10}{'per conflict':>14}{'per correct':>13}"
+    head += "".join(f"{f'{k:,} conflicts':>27}" for k in args.project)
+    print(head)
+    for m in args.models:
+        d = data[m]
+        tin = sum(int(d[i]["input_tokens"]) for i in common)
+        tout = sum(int(d[i]["output_tokens"]) for i in common)
+        pin, pout = PRICES.get(m, (float("nan"), float("nan")))
+        cost = tin * pin / 1e6 + tout * pout / 1e6
+        ok = sum(is_true(d[i]["claude_eq_dataset"]) for i in common)
+        row = f"{m:<18}{f'${cost:.2f}':>10}{f'${cost / n:.4f}':>14}{(f'${cost / ok:.4f}' if ok else '-'):>13}"
+        row += "".join(f"{f'${cost / n * k:,.2f} (batch ${cost / n * k / 2:,.2f})':>27}" for k in args.project)
+        print(row)
+    t = sum(float(first[i]["mergegen_time_s"]) for i in common) / n
+    row = f"{'MergeGen (course)':<18}{'$0':>10}{'$0':>14}{'$0':>13}"
+    row += "".join(f"{f'~{t * k / 3600:,.1f} h CPU':>27}" for k in args.project)
+    print(row)
+    print("MergeGen has no API cost, but it needs a trained model (GPU training; the course model's"
+          "\ntraining cost is unknown) and local compute; its projection is CPU time on this machine.")
 
     print("\n=== Each Claude model vs MergeGen (all conflicts) ===")
     for m in args.models:

@@ -100,6 +100,7 @@ Notes on the comparison:
 - **Length limits:** MergeGen cuts the input at 500 tokens and generates at most 200, so it cannot give the full resolution of longer conflicts. The comparison is shown for all conflicts and for those within the limits.
 - **Claude settings:** adaptive thinking with effort `medium`; no `temperature`, `top_p` or `top_k` is sent, since the current Claude models reject them (per the Anthropic API docs).
 - MergeGen CPU time and Claude API latency are not directly comparable.
+- **Cost:** `demo.py` prints the Claude cost (from the token counts of each call and the API list prices) in total, per conflict and per correct resolution, projected to other run sizes (`--project`, by default 400 and all 63,199 valid Java conflicts), with and without the Batch API discount. For MergeGen it projects the CPU time instead; it has no API cost, but needs a trained model.
 
 ## Data and model weights
 
