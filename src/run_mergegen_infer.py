@@ -36,6 +36,13 @@ def main():
     p.add_argument("--run", default=".", help="folder with RAW_DATA/raw_data (and all_index)")
     p.add_argument("--mergegen-dir", help="folder with mergegen_inference.py and best_model.pt")
     p.add_argument("--model-file", default="best_model.pt")
+    p.add_argument("--model-type",
+                   help="architecture folder inside --mergegen-dir that matches --model-file "
+                        "(./codet5-base for best_model_Java_codet5-base.pt); needs a model_type "
+                        "parameter in MergeInference, which the course file does not have")
+    p.add_argument("--decoder-start", choices=["bos", "config"], default="bos",
+                   help="first decoder token: bos (<s>, what MergeGen is trained and evaluated with in "
+                        "run_mergegen.py) or config (<pad>, the default of the course mergegen_inference.py)")
     p.add_argument("--split", choices=["all", "train", "valid", "test"], default="all",
                    help="which conflicts to run (needs all_index for train/valid/test)")
     p.add_argument("--limit", type=int)
@@ -72,7 +79,10 @@ def main():
         os.chdir(mdir)  # the course code uses relative paths (./codet5-small-local, best_model.pt)
         sys.path.insert(0, str(mdir))
         from mergegen_inference import MergeInference
-        tool = MergeInference(model_path=args.model_file)
+        extra = {"model_type": args.model_type} if args.model_type else {}
+        tool = MergeInference(model_path=args.model_file, **extra)
+        if args.decoder_start == "bos":
+            tool.model.config.decoder_start_token_id = tool.tokenizer.bos_token_id
 
     with out.open("a", encoding="utf-8") as f:
         for n, i in enumerate(todo, 1):
