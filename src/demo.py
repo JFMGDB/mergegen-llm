@@ -49,6 +49,9 @@ def main():
     p.add_argument("--models", nargs="+", default=["claude-opus-5-5", "claude-haiku-5-5"])
     p.add_argument("--mergegen-jsonl", required=True)
     p.add_argument("--mergegen-limits")
+    p.add_argument("--mergegen-label", default="MergeGen (course)", help="name of the MergeGen model in the tables")
+    p.add_argument("--mergegen-setup", default="course model best_model.pt (CodeT5-small)",
+                   help="description of the MergeGen model in the setup note")
     p.add_argument("--examples", type=int, default=3, help="disagreement examples to show (one per pattern)")
     p.add_argument("--project", type=int, nargs="*", default=[400, 63199],
                    help="conflict counts to project the cost to (default: 400 and all 63,199 valid Java conflicts)")
@@ -90,7 +93,7 @@ def main():
     k = sum(is_true(first[i]["mergegen_eq_dataset"]) for i in common)
     ki = sum(is_true(first[i]["mergegen_eq_dataset"]) for i in inside)
     t = sum(float(first[i]["mergegen_time_s"]) for i in common) / n
-    print(f"{'MergeGen (course)':<18}{pct(k, n):<30}{pct(ki, len(inside)):<30}{t:>6.1f}s CPU  "
+    print(f"{args.mergegen_label:<18}{pct(k, n):<30}{pct(ki, len(inside)):<30}{t:>6.1f}s CPU  "
           f"{'-':<18}0 (local)")
     print(f"(95% Wilson CI in parentheses; {len(inside)} of {n} conflicts fit the MergeGen limits "
           "of 500 input / 200 output tokens)")
@@ -110,7 +113,7 @@ def main():
         row += "".join(f"{f'${cost / n * k:,.2f} (batch ${cost / n * k / 2:,.2f})':>27}" for k in args.project)
         print(row)
     t = sum(float(first[i]["mergegen_time_s"]) for i in common) / n
-    row = f"{'MergeGen (course)':<18}{'$0':>10}{'$0':>14}{'$0':>13}"
+    row = f"{args.mergegen_label:<18}{'$0':>10}{'$0':>14}{'$0':>13}"
     row += "".join(f"{f'~{t * k / 3600:,.1f} h CPU':>27}" for k in args.project)
     print(row)
     print("MergeGen has no API cost, but it needs a trained model (GPU training; the course model's"
@@ -167,7 +170,7 @@ def main():
 
     print("\nSetup: Claude via API with adaptive thinking, effort 'medium', same prompt for every model;"
           "\nno temperature/top_p/top_k sent (rejected by the current Claude models, per the API docs)."
-          "\nMergeGen: course model best_model.pt (CodeT5-small) on CPU, beam 3. Its answer has the"
+          f"\nMergeGen: {args.mergegen_setup} on CPU, beam 3. Its answer has the"
           "\ncontext lines around the region, so the same context is added to the dataset resolution."
           "\nMergeGen CPU time and Claude API latency are not directly comparable.")
 
