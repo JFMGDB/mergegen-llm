@@ -1,15 +1,18 @@
-"""Compare Claude, MergeGen and the dataset on the same conflicts of an archived run.
+"""Compare Claude, MergeGen and the dataset on the same conflicts of a run folder.
 
-Reads a run folder produced by the ase-merge fork (e.g. runs/toy400-java):
+Reads a run folder written by prepare_mergebert.py or mine_conflicts.py:
   RAW_DATA/raw_data               [bases, as, bs, resolutions]
   RAW_DATA/raw_data_ids.json      language per conflict (optional)
   all_index                       split -> conflict indexes
-  OUTPUT/test_OUTPUT/SUCCEED|FAIL one file per MergeGen test example (MergeGen output),
-                                  or --mergegen-jsonl from run_mergegen_infer.py
-  OUTPUT/claude/<model>/<split>/results.jsonl   Claude output, time and tokens
+  OUTPUT/claude/<model>/<split>/results.jsonl   Claude output, time and tokens (run_claude.py)
+  --mergegen-jsonl                MergeGen output (run_mergegen.py); without it, one file per
+                                  test example in OUTPUT/test_OUTPUT/SUCCEED|FAIL, as written by
+                                  the training code of the MergeGen replication package
 
 Example:
-    python3 src/compare.py --run ../ase-merge/runs/toy400-java --model claude-opus-5-5
+    python3 src/compare.py --run ../datasets/java-2m --model claude-opus-5-5-r1 \
+        --mergegen-jsonl ../datasets/java-2m/OUTPUT/mergegen/results.jsonl \
+        --mergegen-limits ../datasets/java-2m/OUTPUT/mergegen_course/limits.jsonl
 Writes results/compare-<run>-<model>.csv and prints the summary.
 
 "Equal" = same text after collapsing whitespace (' '.join(s.split())), as in MergeGen.
@@ -201,7 +204,7 @@ def main():
     p.add_argument("--run", required=True, help="run folder, e.g. runs/toy400-java")
     p.add_argument("--model", default="claude-opus-5-5")
     p.add_argument("--split", default="test")
-    p.add_argument("--mergegen-jsonl", help="MergeGen outputs from run_mergegen_infer.py "
+    p.add_argument("--mergegen-jsonl", help="MergeGen outputs from run_mergegen.py "
                    "(instead of OUTPUT/test_OUTPUT; then any split works)")
     p.add_argument("--mergegen-context-lines", type=int, default=2,
                    help="context lines the MergeGen output carries around the region (0: none)")

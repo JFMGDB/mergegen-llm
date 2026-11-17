@@ -1,2 +1,4 @@
-anthropic>=0.40   # only needed for --backend api
-pytest            # to run the tests
+# Claude runs, mining and analysis (Python >= 3.10)
+anthropic>=2.3
+python-dotenv
+pytest

@@ -1,14 +1,14 @@
 """Run the trained MergeGen model (the one from the course's miningframework) on conflicts
-from a run folder of the ase-merge fork, one by one, on CPU or GPU.
+from a run folder, one by one, on CPU or GPU.
 
 It uses `MergeInference.generate_resolution(base, a, b)` from the miningframework branch
 `sepmerge`, folder `dependencies/dependencies/mergegen`. That folder must contain
 `mergegen_inference.py`, `codet5-small-local/` and the trained `best_model.pt`
 (from `mergegen.zip` in the course Drive folder; none of these files is versioned here).
 
-Example (from the fork folder that has RAW_DATA/raw_data):
-    python3 ../mergegen-llm/src/run_mergegen_infer.py --run . \
-        --mergegen-dir ../miningframework/dependencies/dependencies/mergegen --limit 5
+Example (from the repository root, with the course folder in ../mergegen):
+    python3 src/run_mergegen.py --run ../datasets/java-2m --mergegen-dir ../mergegen \
+        --out ../datasets/java-2m/OUTPUT/mergegen/results.jsonl
 
 Output: <run>/OUTPUT/mergegen_course/results.jsonl, one line per conflict
 ({index, output, time_s, error}). It is resumable: indexes already solved are skipped,

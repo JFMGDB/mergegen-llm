@@ -7,7 +7,7 @@ is re-merged with `git merge-file --diff3`. Every conflict region becomes one ex
 The resolution is found by anchoring the non-conflicting text around the region in the merged
 file; regions whose anchors are missing or ambiguous are dropped (like found_res_region=false).
 
-Output (same layout prepare_toy.py writes, so run_claude.py, run_mergegen_infer.py and
+Output (same layout prepare_mergebert.py writes, so run_claude.py, run_mergegen.py and
 compare.py work unchanged):
   <out>/RAW_DATA/raw_data            [bases, as, bs, resolutions]
   <out>/RAW_DATA/raw_data_ids.json   [language, "repo@merge:path", region index] per example
