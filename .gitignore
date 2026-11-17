@@ -26,3 +26,6 @@ PROCESSED/
 
 # Run outputs: keep the CSVs, ignore raw responses unless added on purpose
 results/raw/
+
+# conflicts from private repositories: never versioned
+results/*private*
