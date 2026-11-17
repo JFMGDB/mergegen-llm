@@ -1,21 +1,36 @@
 # Data
 
-This folder holds the conflict samples used in the experiments.
+No conflict data or model weights are versioned in this repository. The scripts read and write
+**run folders**, kept outside the repository (the examples use `../datasets/<name>`).
 
-## What is versioned
+## Run folder layout
 
-- Small samples and the list of sampled conflict IDs (for example `toys.json`).
+```
+<run>/
+  RAW_DATA/raw_data             [bases, as, bs, resolutions], one entry per conflict
+  RAW_DATA/raw_data_ids.json    [language, origin, conflict index] per conflict
+  RAW_DATA/raw_data_meta.jsonl  merge date, parents and file (mined datasets only)
+  all_index                     {"train": [], "valid": [], "test": [every conflict]}
+  OUTPUT/claude/<model>-r<k>/test/results.jsonl   one Claude run (run_claude.py)
+  OUTPUT/mergegen/results.jsonl                   MergeGen answers (run_mergegen.py)
+  OUTPUT/mergegen_course/limits.jsonl             MergeGen length limits (mergegen_limits.py)
+```
 
-## What is NOT versioned
+Base, A and B carry the conflict region of each version with up to 2 context lines on each side;
+the resolution is the developer's resolution of the region only.
 
-- The raw dataset.
-- MergeGen model weights.
+## Datasets used
 
-Both are ignored by `.gitignore` because of their size and license terms.
+| Dataset | Source | Build |
+|---|---|---|
+| MergeBERT, 400 Java conflicts | [Zenodo 6366908](https://zenodo.org/record/6366908), extracted (has `automated-analysis-data/`) | `prepare_mergebert.py --langs Java --limit 400` |
+| Java, last 2 months, 509 conflicts | full clones of jackson-databind, accumulo, sis, spring-boot, stroom, rumble, ontop and ditto | `mine_conflicts.py --langs Java --since 2024-01-01`, then `sample_conflicts.py --since 2026-09-16 --per-repo 150 --seed 42` |
+| Private JS/TS, 341 conflicts | two private repositories | `mine_conflicts.py --since 2024-01-01` |
 
-## Where to get the raw dataset
+`mine_conflicts.py` needs full clones (`git clone --no-checkout <url>`); the clones can be deleted
+after mining. In the private dataset, 4 conflicts are larger than the Claude context window (a data
+file); they stay in the run folder and are left out of the comparisons, which use only conflicts
+answered by every tool (337).
 
-The MergeGen paper uses the dataset from MergeBERT, available on Zenodo:
-<https://zenodo.org/record/6366908>
-
-Download it and place it in `data/raw/` (this path is git-ignored).
+Never put a run folder of a private dataset, or a CSV or HTML page made from it, inside this
+repository: only aggregate numbers (`summary.py`) can be versioned.
