@@ -18,7 +18,11 @@ We run the same conflicts through MergeGen and through LLMs, and compare the res
 
 ## Approach
 
-- **Data:** merge conflicts from the dataset used in the MergeGen paper (originally from MergeBERT). Java only.
+- **Data:** three sets of conflicts, so that the result does not depend on data MergeGen was trained on:
+  1. **MergeBERT dataset** (Java): the data the MergeGen paper used. MergeGen was trained on it, so it only serves as a reference point.
+  2. **Recent Java merges:** merge commits of the last two months (from 2026-09-16) in Java projects of the MergeBERT dataset. They are years newer than MergeGen's training data and also newer than the training cutoff of the Claude models used.
+  3. **Private projects** (JavaScript/TypeScript): conflicts from two private repositories, which no model can have seen. The conflicts and their code are never versioned; only aggregate numbers are reported.
+- **LLMs:** Claude Opus 5.5 and Claude Sonnet 5.5 through the Anthropic API, each run 3 times per conflict (their sampling cannot be fixed).
 - **Prompt A:** the three versions of the conflict (base, A, B) given as they are.
 - **Prompt B:** the same conflict in the MergeGen structured representation.
 - **Metric:** exact match with the resolution written by the developer, also shown ignoring comments.
@@ -106,6 +110,18 @@ python3 src/sample_conflicts.py --run ../datasets/java-recent --out ../datasets/
 ```
 
 The output folder works with `run_claude.py --run`, `run_mergegen_infer.py --run` and `compare.py --run`. Projects used for the recent Java merges: jackson-databind, accumulo, sis, spring-boot, stroom and rumble (ontop and ditto had no conflicts in the period).
+
+## Repeated runs and summary
+
+The Claude models used here reject `temperature`, so the same conflict can get different answers. Each model is run 3 times; after each run, rename `OUTPUT/claude/<model>` to `OUTPUT/claude/<model>-r<k>`. `summary.py` then reports, for each dataset, the mean accuracy over the runs (min-max), how many conflicts Claude got right in every run, in some or in none, the paired comparison with MergeGen (Claude's majority vote, exact McNemar test), and tokens, cost and time per run. It writes only aggregate numbers.
+
+```bash
+python3 src/summary.py --models claude-opus-5-5 claude-sonnet-5-5 --out results/summary.md \
+    --dataset "MergeBERT (MergeGen trained on it)" ../ase-merge \
+        ../ase-merge/OUTPUT/mergegen_course_bos/results.jsonl ../ase-merge/OUTPUT/mergegen_course/limits.jsonl \
+    --dataset "Java, last 2 months" ../datasets/java-2m \
+        ../datasets/java-2m/OUTPUT/mergegen/results.jsonl ../datasets/java-2m/OUTPUT/mergegen_course/limits.jsonl
+```
 
 Notes on the comparison:
 
