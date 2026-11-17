@@ -21,7 +21,7 @@ We run the same conflicts through MergeGen and through LLMs, and compare the res
 - **Data:** merge conflicts from the dataset used in the MergeGen paper (originally from MergeBERT). Java only.
 - **Prompt A:** the three versions of the conflict (base, A, B) given as they are.
 - **Prompt B:** the same conflict in the MergeGen structured representation.
-- **Metric:** exact match with the resolution written by the developer.
+- **Metric:** exact match with the resolution written by the developer, also shown ignoring comments.
 - **Baseline:** MergeGen, run on the same conflicts.
 - **Start small:** first a handful of simple "toy" examples, then a larger sample.
 
@@ -110,6 +110,7 @@ The output folder works with `run_claude.py --run`, `run_mergegen_infer.py --run
 Notes on the comparison:
 
 - **Equal** means exact match with the developer resolution after collapsing whitespace, as in MergeGen. Answers that are equivalent but written differently (for example, modifiers or imports in another order) count as different.
+- **Ignoring comments:** each comparison is also made without `//` and `/* */` comments. MergeGen outputs tokens without line breaks, so where a `//` comment ends is unknown: comparisons with MergeGen ignore only `/* */` comments.
 - **Context:** in `raw_data`, base, A and B carry up to 2 context lines on each side, but the developer resolution is only the conflict region. The course MergeGen model answers context + region, so the same context (`src/conflict_context.py`) is put around the dataset resolution and around Claude's answer before comparing them with MergeGen.
 - **Length limits:** MergeGen cuts the input at 500 tokens and generates at most 200, so it cannot give the full resolution of longer conflicts. The comparison is shown for all conflicts and for those within the limits.
 - **Claude settings:** adaptive thinking with effort `medium`; no `temperature`, `top_p` or `top_k` is sent, since the current Claude models reject them (per the Anthropic API docs).
