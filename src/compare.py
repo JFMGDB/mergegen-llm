@@ -1,18 +1,25 @@
-"""Compare Claude, MergeGen and the dataset on the same conflicts of an archived run.
+"""Compare Claude, MergeGen and the dataset on the same conflicts of a run folder.
 
-Reads a run folder produced by the ase-merge fork (e.g. runs/toy400-java):
+Reads a run folder written by prepare_mergebert.py or mine_conflicts.py:
   RAW_DATA/raw_data               [bases, as, bs, resolutions]
   RAW_DATA/raw_data_ids.json      language per conflict (optional)
   all_index                       split -> conflict indexes
-  OUTPUT/test_OUTPUT/SUCCEED|FAIL one file per MergeGen test example (MergeGen output),
-                                  or --mergegen-jsonl from run_mergegen_infer.py
-  OUTPUT/claude/<model>/<split>/results.jsonl   Claude output, time and tokens
+  OUTPUT/claude/<model>/<split>/results.jsonl   Claude output, time and tokens (run_claude.py)
+  --mergegen-jsonl                MergeGen output (run_mergegen.py); without it, one file per
+                                  test example in OUTPUT/test_OUTPUT/SUCCEED|FAIL, as written by
+                                  the training code of the MergeGen replication package
 
 Example:
-    python3 src/compare.py --run ../ase-merge/runs/toy400-java --model claude-opus-5-5
+    python3 src/compare.py --run ../datasets/java-2m --model claude-opus-5-5-r1 \
+        --mergegen-jsonl ../datasets/java-2m/OUTPUT/mergegen/results.jsonl \
+        --mergegen-limits ../datasets/java-2m/OUTPUT/mergegen_course/limits.jsonl
 Writes results/compare-<run>-<model>.csv and prints the summary.
 
 "Equal" = same text after collapsing whitespace (' '.join(s.split())), as in MergeGen.
+Each comparison is also shown ignoring comments (// and /* */, as in Java, JavaScript and
+TypeScript), since a resolution that differs only in a comment is the same code. MergeGen
+outputs a token stream without line breaks, so where a // comment ends is unknown: comparisons
+with MergeGen ignore only /* */ comments. An exact match always counts as equal here too.
 MergeGen is only evaluated on the test split.
 
 The course MergeGen model (--mergegen-jsonl) answers the conflict region WITH the context
@@ -35,6 +42,34 @@ SEP = "---------------------------------"
 
 def norm(s: str) -> str:
     return " ".join(s.split())
+
+
+def strip_comments(s: str, line_comments: bool = True) -> str:
+    """Drop /* */ (and, if line_comments, //) comments, keeping string literals untouched."""
+    out, i, n = [], 0, len(s)
+    while i < n:
+        c = s[i]
+        if c in "'\"`":
+            j = i + 1
+            while j < n and s[j] != c and (c == "`" or s[j] != "\n"):
+                j += 2 if s[j] == "\\" else 1
+            out.append(s[i:j + 1])
+            i = j + 1
+        elif line_comments and s.startswith("//", i):
+            j = s.find("\n", i)
+            i = n if j < 0 else j
+        elif s.startswith("/*", i):
+            j = s.find("*/", i + 2)
+            out.append(" ")
+            i = n if j < 0 else j + 2
+        else:
+            out.append(c)
+            i += 1
+    return "".join(out)
+
+
+def loose(s: str, line_comments: bool = True) -> str:
+    return norm(strip_comments(s, line_comments))
 
 
 def wilson(k: int, n: int, z: float = 1.96):
@@ -76,18 +111,20 @@ def read_mergegen(run: Path) -> dict:
     return out
 
 
-def print_paired(both: list, title: str):
-    """Claude x MergeGen x dataset on the conflicts both tools answered."""
+def print_paired(both: list, title: str, suffix: str = ""):
+    """Claude x MergeGen x dataset on the conflicts both tools answered
+    (suffix "_nocomments" uses the comparisons that ignore comments)."""
     m = len(both)
     print(f"--- {title} ---")
     if not m:
         return
-    cds = sum(r["claude_eq_dataset"] for r in both)
-    md = sum(r["mergegen_eq_dataset"] for r in both)
-    cm = sum(r["claude_eq_mergegen"] for r in both)
-    only_c = sum(r["claude_eq_dataset"] and not r["mergegen_eq_dataset"] for r in both)
-    only_m = sum(r["mergegen_eq_dataset"] and not r["claude_eq_dataset"] for r in both)
-    both_ok = sum(r["claude_eq_dataset"] and r["mergegen_eq_dataset"] for r in both)
+    c_ok = [r["claude_eq_dataset" + suffix] for r in both]
+    m_ok = [r["mergegen_eq_dataset" + suffix] for r in both]
+    cds, md = sum(c_ok), sum(m_ok)
+    cm = sum(r["claude_eq_mergegen" + suffix] for r in both)
+    only_c = sum(c and not g for c, g in zip(c_ok, m_ok))
+    only_m = sum(g and not c for c, g in zip(c_ok, m_ok))
+    both_ok = sum(c and g for c, g in zip(c_ok, m_ok))
     print(f"Claude   = dataset : {fmt(cds, m)}")
     print(f"MergeGen = dataset : {fmt(md, m)}")
     print(f"Claude   = MergeGen: {cm}/{m}")
@@ -98,41 +135,31 @@ def print_paired(both: list, title: str):
         print(f"MergeGen time (local CPU): mean {sum(mt) / len(mt):.2f}s per conflict")
 
 
-def main():
-    p = argparse.ArgumentParser()
-    p.add_argument("--run", required=True, help="run folder, e.g. runs/toy400-java")
-    p.add_argument("--model", default="claude-opus-5-5")
-    p.add_argument("--split", default="test")
-    p.add_argument("--mergegen-jsonl", help="MergeGen outputs from run_mergegen_infer.py "
-                   "(instead of OUTPUT/test_OUTPUT; then any split works)")
-    p.add_argument("--mergegen-context-lines", type=int, default=2,
-                   help="context lines the MergeGen output carries around the region (0: none)")
-    p.add_argument("--mergegen-limits", help="limits.jsonl from mergegen_limits.py")
-    p.add_argument("--out", help="CSV path (default: results/compare-<run>-<model>.csv)")
-    args = p.parse_args()
-
-    run = Path(args.run)
+def build_rows(run: Path, model: str, split: str = "test", mergegen_jsonl=None,
+               mergegen_context_lines: int = 2, mergegen_limits=None) -> list:
+    """One row per conflict Claude answered: the scenario, the three resolutions and the
+    comparisons (see the module docstring)."""
     bases, a_s, b_s, refs = json.loads((run / "RAW_DATA/raw_data").read_text(encoding="utf-8"))
     ids_path = run / "RAW_DATA/raw_data_ids.json"
     langs = [i[0] for i in json.loads(ids_path.read_text(encoding="utf-8"))] if ids_path.exists() else None
-    claude_path = run / "OUTPUT/claude" / args.model / args.split / "results.jsonl"
+    claude_path = run / "OUTPUT/claude" / model / split / "results.jsonl"
     claude = {}
     for line in claude_path.read_text(encoding="utf-8").splitlines():
         r = json.loads(line)
         claude[r["index"]] = r
     mergegen_time = {}
-    if args.mergegen_jsonl:
+    if mergegen_jsonl:
         mergegen = {}
-        for line in Path(args.mergegen_jsonl).read_text(encoding="utf-8").splitlines():
+        for line in Path(mergegen_jsonl).read_text(encoding="utf-8").splitlines():
             r = json.loads(line)
             if not r.get("error"):
                 mergegen[r["index"]] = r["output"]
                 mergegen_time[r["index"]] = r.get("time_s", "")
     else:
-        mergegen = read_mergegen(run) if args.split == "test" else {}
+        mergegen = read_mergegen(run) if split == "test" else {}
     limits = {}
-    if args.mergegen_limits:
-        for line in Path(args.mergegen_limits).read_text(encoding="utf-8").splitlines():
+    if mergegen_limits:
+        for line in Path(mergegen_limits).read_text(encoding="utf-8").splitlines():
             r = json.loads(line)
             limits[r["index"]] = r
 
@@ -142,10 +169,11 @@ def main():
         ref = norm(refs[i])
         c_out = norm(c["output"])
         m_out = norm(mergegen[i]) if i in mergegen else None
-        before, after = (split_context(bases[i], a_s[i], b_s[i], args.mergegen_context_lines)
-                         if args.mergegen_jsonl and args.mergegen_context_lines else ("", ""))
-        m_ref = norm(with_context(before, refs[i], after))
-        c_ctx = norm(with_context(before, c["output"], after))
+        m_loose = loose(mergegen[i], False) if i in mergegen else None
+        before, after = (split_context(bases[i], a_s[i], b_s[i], mergegen_context_lines)
+                         if mergegen_jsonl and mergegen_context_lines else ("", ""))
+        m_ref = with_context(before, refs[i], after)
+        c_ctx = with_context(before, c["output"], after)
         lim = limits.get(i, {})
         rows.append({
             "index": i, "lang": langs[i] if langs else "",
@@ -153,8 +181,13 @@ def main():
             "resolution_dataset": refs[i],
             "resolution_mergegen": mergegen.get(i, ""), "resolution_claude": c["output"],
             "claude_eq_dataset": c_out == ref,
-            "mergegen_eq_dataset": (m_out == m_ref) if m_out is not None else "",
-            "claude_eq_mergegen": (c_ctx == m_out) if m_out is not None else "",
+            "mergegen_eq_dataset": (m_out == norm(m_ref)) if m_out is not None else "",
+            "claude_eq_mergegen": (norm(c_ctx) == m_out) if m_out is not None else "",
+            "claude_eq_dataset_nocomments": c_out == ref or loose(c["output"]) == loose(refs[i]),
+            "mergegen_eq_dataset_nocomments": (m_out == norm(m_ref) or m_loose == loose(m_ref, False))
+                                              if m_out is not None else "",
+            "claude_eq_mergegen_nocomments": (norm(c_ctx) == m_out or loose(c_ctx, False) == m_loose)
+                                             if m_out is not None else "",
             "time_s": c.get("time_s", ""), "input_tokens": c["input_tokens"],
             "output_tokens": c["output_tokens"], "model": c.get("model", ""),
             "claude_parse_error": c.get("parse_error", ""), "claude_stop_reason": c.get("stop_reason", ""),
@@ -163,6 +196,25 @@ def main():
             "reference_tokens": lim.get("reference_tokens", ""),
             "within_mergegen_limits": lim.get("within_limits", ""),
         })
+    return rows
+
+
+def main():
+    p = argparse.ArgumentParser()
+    p.add_argument("--run", required=True, help="run folder, e.g. runs/toy400-java")
+    p.add_argument("--model", default="claude-opus-5-5")
+    p.add_argument("--split", default="test")
+    p.add_argument("--mergegen-jsonl", help="MergeGen outputs from run_mergegen.py "
+                   "(instead of OUTPUT/test_OUTPUT; then any split works)")
+    p.add_argument("--mergegen-context-lines", type=int, default=2,
+                   help="context lines the MergeGen output carries around the region (0: none)")
+    p.add_argument("--mergegen-limits", help="limits.jsonl from mergegen_limits.py")
+    p.add_argument("--out", help="CSV path (default: results/compare-<run>-<model>.csv)")
+    args = p.parse_args()
+
+    run = Path(args.run)
+    rows = build_rows(run, args.model, args.split, args.mergegen_jsonl, args.mergegen_context_lines,
+                      args.mergegen_limits)
 
     out = Path(args.out) if args.out else Path("results") / f"compare-{run.name}-{args.model}.csv"
     out.parent.mkdir(parents=True, exist_ok=True)
@@ -181,11 +233,14 @@ def main():
     refu = sum(1 for r in rows if r["claude_stop_reason"] == "refusal")
     print(f"Claude parse errors: {perr}, refusals: {refu} (both count as 'different')")
     print(f"Claude   = dataset : {fmt(cd, n)}")
+    cdl = sum(r["claude_eq_dataset_nocomments"] for r in rows)
+    print(f"Claude   = dataset, ignoring comments: {fmt(cdl, n)}")
     both = [r for r in rows if r["mergegen_eq_dataset"] != ""]
     if both:
         print_paired(both, f"Same {len(both)} conflicts for both tools (the fair comparison)")
+        print_paired(both, "Same conflicts, ignoring comments", "_nocomments")
         inside = [r for r in both if r["within_mergegen_limits"] is True]
-        if limits:
+        if args.mergegen_limits:
             print_paired(inside, f"Only the {len(inside)} of them within the MergeGen limits "
                                  "(500 input / 200 output tokens)")
     times = [r["time_s"] for r in rows if r["time_s"] != ""]

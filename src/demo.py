@@ -5,13 +5,14 @@ table (all conflicts and only those within the MergeGen length limits), the pair
 agreement, time, tokens and cost, and a few conflicts where the tools disagree.
 
 Example (from the mergegen-llm folder):
-    python3 src/demo.py --run ../ase-merge --name java100 \
-        --models claude-opus-5-5 claude-haiku-5-5 \
-        --mergegen-jsonl ../ase-merge/OUTPUT/mergegen_course/results.jsonl \
-        --mergegen-limits ../ase-merge/OUTPUT/mergegen_course/limits.jsonl
+    python3 src/demo.py --run ../datasets/java-2m --name java-2m \
+        --models claude-opus-5-5-r1 claude-sonnet-5-5-r1 \
+        --mergegen-jsonl ../datasets/java-2m/OUTPUT/mergegen/results.jsonl \
+        --mergegen-limits ../datasets/java-2m/OUTPUT/mergegen_course/limits.jsonl
 """
 import argparse
 import csv
+import re
 import subprocess
 import sys
 from pathlib import Path
@@ -20,8 +21,12 @@ from compare import norm, wilson, mcnemar_exact
 
 HERE = Path(__file__).resolve().parent
 # USD per million tokens (input, output), Anthropic API list prices (docs cached 2026-10-06)
-PRICES = {"claude-opus-5-5": (4.00, 20.00), "claude-haiku-5-5": (0.10, 0.50),
-          "claude-sonnet-5-5": (2.00, 10.00)}
+PRICES = {"claude-opus-5-5": (4.00, 20.00), "claude-sonnet-5-5": (2.00, 10.00)}
+
+
+def price(model):
+    """(input, output) price of a model or of one of its runs (<model>-r<k>)."""
+    return PRICES.get(re.sub(r"-r\d+$", "", model), (float("nan"), float("nan")))
 csv.field_size_limit(sys.maxsize)
 
 
@@ -44,9 +49,9 @@ def short(text, lines=8):
 
 def main():
     p = argparse.ArgumentParser()
-    p.add_argument("--run", required=True, help="ase-merge run folder (RAW_DATA/, OUTPUT/)")
+    p.add_argument("--run", required=True, help="run folder (RAW_DATA/, OUTPUT/)")
     p.add_argument("--name", default="demo", help="tag for the CSV names")
-    p.add_argument("--models", nargs="+", default=["claude-opus-5-5", "claude-haiku-5-5"])
+    p.add_argument("--models", nargs="+", default=["claude-opus-5-5", "claude-sonnet-5-5"])
     p.add_argument("--mergegen-jsonl", required=True)
     p.add_argument("--mergegen-limits")
     p.add_argument("--mergegen-label", default="MergeGen (course)", help="name of the MergeGen model in the tables")
@@ -57,6 +62,7 @@ def main():
                    help="conflict counts to project the cost to (default: 400 and all 63,199 valid Java conflicts)")
     args = p.parse_args()
 
+    w = max(18, *(len(m) + 2 for m in args.models), len(args.mergegen_label) + 1)  # name column width
     data = {}
     for m in args.models:
         out = Path("results") / f"compare-{args.name}-{m}.csv"
@@ -77,8 +83,8 @@ def main():
 
     print(f"\n=== {n} Java conflicts, same conflicts for every tool ===")
     print("'Equal' = exact match with the developer resolution after collapsing whitespace.")
-    print(f"{'tool':<18}{'equal to dataset (all)':<30}{'within MergeGen limits':<30}"
-          f"{'mean time':<12}{'tokens in/out':<18}{'cost (USD)'}")
+    print(f"{'tool':<{w}}{'equal to dataset (all)':<30}{'within MergeGen limits':<30}"
+          f"{'mean time':<12}{'tokens in/out':<{w}}{'cost (USD)'}")
     for m in args.models:
         d = data[m]
         k = sum(is_true(d[i]["claude_eq_dataset"]) for i in common)
@@ -86,38 +92,38 @@ def main():
         t = sum(float(d[i]["time_s"]) for i in common) / n
         tin = sum(int(d[i]["input_tokens"]) for i in common)
         tout = sum(int(d[i]["output_tokens"]) for i in common)
-        pin, pout = PRICES.get(m, (float("nan"), float("nan")))
+        pin, pout = price(m)
         cost = tin * pin / 1e6 + tout * pout / 1e6
-        print(f"{m:<18}{pct(k, n):<30}{pct(ki, len(inside)):<30}{t:>6.1f}s API  "
+        print(f"{m:<{w}}{pct(k, n):<30}{pct(ki, len(inside)):<30}{t:>6.1f}s API  "
               f"{tin}/{tout:<10}{cost:.2f} ({cost / n:.4f}/conflict)")
     k = sum(is_true(first[i]["mergegen_eq_dataset"]) for i in common)
     ki = sum(is_true(first[i]["mergegen_eq_dataset"]) for i in inside)
     t = sum(float(first[i]["mergegen_time_s"]) for i in common) / n
-    print(f"{args.mergegen_label:<18}{pct(k, n):<30}{pct(ki, len(inside)):<30}{t:>6.1f}s CPU  "
-          f"{'-':<18}0 (local)")
+    print(f"{args.mergegen_label:<{w}}{pct(k, n):<30}{pct(ki, len(inside)):<30}{t:>6.1f}s CPU  "
+          f"{'-':<{w}}0 (local)")
     print(f"(95% Wilson CI in parentheses; {len(inside)} of {n} conflicts fit the MergeGen limits "
           "of 500 input / 200 output tokens)")
 
     print(f"\n=== Cost (Anthropic API list prices; Batch API = 50% off, results within 24h) ===")
-    head = f"{'tool':<18}{'total':>10}{'per conflict':>14}{'per correct':>13}"
+    head = f"{'tool':<{w}}{'total':>10}{'per conflict':>14}{'per correct':>13}"
     head += "".join(f"{f'{k:,} conflicts':>27}" for k in args.project)
     print(head)
     for m in args.models:
         d = data[m]
         tin = sum(int(d[i]["input_tokens"]) for i in common)
         tout = sum(int(d[i]["output_tokens"]) for i in common)
-        pin, pout = PRICES.get(m, (float("nan"), float("nan")))
+        pin, pout = price(m)
         cost = tin * pin / 1e6 + tout * pout / 1e6
         ok = sum(is_true(d[i]["claude_eq_dataset"]) for i in common)
-        row = f"{m:<18}{f'${cost:.2f}':>10}{f'${cost / n:.4f}':>14}{(f'${cost / ok:.4f}' if ok else '-'):>13}"
+        row = f"{m:<{w}}{f'${cost:.2f}':>10}{f'${cost / n:.4f}':>14}{(f'${cost / ok:.4f}' if ok else '-'):>13}"
         row += "".join(f"{f'${cost / n * k:,.2f} (batch ${cost / n * k / 2:,.2f})':>27}" for k in args.project)
         print(row)
     t = sum(float(first[i]["mergegen_time_s"]) for i in common) / n
-    row = f"{args.mergegen_label:<18}{'$0':>10}{'$0':>14}{'$0':>13}"
+    row = f"{args.mergegen_label:<{w}}{'$0':>10}{'$0':>14}{'$0':>13}"
     row += "".join(f"{f'~{t * k / 3600:,.1f} h CPU':>27}" for k in args.project)
     print(row)
-    print("MergeGen has no API cost, but it needs a trained model (GPU training; the course model's"
-          "\ntraining cost is unknown) and local compute; its projection is CPU time on this machine.")
+    print("MergeGen has no API cost, but it needs a trained model (GPU training) and local compute;"
+          "\nits projection is CPU time on this machine.")
 
     print("\n=== Each Claude model vs MergeGen (all conflicts) ===")
     for m in args.models:
@@ -128,7 +134,7 @@ def main():
         oc = sum(c[i] and not g[i] for i in common)
         og = sum(g[i] and not c[i] for i in common)
         same = sum(is_true(d[i]["claude_eq_mergegen"]) for i in common)
-        print(f"{m:<18} both right {both:>3} | only Claude {oc:>3} | only MergeGen {og:>3} | "
+        print(f"{m:<{w}} both right {both:>3} | only Claude {oc:>3} | only MergeGen {og:>3} | "
               f"neither {n - both - oc - og:>3} | same answer {same:>3} | McNemar p = {mcnemar_exact(oc, og):.4f}")
     if len(args.models) > 1:
         a, b = args.models[:2]
@@ -146,9 +152,9 @@ def main():
     for i in common:
         patterns.setdefault(right(i), []).append(i)
     print(f"\n=== Who gets each conflict right ({n} conflicts) ===")
-    print("".join(f"{t:<18}" for t in tools) + f"{'conflicts':>10}   examples")
+    print("".join(f"{t:<{w}}" for t in tools) + f"{'conflicts':>10}   examples")
     for key, idx in sorted(patterns.items(), key=lambda kv: -len(kv[1])):
-        cells = "".join(f"{'right' if ok else 'wrong':<18}" for ok in key)
+        cells = "".join(f"{'right' if ok else 'wrong':<{w}}" for ok in key)
         print(f"{cells}{len(idx):>10}   {', '.join(map(str, idx[:6]))}{' ...' if len(idx) > 6 else ''}")
 
     if args.examples:

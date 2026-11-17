@@ -1,0 +1,16 @@
+# MergeGen inference (run_mergegen.py, mergegen_limits.py) on CPU, in a separate Python 3.10
+# environment: tokenizers 0.12.1 has no wheel for newer Python versions. Versions from the
+# Dockerfile of the course mining framework; the published results used Python 3.10.22 and
+# torch 2.14.1+cpu. Install torch first:
+#   pip install torch==2.14.1 --index-url https://download.pytorch.org/whl/cpu
+transformers==4.19.2
+tokenizers==0.12.1
+huggingface-hub==0.33.4
+regex==2024.11.6
+tqdm==4.54.1
+requests
+PyYAML
+numpy==2.0.2
+packaging
+filelock
+typing_extensions

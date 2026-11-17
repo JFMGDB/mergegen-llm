@@ -5,7 +5,7 @@ either limit it cannot give the full developer resolution. The paper (Threats to
 says the parts above the limit are discarded and that the limit covers 95% of its data.
 
 Run it with the MergeGen environment (it needs the CodeT5 tokenizer, not the model weights):
-    python3 ../mergegen-llm/src/mergegen_limits.py --run . --mergegen-dir ../mergegen --limit 100
+    python3 src/mergegen_limits.py --run ../datasets/java-2m --mergegen-dir ../mergegen
 
 Output: <run>/OUTPUT/mergegen_course/limits.jsonl, one line per conflict
 ({index, conflict_tokens, reference_tokens, within_limits}); compare.py reads it with

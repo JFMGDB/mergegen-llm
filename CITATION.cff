@@ -1,0 +1,35 @@
+cff-version: 1.2.0
+message: "If you use this software or its results, please cite it as below."
+title: "mergegen-llm: MergeGen versus large language models for merge conflict resolution"
+type: software
+authors:
+  - given-names: "José Felipe"
+    family-names: "Guerra"
+    affiliation: "Centro de Informática, Universidade Federal de Pernambuco"
+  - given-names: "Rafael"
+    family-names: "Figueirôa"
+    affiliation: "Centro de Informática, Universidade Federal de Pernambuco"
+repository-code: "https://github.com/JFMGDB/mergegen-llm"
+license: MIT
+date-released: "2026-11-17"
+keywords:
+  - merge conflicts
+  - large language models
+  - MergeGen
+references:
+  - type: conference-paper
+    title: "Merge Conflict Resolution: Classification or Generation?"
+    authors:
+      - family-names: "Dong"
+        given-names: "Jinhao"
+      - family-names: "Zhu"
+        given-names: "Qihao"
+      - family-names: "Sun"
+        given-names: "Zeyu"
+      - family-names: "Lou"
+        given-names: "Yiling"
+      - family-names: "Hao"
+        given-names: "Dan"
+    collection-title: "38th IEEE/ACM International Conference on Automated Software Engineering (ASE)"
+    year: 2023
+    doi: "10.1109/ASE56229.2023.00155"

@@ -1,2 +1,5 @@
-anthropic>=0.40   # only needed for --backend api
-pytest            # to run the tests
+# Claude runs, mining and analysis. Versions used for the published results (Python 3.15.2).
+anthropic==2.4.0
+python-dotenv==1.2.4
+# tests only
+pytest
