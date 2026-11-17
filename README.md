@@ -35,6 +35,17 @@ Details:
 
 - [`results/summary.md`](results/summary.md): accuracy over the runs, consistency, paired comparison, cost and time.
 - [`results/analysis.md`](results/analysis.md): manual reading of the cases where Claude and MergeGen disagree.
+- [`results/answers/`](results/answers/): every answer of every tool on the public datasets, with their provenance.
+
+## Reproducing the results
+
+The tables can be checked without calling the API or running MergeGen: `reproduce.sh` rebuilds the run folders of the two public datasets from their sources, puts the versioned answers in them, regenerates the tables and compares them with `results/summary.md`.
+
+```bash
+./reproduce.sh --mergebert ../fse2022 --java-clones ../repos
+```
+
+`--mergebert` is the extracted Zenodo dataset; `--java-clones` holds full clones of the repositories listed in [`data/samples/java-2m.json`](data/samples/java-2m.json). The conflicts of each sample are listed in [`data/samples/`](data/samples/), so the same sample is rebuilt even after the repositories get new merges. The private dataset cannot be reproduced.
 
 ## Datasets
 
@@ -74,10 +85,14 @@ Every step reads and writes a **run folder**: `RAW_DATA/raw_data` (base, A, B an
 │   ├── summary.py             # every dataset and run: accuracy, consistency, cost (Markdown)
 │   └── demo.py                # one-command demo for one dataset, with disagreement examples
 ├── tests/
-├── data/          # how to get and build the datasets (the data itself is not versioned)
-├── results/       # aggregate results
-├── requirements.txt            # Claude, mining and analysis (Python >= 3.10)
-└── requirements-mergegen.txt   # MergeGen (Python 3.10)
+├── data/
+│   └── samples/   # the conflicts of each public sample (the conflict code itself is not versioned)
+├── results/       # aggregate results and answers/ (every answer on the public datasets)
+├── reproduce.sh   # regenerate and check the public tables from results/answers/
+├── requirements.txt            # Claude, mining and analysis (pinned versions)
+├── requirements-mergegen.txt   # MergeGen (Python 3.10, pinned versions)
+├── CITATION.cff
+└── LICENSE        # MIT
 ```
 
 ## Setup
@@ -99,7 +114,7 @@ python3 src/prepare_mergebert.py --data ../fse2022 --langs Java --limit 400 --ou
 python3 src/mine_conflicts.py ../repos/jackson-databind ../repos/accumulo --langs Java \
     --since 2024-01-01 --out ../datasets/java-recent
 python3 src/sample_conflicts.py --run ../datasets/java-recent --out ../datasets/java-2m \
-    --since 2026-09-16 --per-repo 150 --seed 42
+    --since 2026-09-16 --until 2026-11-16 --per-repo 150 --seed 42
 
 # 2. Claude: 3 runs per model; rename the output after each run
 python3 src/run_claude.py --run ../datasets/java-2m --model claude-opus-5-5 --workers 4
