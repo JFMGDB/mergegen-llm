@@ -93,6 +93,20 @@ python3 src/demo.py --run ../ase-merge --name java100 --models claude-opus-5-5 c
     --mergegen-limits ../ase-merge/OUTPUT/mergegen_course/limits.jsonl
 ```
 
+## Mining new conflicts
+
+`mine_conflicts.py` builds the same `RAW_DATA/raw_data` format from any local git clone: for each merge commit it re-merges the files git reports as conflicting (`git merge-file --diff3`) and takes the developer resolution of each conflict region from the merge commit, anchored on the surrounding lines (regions whose anchors are missing or ambiguous are dropped, and repeated conflicts are kept once). `sample_conflicts.py` then draws a reproducible sample by date and per repository.
+
+```bash
+git clone --no-checkout https://github.com/FasterXML/jackson-databind ../repos/jackson-databind
+python3 src/mine_conflicts.py ../repos/jackson-databind ../repos/accumulo --langs Java \
+    --since 2024-01-01 --out ../datasets/java-recent
+python3 src/sample_conflicts.py --run ../datasets/java-recent --out ../datasets/java-2m \
+    --since 2026-09-16 --per-repo 150 --seed 42
+```
+
+The output folder works with `run_claude.py --run`, `run_mergegen_infer.py --run` and `compare.py --run`. Projects used for the recent Java merges: jackson-databind, accumulo, sis, spring-boot, stroom and rumble (ontop and ditto had no conflicts in the period).
+
 Notes on the comparison:
 
 - **Equal** means exact match with the developer resolution after collapsing whitespace, as in MergeGen. Answers that are equivalent but written differently (for example, modifiers or imports in another order) count as different.
