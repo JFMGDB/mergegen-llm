@@ -1,0 +1,4102 @@
+{
+ "name": "Java, last 2 months",
+ "repositories": {
+  "accumulo": "https://github.com/apache/accumulo",
+  "ditto": "https://github.com/eclipse-ditto/ditto",
+  "jackson-databind": "https://github.com/FasterXML/jackson-databind",
+  "ontop": "https://github.com/ontop/ontop",
+  "rumble": "https://github.com/RumbleDB/rumble",
+  "sis": "https://github.com/apache/sis",
+  "spring-boot": "https://github.com/spring-projects/spring-boot",
+  "stroom": "https://github.com/gchq/stroom"
+ },
+ "mining": {
+  "script": "src/mine_conflicts.py",
+  "since": "2024-01-01",
+  "langs": [
+   "Java"
+  ],
+  "mined_on": "2026-11-16"
+ },
+ "sampling": {
+  "script": "src/sample_conflicts.py",
+  "since": "2026-09-16",
+  "until": "2026-11-16",
+  "per_repo": 150,
+  "seed": 42
+ },
+ "conflicts": [
+  {
+   "id": "accumulo@df6d3e901c50:core/src/main/java/org/apache/accumulo/core/iterators/Combiner.java",
+   "region": 0,
+   "lang": "Java",
+   "merge": "df6d3e901c50bb4b994914313c2a5e318e48a1b8",
+   "date": "2026-11-10T20:38:06Z",
+   "path": "core/src/main/java/org/apache/accumulo/core/iterators/Combiner.java"
+  },
+  {
+   "id": "accumulo@df6d3e901c50:core/src/main/java/org/apache/accumulo/core/spi/balancer/HostRegexTableLoadBalancer.java",
+   "region": 0,
+   "lang": "Java",
+   "merge": "df6d3e901c50bb4b994914313c2a5e318e48a1b8",
+   "date": "2026-11-10T20:38:06Z",
+   "path": "core/src/main/java/org/apache/accumulo/core/spi/balancer/HostRegexTableLoadBalancer.java"
+  },
+  {
+   "id": "accumulo@df6d3e901c50:core/src/main/java/org/apache/accumulo/core/spi/fs/SpaceAwareVolumeChooser.java",
+   "region": 0,
+   "lang": "Java",
+   "merge": "df6d3e901c50bb4b994914313c2a5e318e48a1b8",
+   "date": "2026-11-10T20:38:06Z",
+   "path": "core/src/main/java/org/apache/accumulo/core/spi/fs/SpaceAwareVolumeChooser.java"
+  },
+  {
+   "id": "accumulo@df6d3e901c50:core/src/main/java/org/apache/accumulo/core/spi/fs/SpaceAwareVolumeChooser.java",
+   "region": 1,
+   "lang": "Java",
+   "merge": "df6d3e901c50bb4b994914313c2a5e318e48a1b8",
+   "date": "2026-11-10T20:38:06Z",
+   "path": "core/src/main/java/org/apache/accumulo/core/spi/fs/SpaceAwareVolumeChooser.java"
+  },
+  {
+   "id": "accumulo@df6d3e901c50:core/src/main/java/org/apache/accumulo/core/spi/fs/SpaceAwareVolumeChooser.java",
+   "region": 2,
+   "lang": "Java",
+   "merge": "df6d3e901c50bb4b994914313c2a5e318e48a1b8",
+   "date": "2026-11-10T20:38:06Z",
+   "path": "core/src/main/java/org/apache/accumulo/core/spi/fs/SpaceAwareVolumeChooser.java"
+  },
+  {
+   "id": "accumulo@df6d3e901c50:server/gc/src/main/java/org/apache/accumulo/gc/GarbageCollectionAlgorithm.java",
+   "region": 0,
+   "lang": "Java",
+   "merge": "df6d3e901c50bb4b994914313c2a5e318e48a1b8",
+   "date": "2026-11-10T20:38:06Z",
+   "path": "server/gc/src/main/java/org/apache/accumulo/gc/GarbageCollectionAlgorithm.java"
+  },
+  {
+   "id": "accumulo@df6d3e901c50:server/gc/src/main/java/org/apache/accumulo/gc/GarbageCollectionAlgorithm.java",
+   "region": 1,
+   "lang": "Java",
+   "merge": "df6d3e901c50bb4b994914313c2a5e318e48a1b8",
+   "date": "2026-11-10T20:38:06Z",
+   "path": "server/gc/src/main/java/org/apache/accumulo/gc/GarbageCollectionAlgorithm.java"
+  },
+  {
+   "id": "accumulo@df6d3e901c50:server/manager/src/main/java/org/apache/accumulo/manager/recovery/RecoveryManager.java",
+   "region": 0,
+   "lang": "Java",
+   "merge": "df6d3e901c50bb4b994914313c2a5e318e48a1b8",
+   "date": "2026-11-10T20:38:06Z",
+   "path": "server/manager/src/main/java/org/apache/accumulo/manager/recovery/RecoveryManager.java"
+  },
+  {
+   "id": "accumulo@df6d3e901c50:server/manager/src/main/java/org/apache/accumulo/manager/recovery/RecoveryManager.java",
+   "region": 1,
+   "lang": "Java",
+   "merge": "df6d3e901c50bb4b994914313c2a5e318e48a1b8",
+   "date": "2026-11-10T20:38:06Z",
+   "path": "server/manager/src/main/java/org/apache/accumulo/manager/recovery/RecoveryManager.java"
+  },
+  {
+   "id": "accumulo@df6d3e901c50:server/tserver/src/main/java/org/apache/accumulo/tserver/AssignmentHandler.java",
+   "region": 0,
+   "lang": "Java",
+   "merge": "df6d3e901c50bb4b994914313c2a5e318e48a1b8",
+   "date": "2026-11-10T20:38:06Z",
+   "path": "server/tserver/src/main/java/org/apache/accumulo/tserver/AssignmentHandler.java"
+  },
+  {
+   "id": "accumulo@df6d3e901c50:server/tserver/src/main/java/org/apache/accumulo/tserver/AssignmentHandler.java",
+   "region": 3,
+   "lang": "Java",
+   "merge": "df6d3e901c50bb4b994914313c2a5e318e48a1b8",
+   "date": "2026-11-10T20:38:06Z",
+   "path": "server/tserver/src/main/java/org/apache/accumulo/tserver/AssignmentHandler.java"
+  },
+  {
+   "id": "accumulo@df6d3e901c50:server/tserver/src/main/java/org/apache/accumulo/tserver/TabletServer.java",
+   "region": 0,
+   "lang": "Java",
+   "merge": "df6d3e901c50bb4b994914313c2a5e318e48a1b8",
+   "date": "2026-11-10T20:38:06Z",
+   "path": "server/tserver/src/main/java/org/apache/accumulo/tserver/TabletServer.java"
+  },
+  {
+   "id": "accumulo@df6d3e901c50:server/tserver/src/main/java/org/apache/accumulo/tserver/TabletServer.java",
+   "region": 1,
+   "lang": "Java",
+   "merge": "df6d3e901c50bb4b994914313c2a5e318e48a1b8",
+   "date": "2026-11-10T20:38:06Z",
+   "path": "server/tserver/src/main/java/org/apache/accumulo/tserver/TabletServer.java"
+  },
+  {
+   "id": "accumulo@df6d3e901c50:server/tserver/src/main/java/org/apache/accumulo/tserver/TabletServer.java",
+   "region": 2,
+   "lang": "Java",
+   "merge": "df6d3e901c50bb4b994914313c2a5e318e48a1b8",
+   "date": "2026-11-10T20:38:06Z",
+   "path": "server/tserver/src/main/java/org/apache/accumulo/tserver/TabletServer.java"
+  },
+  {
+   "id": "accumulo@df6d3e901c50:server/tserver/src/main/java/org/apache/accumulo/tserver/TabletServer.java",
+   "region": 3,
+   "lang": "Java",
+   "merge": "df6d3e901c50bb4b994914313c2a5e318e48a1b8",
+   "date": "2026-11-10T20:38:06Z",
+   "path": "server/tserver/src/main/java/org/apache/accumulo/tserver/TabletServer.java"
+  },
+  {
+   "id": "accumulo@df6d3e901c50:server/tserver/src/main/java/org/apache/accumulo/tserver/TabletServer.java",
+   "region": 4,
+   "lang": "Java",
+   "merge": "df6d3e901c50bb4b994914313c2a5e318e48a1b8",
+   "date": "2026-11-10T20:38:06Z",
+   "path": "server/tserver/src/main/java/org/apache/accumulo/tserver/TabletServer.java"
+  },
+  {
+   "id": "accumulo@853433bd1103:server/base/src/main/java/org/apache/accumulo/server/fs/VolumeUtil.java",
+   "region": 0,
+   "lang": "Java",
+   "merge": "853433bd11033012e29a4d8240d9b1f6da1cad89",
+   "date": "2026-11-06T17:53:00Z",
+   "path": "server/base/src/main/java/org/apache/accumulo/server/fs/VolumeUtil.java"
+  },
+  {
+   "id": "accumulo@853433bd1103:server/tserver/src/main/java/org/apache/accumulo/tserver/AssignmentHandler.java",
+   "region": 0,
+   "lang": "Java",
+   "merge": "853433bd11033012e29a4d8240d9b1f6da1cad89",
+   "date": "2026-11-06T17:53:00Z",
+   "path": "server/tserver/src/main/java/org/apache/accumulo/tserver/AssignmentHandler.java"
+  },
+  {
+   "id": "accumulo@853433bd1103:server/tserver/src/main/java/org/apache/accumulo/tserver/AssignmentHandler.java",
+   "region": 1,
+   "lang": "Java",
+   "merge": "853433bd11033012e29a4d8240d9b1f6da1cad89",
+   "date": "2026-11-06T17:53:00Z",
+   "path": "server/tserver/src/main/java/org/apache/accumulo/tserver/AssignmentHandler.java"
+  },
+  {
+   "id": "accumulo@853433bd1103:server/tserver/src/main/java/org/apache/accumulo/tserver/TabletServer.java",
+   "region": 0,
+   "lang": "Java",
+   "merge": "853433bd11033012e29a4d8240d9b1f6da1cad89",
+   "date": "2026-11-06T17:53:00Z",
+   "path": "server/tserver/src/main/java/org/apache/accumulo/tserver/TabletServer.java"
+  },
+  {
+   "id": "accumulo@853433bd1103:server/tserver/src/main/java/org/apache/accumulo/tserver/TabletServer.java",
+   "region": 1,
+   "lang": "Java",
+   "merge": "853433bd11033012e29a4d8240d9b1f6da1cad89",
+   "date": "2026-11-06T17:53:00Z",
+   "path": "server/tserver/src/main/java/org/apache/accumulo/tserver/TabletServer.java"
+  },
+  {
+   "id": "accumulo@853433bd1103:server/tserver/src/main/java/org/apache/accumulo/tserver/TabletServer.java",
+   "region": 2,
+   "lang": "Java",
+   "merge": "853433bd11033012e29a4d8240d9b1f6da1cad89",
+   "date": "2026-11-06T17:53:00Z",
+   "path": "server/tserver/src/main/java/org/apache/accumulo/tserver/TabletServer.java"
+  },
+  {
+   "id": "accumulo@853433bd1103:server/tserver/src/main/java/org/apache/accumulo/tserver/TabletServer.java",
+   "region": 5,
+   "lang": "Java",
+   "merge": "853433bd11033012e29a4d8240d9b1f6da1cad89",
+   "date": "2026-11-06T17:53:00Z",
+   "path": "server/tserver/src/main/java/org/apache/accumulo/tserver/TabletServer.java"
+  },
+  {
+   "id": "accumulo@853433bd1103:server/tserver/src/main/java/org/apache/accumulo/tserver/log/RecoveryLogsIterator.java",
+   "region": 0,
+   "lang": "Java",
+   "merge": "853433bd11033012e29a4d8240d9b1f6da1cad89",
+   "date": "2026-11-06T17:53:00Z",
+   "path": "server/tserver/src/main/java/org/apache/accumulo/tserver/log/RecoveryLogsIterator.java"
+  },
+  {
+   "id": "accumulo@853433bd1103:server/tserver/src/main/java/org/apache/accumulo/tserver/log/RecoveryLogsIterator.java",
+   "region": 1,
+   "lang": "Java",
+   "merge": "853433bd11033012e29a4d8240d9b1f6da1cad89",
+   "date": "2026-11-06T17:53:00Z",
+   "path": "server/tserver/src/main/java/org/apache/accumulo/tserver/log/RecoveryLogsIterator.java"
+  },
+  {
+   "id": "accumulo@853433bd1103:server/tserver/src/main/java/org/apache/accumulo/tserver/log/RecoveryLogsIterator.java",
+   "region": 2,
+   "lang": "Java",
+   "merge": "853433bd11033012e29a4d8240d9b1f6da1cad89",
+   "date": "2026-11-06T17:53:00Z",
+   "path": "server/tserver/src/main/java/org/apache/accumulo/tserver/log/RecoveryLogsIterator.java"
+  },
+  {
+   "id": "accumulo@853433bd1103:server/tserver/src/main/java/org/apache/accumulo/tserver/log/RecoveryLogsIterator.java",
+   "region": 3,
+   "lang": "Java",
+   "merge": "853433bd11033012e29a4d8240d9b1f6da1cad89",
+   "date": "2026-11-06T17:53:00Z",
+   "path": "server/tserver/src/main/java/org/apache/accumulo/tserver/log/RecoveryLogsIterator.java"
+  },
+  {
+   "id": "accumulo@853433bd1103:server/tserver/src/main/java/org/apache/accumulo/tserver/log/RecoveryLogsIterator.java",
+   "region": 4,
+   "lang": "Java",
+   "merge": "853433bd11033012e29a4d8240d9b1f6da1cad89",
+   "date": "2026-11-06T17:53:00Z",
+   "path": "server/tserver/src/main/java/org/apache/accumulo/tserver/log/RecoveryLogsIterator.java"
+  },
+  {
+   "id": "accumulo@853433bd1103:server/tserver/src/main/java/org/apache/accumulo/tserver/log/RecoveryLogsIterator.java",
+   "region": 5,
+   "lang": "Java",
+   "merge": "853433bd11033012e29a4d8240d9b1f6da1cad89",
+   "date": "2026-11-06T17:53:00Z",
+   "path": "server/tserver/src/main/java/org/apache/accumulo/tserver/log/RecoveryLogsIterator.java"
+  },
+  {
+   "id": "accumulo@853433bd1103:server/tserver/src/main/java/org/apache/accumulo/tserver/log/SortedLogRecovery.java",
+   "region": 0,
+   "lang": "Java",
+   "merge": "853433bd11033012e29a4d8240d9b1f6da1cad89",
+   "date": "2026-11-06T17:53:00Z",
+   "path": "server/tserver/src/main/java/org/apache/accumulo/tserver/log/SortedLogRecovery.java"
+  },
+  {
+   "id": "accumulo@853433bd1103:server/tserver/src/main/java/org/apache/accumulo/tserver/log/SortedLogRecovery.java",
+   "region": 1,
+   "lang": "Java",
+   "merge": "853433bd11033012e29a4d8240d9b1f6da1cad89",
+   "date": "2026-11-06T17:53:00Z",
+   "path": "server/tserver/src/main/java/org/apache/accumulo/tserver/log/SortedLogRecovery.java"
+  },
+  {
+   "id": "accumulo@853433bd1103:server/tserver/src/main/java/org/apache/accumulo/tserver/log/SortedLogRecovery.java",
+   "region": 2,
+   "lang": "Java",
+   "merge": "853433bd11033012e29a4d8240d9b1f6da1cad89",
+   "date": "2026-11-06T17:53:00Z",
+   "path": "server/tserver/src/main/java/org/apache/accumulo/tserver/log/SortedLogRecovery.java"
+  },
+  {
+   "id": "accumulo@853433bd1103:server/tserver/src/main/java/org/apache/accumulo/tserver/log/TabletServerLogger.java",
+   "region": 0,
+   "lang": "Java",
+   "merge": "853433bd11033012e29a4d8240d9b1f6da1cad89",
+   "date": "2026-11-06T17:53:00Z",
+   "path": "server/tserver/src/main/java/org/apache/accumulo/tserver/log/TabletServerLogger.java"
+  },
+  {
+   "id": "accumulo@853433bd1103:server/tserver/src/main/java/org/apache/accumulo/tserver/log/TabletServerLogger.java",
+   "region": 1,
+   "lang": "Java",
+   "merge": "853433bd11033012e29a4d8240d9b1f6da1cad89",
+   "date": "2026-11-06T17:53:00Z",
+   "path": "server/tserver/src/main/java/org/apache/accumulo/tserver/log/TabletServerLogger.java"
+  },
+  {
+   "id": "accumulo@853433bd1103:server/tserver/src/main/java/org/apache/accumulo/tserver/log/TabletServerLogger.java",
+   "region": 2,
+   "lang": "Java",
+   "merge": "853433bd11033012e29a4d8240d9b1f6da1cad89",
+   "date": "2026-11-06T17:53:00Z",
+   "path": "server/tserver/src/main/java/org/apache/accumulo/tserver/log/TabletServerLogger.java"
+  },
+  {
+   "id": "accumulo@853433bd1103:server/tserver/src/main/java/org/apache/accumulo/tserver/logger/LogReader.java",
+   "region": 0,
+   "lang": "Java",
+   "merge": "853433bd11033012e29a4d8240d9b1f6da1cad89",
+   "date": "2026-11-06T17:53:00Z",
+   "path": "server/tserver/src/main/java/org/apache/accumulo/tserver/logger/LogReader.java"
+  },
+  {
+   "id": "accumulo@853433bd1103:server/tserver/src/main/java/org/apache/accumulo/tserver/logger/LogReader.java",
+   "region": 1,
+   "lang": "Java",
+   "merge": "853433bd11033012e29a4d8240d9b1f6da1cad89",
+   "date": "2026-11-06T17:53:00Z",
+   "path": "server/tserver/src/main/java/org/apache/accumulo/tserver/logger/LogReader.java"
+  },
+  {
+   "id": "accumulo@853433bd1103:server/tserver/src/test/java/org/apache/accumulo/tserver/log/RecoveryLogsIteratorTest.java",
+   "region": 0,
+   "lang": "Java",
+   "merge": "853433bd11033012e29a4d8240d9b1f6da1cad89",
+   "date": "2026-11-06T17:53:00Z",
+   "path": "server/tserver/src/test/java/org/apache/accumulo/tserver/log/RecoveryLogsIteratorTest.java"
+  },
+  {
+   "id": "accumulo@853433bd1103:server/tserver/src/test/java/org/apache/accumulo/tserver/log/RecoveryLogsIteratorTest.java",
+   "region": 1,
+   "lang": "Java",
+   "merge": "853433bd11033012e29a4d8240d9b1f6da1cad89",
+   "date": "2026-11-06T17:53:00Z",
+   "path": "server/tserver/src/test/java/org/apache/accumulo/tserver/log/RecoveryLogsIteratorTest.java"
+  },
+  {
+   "id": "accumulo@853433bd1103:server/tserver/src/test/java/org/apache/accumulo/tserver/log/SortedLogRecoveryTest.java",
+   "region": 0,
+   "lang": "Java",
+   "merge": "853433bd11033012e29a4d8240d9b1f6da1cad89",
+   "date": "2026-11-06T17:53:00Z",
+   "path": "server/tserver/src/test/java/org/apache/accumulo/tserver/log/SortedLogRecoveryTest.java"
+  },
+  {
+   "id": "accumulo@853433bd1103:server/tserver/src/test/java/org/apache/accumulo/tserver/log/SortedLogRecoveryTest.java",
+   "region": 1,
+   "lang": "Java",
+   "merge": "853433bd11033012e29a4d8240d9b1f6da1cad89",
+   "date": "2026-11-06T17:53:00Z",
+   "path": "server/tserver/src/test/java/org/apache/accumulo/tserver/log/SortedLogRecoveryTest.java"
+  },
+  {
+   "id": "accumulo@853433bd1103:server/tserver/src/test/java/org/apache/accumulo/tserver/log/SortedLogRecoveryTest.java",
+   "region": 2,
+   "lang": "Java",
+   "merge": "853433bd11033012e29a4d8240d9b1f6da1cad89",
+   "date": "2026-11-06T17:53:00Z",
+   "path": "server/tserver/src/test/java/org/apache/accumulo/tserver/log/SortedLogRecoveryTest.java"
+  },
+  {
+   "id": "accumulo@254d690b8eec:core/src/main/java/org/apache/accumulo/core/clientImpl/bulk/BulkImport.java",
+   "region": 0,
+   "lang": "Java",
+   "merge": "254d690b8eecb96826d37aea12b0ca2df55ace62",
+   "date": "2026-10-30T19:03:58Z",
+   "path": "core/src/main/java/org/apache/accumulo/core/clientImpl/bulk/BulkImport.java"
+  },
+  {
+   "id": "accumulo@254d690b8eec:core/src/main/java/org/apache/accumulo/core/clientImpl/bulk/BulkImport.java",
+   "region": 1,
+   "lang": "Java",
+   "merge": "254d690b8eecb96826d37aea12b0ca2df55ace62",
+   "date": "2026-10-30T19:03:58Z",
+   "path": "core/src/main/java/org/apache/accumulo/core/clientImpl/bulk/BulkImport.java"
+  },
+  {
+   "id": "accumulo@254d690b8eec:test/src/main/java/org/apache/accumulo/test/functional/BulkIT.java",
+   "region": 0,
+   "lang": "Java",
+   "merge": "254d690b8eecb96826d37aea12b0ca2df55ace62",
+   "date": "2026-10-30T19:03:58Z",
+   "path": "test/src/main/java/org/apache/accumulo/test/functional/BulkIT.java"
+  },
+  {
+   "id": "accumulo@254d690b8eec:test/src/main/java/org/apache/accumulo/test/functional/BulkIT.java",
+   "region": 1,
+   "lang": "Java",
+   "merge": "254d690b8eecb96826d37aea12b0ca2df55ace62",
+   "date": "2026-10-30T19:03:58Z",
+   "path": "test/src/main/java/org/apache/accumulo/test/functional/BulkIT.java"
+  },
+  {
+   "id": "accumulo@b51f65155ec6:core/src/main/java/org/apache/accumulo/core/client/rfile/RFileScannerBuilder.java",
+   "region": 0,
+   "lang": "Java",
+   "merge": "b51f65155ec624922c099530fa2aa80900bdf925",
+   "date": "2026-10-28T18:21:38Z",
+   "path": "core/src/main/java/org/apache/accumulo/core/client/rfile/RFileScannerBuilder.java"
+  },
+  {
+   "id": "accumulo@2c9f94f7d011:minicluster/src/main/java/org/apache/accumulo/miniclusterImpl/MiniAccumuloClusterImpl.java",
+   "region": 0,
+   "lang": "Java",
+   "merge": "2c9f94f7d011103389f90ba40b0c61acdd0b5c1e",
+   "date": "2026-10-20T11:02:54-04:00",
+   "path": "minicluster/src/main/java/org/apache/accumulo/miniclusterImpl/MiniAccumuloClusterImpl.java"
+  },
+  {
+   "id": "accumulo@0a604730e6e4:minicluster/src/main/java/org/apache/accumulo/miniclusterImpl/MiniAccumuloClusterControl.java",
+   "region": 0,
+   "lang": "Java",
+   "merge": "0a604730e6e42476c4e3293a3d4b2b2317d6b3e9",
+   "date": "2026-10-16T21:42:40Z",
+   "path": "minicluster/src/main/java/org/apache/accumulo/miniclusterImpl/MiniAccumuloClusterControl.java"
+  },
+  {
+   "id": "accumulo@0a604730e6e4:minicluster/src/main/java/org/apache/accumulo/miniclusterImpl/MiniAccumuloClusterControl.java",
+   "region": 1,
+   "lang": "Java",
+   "merge": "0a604730e6e42476c4e3293a3d4b2b2317d6b3e9",
+   "date": "2026-10-16T21:42:40Z",
+   "path": "minicluster/src/main/java/org/apache/accumulo/miniclusterImpl/MiniAccumuloClusterControl.java"
+  },
+  {
+   "id": "accumulo@0a604730e6e4:minicluster/src/main/java/org/apache/accumulo/miniclusterImpl/MiniAccumuloClusterControl.java",
+   "region": 2,
+   "lang": "Java",
+   "merge": "0a604730e6e42476c4e3293a3d4b2b2317d6b3e9",
+   "date": "2026-10-16T21:42:40Z",
+   "path": "minicluster/src/main/java/org/apache/accumulo/miniclusterImpl/MiniAccumuloClusterControl.java"
+  },
+  {
+   "id": "accumulo@4ae6b747de49:minicluster/src/main/java/org/apache/accumulo/miniclusterImpl/MiniAccumuloClusterImpl.java",
+   "region": 0,
+   "lang": "Java",
+   "merge": "4ae6b747de49234e1a8468f22945c552d6923287",
+   "date": "2026-10-16T11:15:01-04:00",
+   "path": "minicluster/src/main/java/org/apache/accumulo/miniclusterImpl/MiniAccumuloClusterImpl.java"
+  },
+  {
+   "id": "accumulo@4ae6b747de49:server/manager/src/main/java/org/apache/accumulo/manager/state/SetGoalState.java",
+   "region": 0,
+   "lang": "Java",
+   "merge": "4ae6b747de49234e1a8468f22945c552d6923287",
+   "date": "2026-10-16T11:15:01-04:00",
+   "path": "server/manager/src/main/java/org/apache/accumulo/manager/state/SetGoalState.java"
+  },
+  {
+   "id": "accumulo@4ae6b747de49:server/manager/src/main/java/org/apache/accumulo/manager/state/SetGoalState.java",
+   "region": 1,
+   "lang": "Java",
+   "merge": "4ae6b747de49234e1a8468f22945c552d6923287",
+   "date": "2026-10-16T11:15:01-04:00",
+   "path": "server/manager/src/main/java/org/apache/accumulo/manager/state/SetGoalState.java"
+  },
+  {
+   "id": "accumulo@4911a3761942:server/manager/src/main/java/org/apache/accumulo/manager/state/SetGoalState.java",
+   "region": 0,
+   "lang": "Java",
+   "merge": "4911a3761942ab2fde28485b4f81e73604950253",
+   "date": "2026-10-09T19:41:44Z",
+   "path": "server/manager/src/main/java/org/apache/accumulo/manager/state/SetGoalState.java"
+  },
+  {
+   "id": "accumulo@863068cf9307:core/src/main/java/org/apache/accumulo/core/conf/Property.java",
+   "region": 0,
+   "lang": "Java",
+   "merge": "863068cf9307290684d50d2b4bb4abd028466b32",
+   "date": "2026-10-08T18:40:53Z",
+   "path": "core/src/main/java/org/apache/accumulo/core/conf/Property.java"
+  },
+  {
+   "id": "accumulo@863068cf9307:server/tserver/src/main/java/org/apache/accumulo/tserver/TabletClientHandler.java",
+   "region": 0,
+   "lang": "Java",
+   "merge": "863068cf9307290684d50d2b4bb4abd028466b32",
+   "date": "2026-10-08T18:40:53Z",
+   "path": "server/tserver/src/main/java/org/apache/accumulo/tserver/TabletClientHandler.java"
+  },
+  {
+   "id": "accumulo@863068cf9307:server/tserver/src/main/java/org/apache/accumulo/tserver/TabletClientHandler.java",
+   "region": 1,
+   "lang": "Java",
+   "merge": "863068cf9307290684d50d2b4bb4abd028466b32",
+   "date": "2026-10-08T18:40:53Z",
+   "path": "server/tserver/src/main/java/org/apache/accumulo/tserver/TabletClientHandler.java"
+  },
+  {
+   "id": "accumulo@060561126b84:minicluster/src/main/java/org/apache/accumulo/miniclusterImpl/MiniAccumuloClusterControl.java",
+   "region": 0,
+   "lang": "Java",
+   "merge": "060561126b84989a8e3f9e808ccb3a7d918aebcb",
+   "date": "2026-10-08T10:55:36-04:00",
+   "path": "minicluster/src/main/java/org/apache/accumulo/miniclusterImpl/MiniAccumuloClusterControl.java"
+  },
+  {
+   "id": "accumulo@060561126b84:minicluster/src/main/java/org/apache/accumulo/miniclusterImpl/MiniAccumuloClusterControl.java",
+   "region": 1,
+   "lang": "Java",
+   "merge": "060561126b84989a8e3f9e808ccb3a7d918aebcb",
+   "date": "2026-10-08T10:55:36-04:00",
+   "path": "minicluster/src/main/java/org/apache/accumulo/miniclusterImpl/MiniAccumuloClusterControl.java"
+  },
+  {
+   "id": "accumulo@060561126b84:minicluster/src/main/java/org/apache/accumulo/miniclusterImpl/MiniAccumuloClusterControl.java",
+   "region": 2,
+   "lang": "Java",
+   "merge": "060561126b84989a8e3f9e808ccb3a7d918aebcb",
+   "date": "2026-10-08T10:55:36-04:00",
+   "path": "minicluster/src/main/java/org/apache/accumulo/miniclusterImpl/MiniAccumuloClusterControl.java"
+  },
+  {
+   "id": "accumulo@060561126b84:minicluster/src/main/java/org/apache/accumulo/miniclusterImpl/MiniAccumuloClusterImpl.java",
+   "region": 0,
+   "lang": "Java",
+   "merge": "060561126b84989a8e3f9e808ccb3a7d918aebcb",
+   "date": "2026-10-08T10:55:36-04:00",
+   "path": "minicluster/src/main/java/org/apache/accumulo/miniclusterImpl/MiniAccumuloClusterImpl.java"
+  },
+  {
+   "id": "accumulo@060561126b84:minicluster/src/main/java/org/apache/accumulo/miniclusterImpl/MiniAccumuloClusterImpl.java",
+   "region": 1,
+   "lang": "Java",
+   "merge": "060561126b84989a8e3f9e808ccb3a7d918aebcb",
+   "date": "2026-10-08T10:55:36-04:00",
+   "path": "minicluster/src/main/java/org/apache/accumulo/miniclusterImpl/MiniAccumuloClusterImpl.java"
+  },
+  {
+   "id": "accumulo@b4bd0e9387a4:server/tserver/src/main/java/org/apache/accumulo/tserver/log/TabletServerLogger.java",
+   "region": 0,
+   "lang": "Java",
+   "merge": "b4bd0e9387a4309a02073cc1b762d952c6f7d936",
+   "date": "2026-10-01T20:15:04Z",
+   "path": "server/tserver/src/main/java/org/apache/accumulo/tserver/log/TabletServerLogger.java"
+  },
+  {
+   "id": "accumulo@b4bd0e9387a4:server/tserver/src/main/java/org/apache/accumulo/tserver/log/TabletServerLogger.java",
+   "region": 1,
+   "lang": "Java",
+   "merge": "b4bd0e9387a4309a02073cc1b762d952c6f7d936",
+   "date": "2026-10-01T20:15:04Z",
+   "path": "server/tserver/src/main/java/org/apache/accumulo/tserver/log/TabletServerLogger.java"
+  },
+  {
+   "id": "accumulo@d089b687a6fc:server/manager/src/main/java/org/apache/accumulo/manager/FateServiceHandler.java",
+   "region": 0,
+   "lang": "Java",
+   "merge": "d089b687a6fcbb3fb983d0eb4134f6497215f18b",
+   "date": "2026-09-25T14:12:50Z",
+   "path": "server/manager/src/main/java/org/apache/accumulo/manager/FateServiceHandler.java"
+  },
+  {
+   "id": "accumulo@ad3c94ccad46:core/src/main/java/org/apache/accumulo/core/util/UtilWaitThread.java",
+   "region": 0,
+   "lang": "Java",
+   "merge": "ad3c94ccad468b9147be63cf3d132cab4f229f22",
+   "date": "2026-09-23T10:57:53Z",
+   "path": "core/src/main/java/org/apache/accumulo/core/util/UtilWaitThread.java"
+  },
+  {
+   "id": "jackson-databind@a48ee7a3949c:src/main/java/tools/jackson/databind/node/NodeSerialization.java",
+   "region": 0,
+   "lang": "Java",
+   "merge": "a48ee7a3949cc62226d9589e232113957da757f8",
+   "date": "2026-11-14T10:52:33-08:00",
+   "path": "src/main/java/tools/jackson/databind/node/NodeSerialization.java"
+  },
+  {
+   "id": "jackson-databind@a48ee7a3949c:src/main/java/tools/jackson/databind/node/NodeSerialization.java",
+   "region": 1,
+   "lang": "Java",
+   "merge": "a48ee7a3949cc62226d9589e232113957da757f8",
+   "date": "2026-11-14T10:52:33-08:00",
+   "path": "src/main/java/tools/jackson/databind/node/NodeSerialization.java"
+  },
+  {
+   "id": "jackson-databind@4250184ebb10:src/main/java/tools/jackson/databind/deser/impl/MethodProperty.java",
+   "region": 0,
+   "lang": "Java",
+   "merge": "4250184ebb100062f034a31ddaf1d548d638fe75",
+   "date": "2026-11-12T20:10:02-08:00",
+   "path": "src/main/java/tools/jackson/databind/deser/impl/MethodProperty.java"
+  },
+  {
+   "id": "jackson-databind@4250184ebb10:src/main/java/tools/jackson/databind/introspect/AnnotatedConstructor.java",
+   "region": 0,
+   "lang": "Java",
+   "merge": "4250184ebb100062f034a31ddaf1d548d638fe75",
+   "date": "2026-11-12T20:10:02-08:00",
+   "path": "src/main/java/tools/jackson/databind/introspect/AnnotatedConstructor.java"
+  },
+  {
+   "id": "jackson-databind@4250184ebb10:src/main/java/tools/jackson/databind/introspect/AnnotatedConstructor.java",
+   "region": 1,
+   "lang": "Java",
+   "merge": "4250184ebb100062f034a31ddaf1d548d638fe75",
+   "date": "2026-11-12T20:10:02-08:00",
+   "path": "src/main/java/tools/jackson/databind/introspect/AnnotatedConstructor.java"
+  },
+  {
+   "id": "jackson-databind@4250184ebb10:src/main/java/tools/jackson/databind/introspect/AnnotatedMethod.java",
+   "region": 0,
+   "lang": "Java",
+   "merge": "4250184ebb100062f034a31ddaf1d548d638fe75",
+   "date": "2026-11-12T20:10:02-08:00",
+   "path": "src/main/java/tools/jackson/databind/introspect/AnnotatedMethod.java"
+  },
+  {
+   "id": "jackson-databind@4250184ebb10:src/main/java/tools/jackson/databind/introspect/AnnotatedMethod.java",
+   "region": 1,
+   "lang": "Java",
+   "merge": "4250184ebb100062f034a31ddaf1d548d638fe75",
+   "date": "2026-11-12T20:10:02-08:00",
+   "path": "src/main/java/tools/jackson/databind/introspect/AnnotatedMethod.java"
+  },
+  {
+   "id": "jackson-databind@4250184ebb10:src/main/java/tools/jackson/databind/introspect/AnnotatedMethod.java",
+   "region": 2,
+   "lang": "Java",
+   "merge": "4250184ebb100062f034a31ddaf1d548d638fe75",
+   "date": "2026-11-12T20:10:02-08:00",
+   "path": "src/main/java/tools/jackson/databind/introspect/AnnotatedMethod.java"
+  },
+  {
+   "id": "jackson-databind@9762352158c1:src/main/java/tools/jackson/databind/deser/CreatorProperty.java",
+   "region": 0,
+   "lang": "Java",
+   "merge": "9762352158c1048698c38fa3b769f98752858baf",
+   "date": "2026-10-30T14:27:02-07:00",
+   "path": "src/main/java/tools/jackson/databind/deser/CreatorProperty.java"
+  },
+  {
+   "id": "jackson-databind@9762352158c1:src/main/java/tools/jackson/databind/deser/CreatorProperty.java",
+   "region": 1,
+   "lang": "Java",
+   "merge": "9762352158c1048698c38fa3b769f98752858baf",
+   "date": "2026-10-30T14:27:02-07:00",
+   "path": "src/main/java/tools/jackson/databind/deser/CreatorProperty.java"
+  },
+  {
+   "id": "jackson-databind@feeb84cb9758:src/main/java/com/fasterxml/jackson/databind/deser/std/StdKeyDeserializers.java",
+   "region": 0,
+   "lang": "Java",
+   "merge": "feeb84cb9758352b327fc77e37715117431b530f",
+   "date": "2026-10-24T19:04:17-07:00",
+   "path": "src/main/java/com/fasterxml/jackson/databind/deser/std/StdKeyDeserializers.java"
+  },
+  {
+   "id": "jackson-databind@bceb7d6843ed:src/main/java/tools/jackson/databind/deser/bean/BeanDeserializer.java",
+   "region": 0,
+   "lang": "Java",
+   "merge": "bceb7d6843ed485121d469bab273610ad441f030",
+   "date": "2026-10-22T20:12:24-07:00",
+   "path": "src/main/java/tools/jackson/databind/deser/bean/BeanDeserializer.java"
+  },
+  {
+   "id": "jackson-databind@bceb7d6843ed:src/main/java/tools/jackson/databind/deser/bean/BeanDeserializer.java",
+   "region": 1,
+   "lang": "Java",
+   "merge": "bceb7d6843ed485121d469bab273610ad441f030",
+   "date": "2026-10-22T20:12:24-07:00",
+   "path": "src/main/java/tools/jackson/databind/deser/bean/BeanDeserializer.java"
+  },
+  {
+   "id": "jackson-databind@122685cccb09:src/test/java/tools/jackson/databind/deser/filter/DeserializationProblemHandlerTest.java",
+   "region": 0,
+   "lang": "Java",
+   "merge": "122685cccb09bb5c5b33cd2a132121c4dfdd473e",
+   "date": "2026-10-22T14:34:24-07:00",
+   "path": "src/test/java/tools/jackson/databind/deser/filter/DeserializationProblemHandlerTest.java"
+  },
+  {
+   "id": "jackson-databind@122685cccb09:src/test/java/tools/jackson/databind/deser/filter/DeserializationProblemHandlerTest.java",
+   "region": 1,
+   "lang": "Java",
+   "merge": "122685cccb09bb5c5b33cd2a132121c4dfdd473e",
+   "date": "2026-10-22T14:34:24-07:00",
+   "path": "src/test/java/tools/jackson/databind/deser/filter/DeserializationProblemHandlerTest.java"
+  },
+  {
+   "id": "jackson-databind@bb50c64eaa06:src/test/java/tools/jackson/databind/deser/jdk/CustomMapKeyDeserializationTest.java",
+   "region": 0,
+   "lang": "Java",
+   "merge": "bb50c64eaa0644c36c7480c71c767f861712b0fb",
+   "date": "2026-10-20T18:51:20-07:00",
+   "path": "src/test/java/tools/jackson/databind/deser/jdk/CustomMapKeyDeserializationTest.java"
+  },
+  {
+   "id": "jackson-databind@bb50c64eaa06:src/test/java/tools/jackson/databind/deser/jdk/CustomMapKeyDeserializationTest.java",
+   "region": 1,
+   "lang": "Java",
+   "merge": "bb50c64eaa0644c36c7480c71c767f861712b0fb",
+   "date": "2026-10-20T18:51:20-07:00",
+   "path": "src/test/java/tools/jackson/databind/deser/jdk/CustomMapKeyDeserializationTest.java"
+  },
+  {
+   "id": "jackson-databind@bb50c64eaa06:src/test/java/tools/jackson/databind/deser/jdk/CustomMapKeyDeserializationTest.java",
+   "region": 2,
+   "lang": "Java",
+   "merge": "bb50c64eaa0644c36c7480c71c767f861712b0fb",
+   "date": "2026-10-20T18:51:20-07:00",
+   "path": "src/test/java/tools/jackson/databind/deser/jdk/CustomMapKeyDeserializationTest.java"
+  },
+  {
+   "id": "jackson-databind@c9159089e80f:src/test/java/com/fasterxml/jackson/databind/ser/jdk/DateSerializationTest.java",
+   "region": 0,
+   "lang": "Java",
+   "merge": "c9159089e80f1e856a615ce0b832498a0e30ca28",
+   "date": "2026-10-16T19:09:44-07:00",
+   "path": "src/test/java/com/fasterxml/jackson/databind/ser/jdk/DateSerializationTest.java"
+  },
+  {
+   "id": "jackson-databind@330eb2c25f5d:src/main/java/tools/jackson/databind/jsontype/BasicPolymorphicTypeValidator.java",
+   "region": 0,
+   "lang": "Java",
+   "merge": "330eb2c25f5d922ffe00a2e5e29813bb9cb23ff2",
+   "date": "2026-10-16T16:56:43-07:00",
+   "path": "src/main/java/tools/jackson/databind/jsontype/BasicPolymorphicTypeValidator.java"
+  },
+  {
+   "id": "jackson-databind@5497d188e094:src/main/java/tools/jackson/databind/deser/jdk/EnumMapDeserializer.java",
+   "region": 0,
+   "lang": "Java",
+   "merge": "5497d188e094e45ea0870ff07808ba9b57f35d21",
+   "date": "2026-10-14T20:23:54-07:00",
+   "path": "src/main/java/tools/jackson/databind/deser/jdk/EnumMapDeserializer.java"
+  },
+  {
+   "id": "jackson-databind@5497d188e094:src/main/java/tools/jackson/databind/deser/jdk/FactoryBasedEnumDeserializer.java",
+   "region": 0,
+   "lang": "Java",
+   "merge": "5497d188e094e45ea0870ff07808ba9b57f35d21",
+   "date": "2026-10-14T20:23:54-07:00",
+   "path": "src/main/java/tools/jackson/databind/deser/jdk/FactoryBasedEnumDeserializer.java"
+  },
+  {
+   "id": "jackson-databind@5497d188e094:src/main/java/tools/jackson/databind/deser/jdk/MapDeserializer.java",
+   "region": 0,
+   "lang": "Java",
+   "merge": "5497d188e094e45ea0870ff07808ba9b57f35d21",
+   "date": "2026-10-14T20:23:54-07:00",
+   "path": "src/main/java/tools/jackson/databind/deser/jdk/MapDeserializer.java"
+  },
+  {
+   "id": "jackson-databind@eab7f170ab13:src/main/java/tools/jackson/databind/deser/jdk/EnumMapDeserializer.java",
+   "region": 0,
+   "lang": "Java",
+   "merge": "eab7f170ab13f2a6b167f359bd1efaefc4ac9673",
+   "date": "2026-09-30T14:24:18-07:00",
+   "path": "src/main/java/tools/jackson/databind/deser/jdk/EnumMapDeserializer.java"
+  },
+  {
+   "id": "rumble@b95403409c16:src/test/java/iq/RuntimeTests.java",
+   "region": 0,
+   "lang": "Java",
+   "merge": "b95403409c16a70c6deccc2e99f16dd697e66384",
+   "date": "2026-11-09T11:24:37+01:00",
+   "path": "src/test/java/iq/RuntimeTests.java"
+  },
+  {
+   "id": "rumble@ebd2098f2f75:src/main/java/org/rumbledb/runtime/functions/numerics/RoundFunctionIterator.java",
+   "region": 0,
+   "lang": "Java",
+   "merge": "ebd2098f2f7556188f02e5da957c0feb11964bfd",
+   "date": "2026-11-09T11:04:23+01:00",
+   "path": "src/main/java/org/rumbledb/runtime/functions/numerics/RoundFunctionIterator.java"
+  },
+  {
+   "id": "rumble@ebd2098f2f75:src/main/java/org/rumbledb/runtime/functions/numerics/RoundFunctionIterator.java",
+   "region": 1,
+   "lang": "Java",
+   "merge": "ebd2098f2f7556188f02e5da957c0feb11964bfd",
+   "date": "2026-11-09T11:04:23+01:00",
+   "path": "src/main/java/org/rumbledb/runtime/functions/numerics/RoundFunctionIterator.java"
+  },
+  {
+   "id": "rumble@a33f1e8d0cd0:src/main/java/org/rumbledb/compiler/InferTypeVisitor.java",
+   "region": 0,
+   "lang": "Java",
+   "merge": "a33f1e8d0cd06a3734cf7efc92de20ec810d0122",
+   "date": "2026-11-09T10:29:05+01:00",
+   "path": "src/main/java/org/rumbledb/compiler/InferTypeVisitor.java"
+  },
+  {
+   "id": "rumble@a33f1e8d0cd0:src/main/java/org/rumbledb/compiler/InferTypeVisitor.java",
+   "region": 1,
+   "lang": "Java",
+   "merge": "a33f1e8d0cd06a3734cf7efc92de20ec810d0122",
+   "date": "2026-11-09T10:29:05+01:00",
+   "path": "src/main/java/org/rumbledb/compiler/InferTypeVisitor.java"
+  },
+  {
+   "id": "rumble@a33f1e8d0cd0:src/main/java/org/rumbledb/compiler/InferTypeVisitor.java",
+   "region": 2,
+   "lang": "Java",
+   "merge": "a33f1e8d0cd06a3734cf7efc92de20ec810d0122",
+   "date": "2026-11-09T10:29:05+01:00",
+   "path": "src/main/java/org/rumbledb/compiler/InferTypeVisitor.java"
+  },
+  {
+   "id": "rumble@a33f1e8d0cd0:src/main/java/org/rumbledb/compiler/StaticContextVisitor.java",
+   "region": 0,
+   "lang": "Java",
+   "merge": "a33f1e8d0cd06a3734cf7efc92de20ec810d0122",
+   "date": "2026-11-09T10:29:05+01:00",
+   "path": "src/main/java/org/rumbledb/compiler/StaticContextVisitor.java"
+  },
+  {
+   "id": "rumble@a33f1e8d0cd0:src/main/java/org/rumbledb/compiler/StaticContextVisitor.java",
+   "region": 5,
+   "lang": "Java",
+   "merge": "a33f1e8d0cd06a3734cf7efc92de20ec810d0122",
+   "date": "2026-11-09T10:29:05+01:00",
+   "path": "src/main/java/org/rumbledb/compiler/StaticContextVisitor.java"
+  },
+  {
+   "id": "rumble@a33f1e8d0cd0:src/main/java/org/rumbledb/compiler/StaticContextVisitor.java",
+   "region": 6,
+   "lang": "Java",
+   "merge": "a33f1e8d0cd06a3734cf7efc92de20ec810d0122",
+   "date": "2026-11-09T10:29:05+01:00",
+   "path": "src/main/java/org/rumbledb/compiler/StaticContextVisitor.java"
+  },
+  {
+   "id": "rumble@a33f1e8d0cd0:src/main/java/org/rumbledb/compiler/VariableDependenciesVisitor.java",
+   "region": 0,
+   "lang": "Java",
+   "merge": "a33f1e8d0cd06a3734cf7efc92de20ec810d0122",
+   "date": "2026-11-09T10:29:05+01:00",
+   "path": "src/main/java/org/rumbledb/compiler/VariableDependenciesVisitor.java"
+  },
+  {
+   "id": "rumble@a33f1e8d0cd0:src/main/java/org/rumbledb/compiler/VariableDependenciesVisitor.java",
+   "region": 1,
+   "lang": "Java",
+   "merge": "a33f1e8d0cd06a3734cf7efc92de20ec810d0122",
+   "date": "2026-11-09T10:29:05+01:00",
+   "path": "src/main/java/org/rumbledb/compiler/VariableDependenciesVisitor.java"
+  },
+  {
+   "id": "rumble@a33f1e8d0cd0:src/main/java/org/rumbledb/compiler/VariableDependenciesVisitor.java",
+   "region": 2,
+   "lang": "Java",
+   "merge": "a33f1e8d0cd06a3734cf7efc92de20ec810d0122",
+   "date": "2026-11-09T10:29:05+01:00",
+   "path": "src/main/java/org/rumbledb/compiler/VariableDependenciesVisitor.java"
+  },
+  {
+   "id": "rumble@a33f1e8d0cd0:src/main/java/org/rumbledb/compiler/VariableDependenciesVisitor.java",
+   "region": 3,
+   "lang": "Java",
+   "merge": "a33f1e8d0cd06a3734cf7efc92de20ec810d0122",
+   "date": "2026-11-09T10:29:05+01:00",
+   "path": "src/main/java/org/rumbledb/compiler/VariableDependenciesVisitor.java"
+  },
+  {
+   "id": "rumble@a33f1e8d0cd0:src/main/java/org/rumbledb/compiler/VariableDependenciesVisitor.java",
+   "region": 4,
+   "lang": "Java",
+   "merge": "a33f1e8d0cd06a3734cf7efc92de20ec810d0122",
+   "date": "2026-11-09T10:29:05+01:00",
+   "path": "src/main/java/org/rumbledb/compiler/VariableDependenciesVisitor.java"
+  },
+  {
+   "id": "rumble@a33f1e8d0cd0:src/main/java/org/rumbledb/compiler/VariableDependenciesVisitor.java",
+   "region": 5,
+   "lang": "Java",
+   "merge": "a33f1e8d0cd06a3734cf7efc92de20ec810d0122",
+   "date": "2026-11-09T10:29:05+01:00",
+   "path": "src/main/java/org/rumbledb/compiler/VariableDependenciesVisitor.java"
+  },
+  {
+   "id": "rumble@a33f1e8d0cd0:src/main/java/org/rumbledb/compiler/VariableDependenciesVisitor.java",
+   "region": 9,
+   "lang": "Java",
+   "merge": "a33f1e8d0cd06a3734cf7efc92de20ec810d0122",
+   "date": "2026-11-09T10:29:05+01:00",
+   "path": "src/main/java/org/rumbledb/compiler/VariableDependenciesVisitor.java"
+  },
+  {
+   "id": "rumble@a33f1e8d0cd0:src/main/java/org/rumbledb/compiler/VariableDependenciesVisitor.java",
+   "region": 10,
+   "lang": "Java",
+   "merge": "a33f1e8d0cd06a3734cf7efc92de20ec810d0122",
+   "date": "2026-11-09T10:29:05+01:00",
+   "path": "src/main/java/org/rumbledb/compiler/VariableDependenciesVisitor.java"
+  },
+  {
+   "id": "rumble@a33f1e8d0cd0:src/main/java/org/rumbledb/compiler/VariableDependenciesVisitor.java",
+   "region": 13,
+   "lang": "Java",
+   "merge": "a33f1e8d0cd06a3734cf7efc92de20ec810d0122",
+   "date": "2026-11-09T10:29:05+01:00",
+   "path": "src/main/java/org/rumbledb/compiler/VariableDependenciesVisitor.java"
+  },
+  {
+   "id": "rumble@a33f1e8d0cd0:src/main/java/org/rumbledb/expressions/flowr/Clause.java",
+   "region": 0,
+   "lang": "Java",
+   "merge": "a33f1e8d0cd06a3734cf7efc92de20ec810d0122",
+   "date": "2026-11-09T10:29:05+01:00",
+   "path": "src/main/java/org/rumbledb/expressions/flowr/Clause.java"
+  },
+  {
+   "id": "rumble@d3b6d8dadc57:src/main/java/org/rumbledb/compiler/RuntimeIteratorVisitor.java",
+   "region": 0,
+   "lang": "Java",
+   "merge": "d3b6d8dadc5769e79b4de9b2f477f5f32a288a66",
+   "date": "2026-11-09T10:14:44+01:00",
+   "path": "src/main/java/org/rumbledb/compiler/RuntimeIteratorVisitor.java"
+  },
+  {
+   "id": "rumble@d3b6d8dadc57:src/main/java/org/rumbledb/compiler/RuntimeIteratorVisitor.java",
+   "region": 1,
+   "lang": "Java",
+   "merge": "d3b6d8dadc5769e79b4de9b2f477f5f32a288a66",
+   "date": "2026-11-09T10:14:44+01:00",
+   "path": "src/main/java/org/rumbledb/compiler/RuntimeIteratorVisitor.java"
+  },
+  {
+   "id": "rumble@d3b6d8dadc57:src/main/java/org/rumbledb/compiler/RuntimeIteratorVisitor.java",
+   "region": 2,
+   "lang": "Java",
+   "merge": "d3b6d8dadc5769e79b4de9b2f477f5f32a288a66",
+   "date": "2026-11-09T10:14:44+01:00",
+   "path": "src/main/java/org/rumbledb/compiler/RuntimeIteratorVisitor.java"
+  },
+  {
+   "id": "rumble@d3b6d8dadc57:src/main/java/org/rumbledb/compiler/RuntimeIteratorVisitor.java",
+   "region": 3,
+   "lang": "Java",
+   "merge": "d3b6d8dadc5769e79b4de9b2f477f5f32a288a66",
+   "date": "2026-11-09T10:14:44+01:00",
+   "path": "src/main/java/org/rumbledb/compiler/RuntimeIteratorVisitor.java"
+  },
+  {
+   "id": "rumble@d3b6d8dadc57:src/main/java/org/rumbledb/compiler/RuntimeIteratorVisitor.java",
+   "region": 4,
+   "lang": "Java",
+   "merge": "d3b6d8dadc5769e79b4de9b2f477f5f32a288a66",
+   "date": "2026-11-09T10:14:44+01:00",
+   "path": "src/main/java/org/rumbledb/compiler/RuntimeIteratorVisitor.java"
+  },
+  {
+   "id": "rumble@d3b6d8dadc57:src/main/java/org/rumbledb/compiler/RuntimeIteratorVisitor.java",
+   "region": 8,
+   "lang": "Java",
+   "merge": "d3b6d8dadc5769e79b4de9b2f477f5f32a288a66",
+   "date": "2026-11-09T10:14:44+01:00",
+   "path": "src/main/java/org/rumbledb/compiler/RuntimeIteratorVisitor.java"
+  },
+  {
+   "id": "rumble@be3873ea60fa:src/main/java/org/rumbledb/compiler/RuntimeIteratorVisitor.java",
+   "region": 0,
+   "lang": "Java",
+   "merge": "be3873ea60faa65a57064448bbe5eda760ab26b2",
+   "date": "2026-11-06T16:51:37+01:00",
+   "path": "src/main/java/org/rumbledb/compiler/RuntimeIteratorVisitor.java"
+  },
+  {
+   "id": "rumble@be3873ea60fa:src/main/java/org/rumbledb/compiler/RuntimeIteratorVisitor.java",
+   "region": 1,
+   "lang": "Java",
+   "merge": "be3873ea60faa65a57064448bbe5eda760ab26b2",
+   "date": "2026-11-06T16:51:37+01:00",
+   "path": "src/main/java/org/rumbledb/compiler/RuntimeIteratorVisitor.java"
+  },
+  {
+   "id": "rumble@be3873ea60fa:src/main/java/org/rumbledb/compiler/RuntimeIteratorVisitor.java",
+   "region": 2,
+   "lang": "Java",
+   "merge": "be3873ea60faa65a57064448bbe5eda760ab26b2",
+   "date": "2026-11-06T16:51:37+01:00",
+   "path": "src/main/java/org/rumbledb/compiler/RuntimeIteratorVisitor.java"
+  },
+  {
+   "id": "rumble@be3873ea60fa:src/main/java/org/rumbledb/compiler/RuntimeIteratorVisitor.java",
+   "region": 3,
+   "lang": "Java",
+   "merge": "be3873ea60faa65a57064448bbe5eda760ab26b2",
+   "date": "2026-11-06T16:51:37+01:00",
+   "path": "src/main/java/org/rumbledb/compiler/RuntimeIteratorVisitor.java"
+  },
+  {
+   "id": "rumble@be3873ea60fa:src/main/java/org/rumbledb/runtime/typing/InstanceOfIterator.java",
+   "region": 0,
+   "lang": "Java",
+   "merge": "be3873ea60faa65a57064448bbe5eda760ab26b2",
+   "date": "2026-11-06T16:51:37+01:00",
+   "path": "src/main/java/org/rumbledb/runtime/typing/InstanceOfIterator.java"
+  },
+  {
+   "id": "rumble@7edfa9d18242:src/main/java/org/rumbledb/runtime/functions/input/JsonLinesFunctionIterator.java",
+   "region": 0,
+   "lang": "Java",
+   "merge": "7edfa9d18242ad631e788ea7425decd6b582f886",
+   "date": "2026-11-06T16:35:15+01:00",
+   "path": "src/main/java/org/rumbledb/runtime/functions/input/JsonLinesFunctionIterator.java"
+  },
+  {
+   "id": "rumble@7edfa9d18242:src/main/java/org/rumbledb/runtime/functions/input/JsonLinesFunctionIterator.java",
+   "region": 1,
+   "lang": "Java",
+   "merge": "7edfa9d18242ad631e788ea7425decd6b582f886",
+   "date": "2026-11-06T16:35:15+01:00",
+   "path": "src/main/java/org/rumbledb/runtime/functions/input/JsonLinesFunctionIterator.java"
+  },
+  {
+   "id": "rumble@7edfa9d18242:src/main/java/org/rumbledb/runtime/functions/input/JsonLinesFunctionIterator.java",
+   "region": 2,
+   "lang": "Java",
+   "merge": "7edfa9d18242ad631e788ea7425decd6b582f886",
+   "date": "2026-11-06T16:35:15+01:00",
+   "path": "src/main/java/org/rumbledb/runtime/functions/input/JsonLinesFunctionIterator.java"
+  },
+  {
+   "id": "rumble@ea546b2ef767:src/main/java/org/rumbledb/compiler/DynamicContextVisitor.java",
+   "region": 0,
+   "lang": "Java",
+   "merge": "ea546b2ef76700a5c7d18dd11ff2d77de94f25b4",
+   "date": "2026-11-06T15:09:22+01:00",
+   "path": "src/main/java/org/rumbledb/compiler/DynamicContextVisitor.java"
+  },
+  {
+   "id": "rumble@a73d60796715:src/main/java/org/rumbledb/compiler/ModuleParser.java",
+   "region": 0,
+   "lang": "Java",
+   "merge": "a73d6079671572bb50cd3ec5917e5cc9a0a72d4b",
+   "date": "2026-11-06T15:07:13+01:00",
+   "path": "src/main/java/org/rumbledb/compiler/ModuleParser.java"
+  },
+  {
+   "id": "rumble@a73d60796715:src/main/java/org/rumbledb/compiler/ModuleParser.java",
+   "region": 1,
+   "lang": "Java",
+   "merge": "a73d6079671572bb50cd3ec5917e5cc9a0a72d4b",
+   "date": "2026-11-06T15:07:13+01:00",
+   "path": "src/main/java/org/rumbledb/compiler/ModuleParser.java"
+  },
+  {
+   "id": "rumble@a73d60796715:src/main/java/org/rumbledb/compiler/ModuleParser.java",
+   "region": 2,
+   "lang": "Java",
+   "merge": "a73d6079671572bb50cd3ec5917e5cc9a0a72d4b",
+   "date": "2026-11-06T15:07:13+01:00",
+   "path": "src/main/java/org/rumbledb/compiler/ModuleParser.java"
+  },
+  {
+   "id": "rumble@a73d60796715:src/main/java/org/rumbledb/compiler/ModuleParser.java",
+   "region": 3,
+   "lang": "Java",
+   "merge": "a73d6079671572bb50cd3ec5917e5cc9a0a72d4b",
+   "date": "2026-11-06T15:07:13+01:00",
+   "path": "src/main/java/org/rumbledb/compiler/ModuleParser.java"
+  },
+  {
+   "id": "rumble@a73d60796715:src/main/java/org/rumbledb/compiler/ModuleParser.java",
+   "region": 4,
+   "lang": "Java",
+   "merge": "a73d6079671572bb50cd3ec5917e5cc9a0a72d4b",
+   "date": "2026-11-06T15:07:13+01:00",
+   "path": "src/main/java/org/rumbledb/compiler/ModuleParser.java"
+  },
+  {
+   "id": "rumble@a73d60796715:src/main/java/org/rumbledb/compiler/ModuleParser.java",
+   "region": 5,
+   "lang": "Java",
+   "merge": "a73d6079671572bb50cd3ec5917e5cc9a0a72d4b",
+   "date": "2026-11-06T15:07:13+01:00",
+   "path": "src/main/java/org/rumbledb/compiler/ModuleParser.java"
+  },
+  {
+   "id": "rumble@a73d60796715:src/main/java/org/rumbledb/compiler/translation/TranslationContext.java",
+   "region": 0,
+   "lang": "Java",
+   "merge": "a73d6079671572bb50cd3ec5917e5cc9a0a72d4b",
+   "date": "2026-11-06T15:07:13+01:00",
+   "path": "src/main/java/org/rumbledb/compiler/translation/TranslationContext.java"
+  },
+  {
+   "id": "rumble@a73d60796715:src/main/java/org/rumbledb/compiler/translation/TranslationContext.java",
+   "region": 1,
+   "lang": "Java",
+   "merge": "a73d6079671572bb50cd3ec5917e5cc9a0a72d4b",
+   "date": "2026-11-06T15:07:13+01:00",
+   "path": "src/main/java/org/rumbledb/compiler/translation/TranslationContext.java"
+  },
+  {
+   "id": "rumble@a73d60796715:src/main/java/org/rumbledb/compiler/translation/TranslationContext.java",
+   "region": 2,
+   "lang": "Java",
+   "merge": "a73d6079671572bb50cd3ec5917e5cc9a0a72d4b",
+   "date": "2026-11-06T15:07:13+01:00",
+   "path": "src/main/java/org/rumbledb/compiler/translation/TranslationContext.java"
+  },
+  {
+   "id": "rumble@a73d60796715:src/main/java/org/rumbledb/compiler/translation/TranslationContext.java",
+   "region": 3,
+   "lang": "Java",
+   "merge": "a73d6079671572bb50cd3ec5917e5cc9a0a72d4b",
+   "date": "2026-11-06T15:07:13+01:00",
+   "path": "src/main/java/org/rumbledb/compiler/translation/TranslationContext.java"
+  },
+  {
+   "id": "rumble@4983167f5a78:src/main/java/org/rumbledb/compiler/CompilationPipeline.java",
+   "region": 0,
+   "lang": "Java",
+   "merge": "4983167f5a785bc29ab4cf0603e97937ba1f52fc",
+   "date": "2026-11-06T15:05:19+01:00",
+   "path": "src/main/java/org/rumbledb/compiler/CompilationPipeline.java"
+  },
+  {
+   "id": "rumble@4983167f5a78:src/main/java/org/rumbledb/compiler/DynamicContextVisitor.java",
+   "region": 0,
+   "lang": "Java",
+   "merge": "4983167f5a785bc29ab4cf0603e97937ba1f52fc",
+   "date": "2026-11-06T15:05:19+01:00",
+   "path": "src/main/java/org/rumbledb/compiler/DynamicContextVisitor.java"
+  },
+  {
+   "id": "rumble@4983167f5a78:src/main/java/org/rumbledb/compiler/DynamicContextVisitor.java",
+   "region": 1,
+   "lang": "Java",
+   "merge": "4983167f5a785bc29ab4cf0603e97937ba1f52fc",
+   "date": "2026-11-06T15:05:19+01:00",
+   "path": "src/main/java/org/rumbledb/compiler/DynamicContextVisitor.java"
+  },
+  {
+   "id": "rumble@4983167f5a78:src/main/java/org/rumbledb/compiler/ExecutionModeVisitor.java",
+   "region": 0,
+   "lang": "Java",
+   "merge": "4983167f5a785bc29ab4cf0603e97937ba1f52fc",
+   "date": "2026-11-06T15:05:19+01:00",
+   "path": "src/main/java/org/rumbledb/compiler/ExecutionModeVisitor.java"
+  },
+  {
+   "id": "rumble@4983167f5a78:src/main/java/org/rumbledb/compiler/InferTypeVisitor.java",
+   "region": 0,
+   "lang": "Java",
+   "merge": "4983167f5a785bc29ab4cf0603e97937ba1f52fc",
+   "date": "2026-11-06T15:05:19+01:00",
+   "path": "src/main/java/org/rumbledb/compiler/InferTypeVisitor.java"
+  },
+  {
+   "id": "rumble@4983167f5a78:src/main/java/org/rumbledb/compiler/ModuleImportLoader.java",
+   "region": 0,
+   "lang": "Java",
+   "merge": "4983167f5a785bc29ab4cf0603e97937ba1f52fc",
+   "date": "2026-11-06T15:05:19+01:00",
+   "path": "src/main/java/org/rumbledb/compiler/ModuleImportLoader.java"
+  },
+  {
+   "id": "rumble@4983167f5a78:src/main/java/org/rumbledb/compiler/ModuleImportLoader.java",
+   "region": 1,
+   "lang": "Java",
+   "merge": "4983167f5a785bc29ab4cf0603e97937ba1f52fc",
+   "date": "2026-11-06T15:05:19+01:00",
+   "path": "src/main/java/org/rumbledb/compiler/ModuleImportLoader.java"
+  },
+  {
+   "id": "rumble@4983167f5a78:src/main/java/org/rumbledb/compiler/ModuleParser.java",
+   "region": 0,
+   "lang": "Java",
+   "merge": "4983167f5a785bc29ab4cf0603e97937ba1f52fc",
+   "date": "2026-11-06T15:05:19+01:00",
+   "path": "src/main/java/org/rumbledb/compiler/ModuleParser.java"
+  },
+  {
+   "id": "rumble@4983167f5a78:src/main/java/org/rumbledb/compiler/ModuleParser.java",
+   "region": 1,
+   "lang": "Java",
+   "merge": "4983167f5a785bc29ab4cf0603e97937ba1f52fc",
+   "date": "2026-11-06T15:05:19+01:00",
+   "path": "src/main/java/org/rumbledb/compiler/ModuleParser.java"
+  },
+  {
+   "id": "rumble@4983167f5a78:src/main/java/org/rumbledb/compiler/StaticContextVisitor.java",
+   "region": 0,
+   "lang": "Java",
+   "merge": "4983167f5a785bc29ab4cf0603e97937ba1f52fc",
+   "date": "2026-11-06T15:05:19+01:00",
+   "path": "src/main/java/org/rumbledb/compiler/StaticContextVisitor.java"
+  },
+  {
+   "id": "rumble@4983167f5a78:src/main/java/org/rumbledb/compiler/StaticContextVisitor.java",
+   "region": 1,
+   "lang": "Java",
+   "merge": "4983167f5a785bc29ab4cf0603e97937ba1f52fc",
+   "date": "2026-11-06T15:05:19+01:00",
+   "path": "src/main/java/org/rumbledb/compiler/StaticContextVisitor.java"
+  },
+  {
+   "id": "rumble@4983167f5a78:src/main/java/org/rumbledb/compiler/StaticContextVisitor.java",
+   "region": 2,
+   "lang": "Java",
+   "merge": "4983167f5a785bc29ab4cf0603e97937ba1f52fc",
+   "date": "2026-11-06T15:05:19+01:00",
+   "path": "src/main/java/org/rumbledb/compiler/StaticContextVisitor.java"
+  },
+  {
+   "id": "rumble@4983167f5a78:src/main/java/org/rumbledb/compiler/StaticContextVisitor.java",
+   "region": 3,
+   "lang": "Java",
+   "merge": "4983167f5a785bc29ab4cf0603e97937ba1f52fc",
+   "date": "2026-11-06T15:05:19+01:00",
+   "path": "src/main/java/org/rumbledb/compiler/StaticContextVisitor.java"
+  },
+  {
+   "id": "rumble@4983167f5a78:src/main/java/org/rumbledb/compiler/StaticContextVisitor.java",
+   "region": 4,
+   "lang": "Java",
+   "merge": "4983167f5a785bc29ab4cf0603e97937ba1f52fc",
+   "date": "2026-11-06T15:05:19+01:00",
+   "path": "src/main/java/org/rumbledb/compiler/StaticContextVisitor.java"
+  },
+  {
+   "id": "rumble@4983167f5a78:src/main/java/org/rumbledb/compiler/VariableDependenciesVisitor.java",
+   "region": 0,
+   "lang": "Java",
+   "merge": "4983167f5a785bc29ab4cf0603e97937ba1f52fc",
+   "date": "2026-11-06T15:05:19+01:00",
+   "path": "src/main/java/org/rumbledb/compiler/VariableDependenciesVisitor.java"
+  },
+  {
+   "id": "rumble@4983167f5a78:src/main/java/org/rumbledb/compiler/translation/ImportTranslation.java",
+   "region": 0,
+   "lang": "Java",
+   "merge": "4983167f5a785bc29ab4cf0603e97937ba1f52fc",
+   "date": "2026-11-06T15:05:19+01:00",
+   "path": "src/main/java/org/rumbledb/compiler/translation/ImportTranslation.java"
+  },
+  {
+   "id": "rumble@4983167f5a78:src/main/java/org/rumbledb/compiler/translation/ModuleTranslation.java",
+   "region": 0,
+   "lang": "Java",
+   "merge": "4983167f5a785bc29ab4cf0603e97937ba1f52fc",
+   "date": "2026-11-06T15:05:19+01:00",
+   "path": "src/main/java/org/rumbledb/compiler/translation/ModuleTranslation.java"
+  },
+  {
+   "id": "rumble@4983167f5a78:src/main/java/org/rumbledb/expressions/module/Prolog.java",
+   "region": 1,
+   "lang": "Java",
+   "merge": "4983167f5a785bc29ab4cf0603e97937ba1f52fc",
+   "date": "2026-11-06T15:05:19+01:00",
+   "path": "src/main/java/org/rumbledb/expressions/module/Prolog.java"
+  },
+  {
+   "id": "rumble@b9398d4a65b2:src/main/java/org/rumbledb/spark/SparkSessionManager.java",
+   "region": 0,
+   "lang": "Java",
+   "merge": "b9398d4a65b21a8e9cab5b141501fa486faf7ffe",
+   "date": "2026-11-05T11:28:46+01:00",
+   "path": "src/main/java/org/rumbledb/spark/SparkSessionManager.java"
+  },
+  {
+   "id": "rumble@c0f135da41c6:src/main/java/org/rumbledb/cli/Main.java",
+   "region": 0,
+   "lang": "Java",
+   "merge": "c0f135da41c6c7bb2dad7366eea1001826db3cf3",
+   "date": "2026-11-05T10:58:47+01:00",
+   "path": "src/main/java/org/rumbledb/cli/Main.java"
+  },
+  {
+   "id": "rumble@b19553e0534c:src/main/java/org/rumbledb/compiler/StaticContextVisitor.java",
+   "region": 0,
+   "lang": "Java",
+   "merge": "b19553e0534cba96ec16c9baff1e34030e7700fb",
+   "date": "2026-11-05T00:52:33+01:00",
+   "path": "src/main/java/org/rumbledb/compiler/StaticContextVisitor.java"
+  },
+  {
+   "id": "rumble@b9ecd4ed670c:src/test/java/org/rumbledb/cli/CLIJarIT.java",
+   "region": 0,
+   "lang": "Java",
+   "merge": "b9ecd4ed670c4ef9ee2082a4e8485ea5dacec8c3",
+   "date": "2026-11-04T14:19:53+01:00",
+   "path": "src/test/java/org/rumbledb/cli/CLIJarIT.java"
+  },
+  {
+   "id": "rumble@4ac708d95647:src/main/java/org/rumbledb/compiler/ModuleImportLoader.java",
+   "region": 0,
+   "lang": "Java",
+   "merge": "4ac708d95647ba8d0ea798c194cecd08efee8c65",
+   "date": "2026-11-03T11:09:18+01:00",
+   "path": "src/main/java/org/rumbledb/compiler/ModuleImportLoader.java"
+  },
+  {
+   "id": "rumble@4ac708d95647:src/main/java/org/rumbledb/compiler/ModuleImportLoader.java",
+   "region": 1,
+   "lang": "Java",
+   "merge": "4ac708d95647ba8d0ea798c194cecd08efee8c65",
+   "date": "2026-11-03T11:09:18+01:00",
+   "path": "src/main/java/org/rumbledb/compiler/ModuleImportLoader.java"
+  },
+  {
+   "id": "rumble@4ac708d95647:src/main/java/org/rumbledb/compiler/ModuleImportLoader.java",
+   "region": 2,
+   "lang": "Java",
+   "merge": "4ac708d95647ba8d0ea798c194cecd08efee8c65",
+   "date": "2026-11-03T11:09:18+01:00",
+   "path": "src/main/java/org/rumbledb/compiler/ModuleImportLoader.java"
+  },
+  {
+   "id": "rumble@4ac708d95647:src/main/java/org/rumbledb/compiler/ModuleImportLoader.java",
+   "region": 3,
+   "lang": "Java",
+   "merge": "4ac708d95647ba8d0ea798c194cecd08efee8c65",
+   "date": "2026-11-03T11:09:18+01:00",
+   "path": "src/main/java/org/rumbledb/compiler/ModuleImportLoader.java"
+  },
+  {
+   "id": "rumble@4ac708d95647:src/main/java/org/rumbledb/compiler/ModuleImportLoader.java",
+   "region": 4,
+   "lang": "Java",
+   "merge": "4ac708d95647ba8d0ea798c194cecd08efee8c65",
+   "date": "2026-11-03T11:09:18+01:00",
+   "path": "src/main/java/org/rumbledb/compiler/ModuleImportLoader.java"
+  },
+  {
+   "id": "rumble@4ac708d95647:src/main/java/org/rumbledb/compiler/ModulePruningVisitor.java",
+   "region": 0,
+   "lang": "Java",
+   "merge": "4ac708d95647ba8d0ea798c194cecd08efee8c65",
+   "date": "2026-11-03T11:09:18+01:00",
+   "path": "src/main/java/org/rumbledb/compiler/ModulePruningVisitor.java"
+  },
+  {
+   "id": "rumble@4ac708d95647:src/main/java/org/rumbledb/compiler/StaticContextVisitor.java",
+   "region": 0,
+   "lang": "Java",
+   "merge": "4ac708d95647ba8d0ea798c194cecd08efee8c65",
+   "date": "2026-11-03T11:09:18+01:00",
+   "path": "src/main/java/org/rumbledb/compiler/StaticContextVisitor.java"
+  },
+  {
+   "id": "rumble@891601d2f0de:src/main/java/org/rumbledb/compiler/CompilationPipeline.java",
+   "region": 0,
+   "lang": "Java",
+   "merge": "891601d2f0de96724eb3fed78df1aa13c4d9c22c",
+   "date": "2026-10-30T16:11:01+01:00",
+   "path": "src/main/java/org/rumbledb/compiler/CompilationPipeline.java"
+  },
+  {
+   "id": "rumble@891601d2f0de:src/main/java/org/rumbledb/compiler/CompilationPipeline.java",
+   "region": 1,
+   "lang": "Java",
+   "merge": "891601d2f0de96724eb3fed78df1aa13c4d9c22c",
+   "date": "2026-10-30T16:11:01+01:00",
+   "path": "src/main/java/org/rumbledb/compiler/CompilationPipeline.java"
+  },
+  {
+   "id": "rumble@891601d2f0de:src/main/java/org/rumbledb/compiler/ModuleImportLoader.java",
+   "region": 0,
+   "lang": "Java",
+   "merge": "891601d2f0de96724eb3fed78df1aa13c4d9c22c",
+   "date": "2026-10-30T16:11:01+01:00",
+   "path": "src/main/java/org/rumbledb/compiler/ModuleImportLoader.java"
+  },
+  {
+   "id": "rumble@891601d2f0de:src/main/java/org/rumbledb/compiler/StaticContextVisitor.java",
+   "region": 0,
+   "lang": "Java",
+   "merge": "891601d2f0de96724eb3fed78df1aa13c4d9c22c",
+   "date": "2026-10-30T16:11:01+01:00",
+   "path": "src/main/java/org/rumbledb/compiler/StaticContextVisitor.java"
+  },
+  {
+   "id": "rumble@9b5bfcddaae4:src/main/java/org/rumbledb/compiler/DynamicContextVisitor.java",
+   "region": 0,
+   "lang": "Java",
+   "merge": "9b5bfcddaae4207e9c269b8e758c826016e3ed83",
+   "date": "2026-10-29T13:55:49+01:00",
+   "path": "src/main/java/org/rumbledb/compiler/DynamicContextVisitor.java"
+  },
+  {
+   "id": "rumble@a2ddaa261db1:src/main/java/org/rumbledb/compiler/StaticContextVisitor.java",
+   "region": 0,
+   "lang": "Java",
+   "merge": "a2ddaa261db160fc9c719e24387764d81a55321a",
+   "date": "2026-10-29T13:49:17+01:00",
+   "path": "src/main/java/org/rumbledb/compiler/StaticContextVisitor.java"
+  },
+  {
+   "id": "rumble@2334475db02f:src/main/java/org/rumbledb/runtime/flwor/clauses/WhereClauseIterator.java",
+   "region": 0,
+   "lang": "Java",
+   "merge": "2334475db02f8dc43a21fa8b54eaf578c724f7c3",
+   "date": "2026-10-21T10:16:13+02:00",
+   "path": "src/main/java/org/rumbledb/runtime/flwor/clauses/WhereClauseIterator.java"
+  },
+  {
+   "id": "rumble@2334475db02f:src/main/java/org/rumbledb/runtime/functions/FunctionItemCallIterator.java",
+   "region": 0,
+   "lang": "Java",
+   "merge": "2334475db02f8dc43a21fa8b54eaf578c724f7c3",
+   "date": "2026-10-21T10:16:13+02:00",
+   "path": "src/main/java/org/rumbledb/runtime/functions/FunctionItemCallIterator.java"
+  },
+  {
+   "id": "rumble@2334475db02f:src/main/java/org/rumbledb/runtime/functions/sequences/general/InsertBeforeFunctionIterator.java",
+   "region": 0,
+   "lang": "Java",
+   "merge": "2334475db02f8dc43a21fa8b54eaf578c724f7c3",
+   "date": "2026-10-21T10:16:13+02:00",
+   "path": "src/main/java/org/rumbledb/runtime/functions/sequences/general/InsertBeforeFunctionIterator.java"
+  },
+  {
+   "id": "rumble@2334475db02f:src/main/java/org/rumbledb/runtime/functions/sequences/general/InsertBeforeFunctionIterator.java",
+   "region": 1,
+   "lang": "Java",
+   "merge": "2334475db02f8dc43a21fa8b54eaf578c724f7c3",
+   "date": "2026-10-21T10:16:13+02:00",
+   "path": "src/main/java/org/rumbledb/runtime/functions/sequences/general/InsertBeforeFunctionIterator.java"
+  },
+  {
+   "id": "rumble@2334475db02f:src/main/java/org/rumbledb/runtime/functions/sequences/general/InsertBeforeFunctionIterator.java",
+   "region": 2,
+   "lang": "Java",
+   "merge": "2334475db02f8dc43a21fa8b54eaf578c724f7c3",
+   "date": "2026-10-21T10:16:13+02:00",
+   "path": "src/main/java/org/rumbledb/runtime/functions/sequences/general/InsertBeforeFunctionIterator.java"
+  },
+  {
+   "id": "rumble@2334475db02f:src/main/java/org/rumbledb/runtime/functions/sequences/general/RemoveFunctionIterator.java",
+   "region": 0,
+   "lang": "Java",
+   "merge": "2334475db02f8dc43a21fa8b54eaf578c724f7c3",
+   "date": "2026-10-21T10:16:13+02:00",
+   "path": "src/main/java/org/rumbledb/runtime/functions/sequences/general/RemoveFunctionIterator.java"
+  },
+  {
+   "id": "rumble@2334475db02f:src/main/java/org/rumbledb/runtime/functions/sequences/general/RemoveFunctionIterator.java",
+   "region": 1,
+   "lang": "Java",
+   "merge": "2334475db02f8dc43a21fa8b54eaf578c724f7c3",
+   "date": "2026-10-21T10:16:13+02:00",
+   "path": "src/main/java/org/rumbledb/runtime/functions/sequences/general/RemoveFunctionIterator.java"
+  },
+  {
+   "id": "rumble@2334475db02f:src/main/java/org/rumbledb/runtime/navigation/ArrayLookupIterator.java",
+   "region": 0,
+   "lang": "Java",
+   "merge": "2334475db02f8dc43a21fa8b54eaf578c724f7c3",
+   "date": "2026-10-21T10:16:13+02:00",
+   "path": "src/main/java/org/rumbledb/runtime/navigation/ArrayLookupIterator.java"
+  },
+  {
+   "id": "rumble@2334475db02f:src/main/java/org/rumbledb/runtime/navigation/ArrayLookupIterator.java",
+   "region": 1,
+   "lang": "Java",
+   "merge": "2334475db02f8dc43a21fa8b54eaf578c724f7c3",
+   "date": "2026-10-21T10:16:13+02:00",
+   "path": "src/main/java/org/rumbledb/runtime/navigation/ArrayLookupIterator.java"
+  },
+  {
+   "id": "rumble@2334475db02f:src/main/java/org/rumbledb/runtime/navigation/ArrayLookupIterator.java",
+   "region": 2,
+   "lang": "Java",
+   "merge": "2334475db02f8dc43a21fa8b54eaf578c724f7c3",
+   "date": "2026-10-21T10:16:13+02:00",
+   "path": "src/main/java/org/rumbledb/runtime/navigation/ArrayLookupIterator.java"
+  },
+  {
+   "id": "rumble@2334475db02f:src/main/java/org/rumbledb/runtime/navigation/ArrayLookupIterator.java",
+   "region": 3,
+   "lang": "Java",
+   "merge": "2334475db02f8dc43a21fa8b54eaf578c724f7c3",
+   "date": "2026-10-21T10:16:13+02:00",
+   "path": "src/main/java/org/rumbledb/runtime/navigation/ArrayLookupIterator.java"
+  },
+  {
+   "id": "rumble@2334475db02f:src/main/java/org/rumbledb/runtime/navigation/ArrayLookupIterator.java",
+   "region": 4,
+   "lang": "Java",
+   "merge": "2334475db02f8dc43a21fa8b54eaf578c724f7c3",
+   "date": "2026-10-21T10:16:13+02:00",
+   "path": "src/main/java/org/rumbledb/runtime/navigation/ArrayLookupIterator.java"
+  },
+  {
+   "id": "rumble@2334475db02f:src/main/java/org/rumbledb/runtime/navigation/ObjectLookupIterator.java",
+   "region": 0,
+   "lang": "Java",
+   "merge": "2334475db02f8dc43a21fa8b54eaf578c724f7c3",
+   "date": "2026-10-21T10:16:13+02:00",
+   "path": "src/main/java/org/rumbledb/runtime/navigation/ObjectLookupIterator.java"
+  },
+  {
+   "id": "rumble@2334475db02f:src/main/java/org/rumbledb/runtime/navigation/ObjectLookupIterator.java",
+   "region": 1,
+   "lang": "Java",
+   "merge": "2334475db02f8dc43a21fa8b54eaf578c724f7c3",
+   "date": "2026-10-21T10:16:13+02:00",
+   "path": "src/main/java/org/rumbledb/runtime/navigation/ObjectLookupIterator.java"
+  },
+  {
+   "id": "rumble@2334475db02f:src/main/java/org/rumbledb/runtime/navigation/ObjectLookupIterator.java",
+   "region": 2,
+   "lang": "Java",
+   "merge": "2334475db02f8dc43a21fa8b54eaf578c724f7c3",
+   "date": "2026-10-21T10:16:13+02:00",
+   "path": "src/main/java/org/rumbledb/runtime/navigation/ObjectLookupIterator.java"
+  },
+  {
+   "id": "rumble@2334475db02f:src/main/java/org/rumbledb/runtime/navigation/ObjectLookupIterator.java",
+   "region": 3,
+   "lang": "Java",
+   "merge": "2334475db02f8dc43a21fa8b54eaf578c724f7c3",
+   "date": "2026-10-21T10:16:13+02:00",
+   "path": "src/main/java/org/rumbledb/runtime/navigation/ObjectLookupIterator.java"
+  },
+  {
+   "id": "rumble@2334475db02f:src/main/java/org/rumbledb/runtime/navigation/ObjectLookupIterator.java",
+   "region": 4,
+   "lang": "Java",
+   "merge": "2334475db02f8dc43a21fa8b54eaf578c724f7c3",
+   "date": "2026-10-21T10:16:13+02:00",
+   "path": "src/main/java/org/rumbledb/runtime/navigation/ObjectLookupIterator.java"
+  },
+  {
+   "id": "rumble@2334475db02f:src/main/java/org/rumbledb/runtime/navigation/ObjectLookupIterator.java",
+   "region": 5,
+   "lang": "Java",
+   "merge": "2334475db02f8dc43a21fa8b54eaf578c724f7c3",
+   "date": "2026-10-21T10:16:13+02:00",
+   "path": "src/main/java/org/rumbledb/runtime/navigation/ObjectLookupIterator.java"
+  },
+  {
+   "id": "rumble@2334475db02f:src/main/java/org/rumbledb/runtime/primary/ObjectConstructorRuntimeIterator.java",
+   "region": 0,
+   "lang": "Java",
+   "merge": "2334475db02f8dc43a21fa8b54eaf578c724f7c3",
+   "date": "2026-10-21T10:16:13+02:00",
+   "path": "src/main/java/org/rumbledb/runtime/primary/ObjectConstructorRuntimeIterator.java"
+  },
+  {
+   "id": "rumble@2334475db02f:src/main/java/org/rumbledb/runtime/scripting/loops/ExitStatementIterator.java",
+   "region": 2,
+   "lang": "Java",
+   "merge": "2334475db02f8dc43a21fa8b54eaf578c724f7c3",
+   "date": "2026-10-21T10:16:13+02:00",
+   "path": "src/main/java/org/rumbledb/runtime/scripting/loops/ExitStatementIterator.java"
+  },
+  {
+   "id": "rumble@10910a04fcf9:src/main/java/org/rumbledb/compiler/context/xml/DirElemOpenCloseContext.java",
+   "region": 0,
+   "lang": "Java",
+   "merge": "10910a04fcf98affb4014c9774f87f409c508a82",
+   "date": "2026-10-19T10:41:58+02:00",
+   "path": "src/main/java/org/rumbledb/compiler/context/xml/DirElemOpenCloseContext.java"
+  },
+  {
+   "id": "rumble@b98589598369:src/main/java/org/rumbledb/cli/Main.java",
+   "region": 0,
+   "lang": "Java",
+   "merge": "b985895983698cfb509648554e4afb978363fbb6",
+   "date": "2026-10-02T16:53:56+02:00",
+   "path": "src/main/java/org/rumbledb/cli/Main.java"
+  },
+  {
+   "id": "rumble@d5f0f04b8522:src/main/java/org/rumbledb/cli/JsoniqQueryExecutor.java",
+   "region": 0,
+   "lang": "Java",
+   "merge": "d5f0f04b8522282d8fd5dfebb5579f070217ba03",
+   "date": "2026-10-02T16:47:09+02:00",
+   "path": "src/main/java/org/rumbledb/cli/JsoniqQueryExecutor.java"
+  },
+  {
+   "id": "rumble@d5f0f04b8522:src/main/java/org/rumbledb/cli/JsoniqQueryExecutor.java",
+   "region": 4,
+   "lang": "Java",
+   "merge": "d5f0f04b8522282d8fd5dfebb5579f070217ba03",
+   "date": "2026-10-02T16:47:09+02:00",
+   "path": "src/main/java/org/rumbledb/cli/JsoniqQueryExecutor.java"
+  },
+  {
+   "id": "rumble@d5f0f04b8522:src/main/java/org/rumbledb/cli/Main.java",
+   "region": 0,
+   "lang": "Java",
+   "merge": "d5f0f04b8522282d8fd5dfebb5579f070217ba03",
+   "date": "2026-10-02T16:47:09+02:00",
+   "path": "src/main/java/org/rumbledb/cli/Main.java"
+  },
+  {
+   "id": "rumble@6aa32d5a80d6:src/main/java/org/rumbledb/types/DerivedAtomicItemType.java",
+   "region": 0,
+   "lang": "Java",
+   "merge": "6aa32d5a80d69b33a016147bec9afa45899610f7",
+   "date": "2026-09-25T15:21:33+02:00",
+   "path": "src/main/java/org/rumbledb/types/DerivedAtomicItemType.java"
+  },
+  {
+   "id": "rumble@6aa32d5a80d6:src/main/java/org/rumbledb/types/ObjectItemType.java",
+   "region": 0,
+   "lang": "Java",
+   "merge": "6aa32d5a80d69b33a016147bec9afa45899610f7",
+   "date": "2026-09-25T15:21:33+02:00",
+   "path": "src/main/java/org/rumbledb/types/ObjectItemType.java"
+  },
+  {
+   "id": "rumble@5401581c0a04:src/main/java/org/rumbledb/types/DerivedAtomicItemType.java",
+   "region": 0,
+   "lang": "Java",
+   "merge": "5401581c0a043e6b6d353b43e75fba57ef4d2af4",
+   "date": "2026-09-25T14:52:01+02:00",
+   "path": "src/main/java/org/rumbledb/types/DerivedAtomicItemType.java"
+  },
+  {
+   "id": "rumble@5401581c0a04:src/main/java/org/rumbledb/types/DerivedAtomicItemType.java",
+   "region": 1,
+   "lang": "Java",
+   "merge": "5401581c0a043e6b6d353b43e75fba57ef4d2af4",
+   "date": "2026-09-25T14:52:01+02:00",
+   "path": "src/main/java/org/rumbledb/types/DerivedAtomicItemType.java"
+  },
+  {
+   "id": "rumble@5401581c0a04:src/main/java/org/rumbledb/types/ObjectItemType.java",
+   "region": 0,
+   "lang": "Java",
+   "merge": "5401581c0a043e6b6d353b43e75fba57ef4d2af4",
+   "date": "2026-09-25T14:52:01+02:00",
+   "path": "src/main/java/org/rumbledb/types/ObjectItemType.java"
+  },
+  {
+   "id": "rumble@5401581c0a04:src/main/java/org/rumbledb/types/ObjectItemType.java",
+   "region": 1,
+   "lang": "Java",
+   "merge": "5401581c0a043e6b6d353b43e75fba57ef4d2af4",
+   "date": "2026-09-25T14:52:01+02:00",
+   "path": "src/main/java/org/rumbledb/types/ObjectItemType.java"
+  },
+  {
+   "id": "sis@33fed0ffeb22:endorsed/src/org.apache.sis.metadata/main/org/apache/sis/xml/bind/metadata/replace/ReferenceSystemMetadata.java",
+   "region": 0,
+   "lang": "Java",
+   "merge": "33fed0ffeb220d51b3e12836dbfd67a583eea6f5",
+   "date": "2026-11-07T19:04:38+01:00",
+   "path": "endorsed/src/org.apache.sis.metadata/main/org/apache/sis/xml/bind/metadata/replace/ReferenceSystemMetadata.java"
+  },
+  {
+   "id": "sis@33fed0ffeb22:endorsed/src/org.apache.sis.portrayal/test/org/apache/sis/style/se1/ColorMapTest.java",
+   "region": 0,
+   "lang": "Java",
+   "merge": "33fed0ffeb220d51b3e12836dbfd67a583eea6f5",
+   "date": "2026-11-07T19:04:38+01:00",
+   "path": "endorsed/src/org.apache.sis.portrayal/test/org/apache/sis/style/se1/ColorMapTest.java"
+  },
+  {
+   "id": "sis@33fed0ffeb22:endorsed/src/org.apache.sis.portrayal/test/org/apache/sis/style/se1/ColorReplacementTest.java",
+   "region": 0,
+   "lang": "Java",
+   "merge": "33fed0ffeb220d51b3e12836dbfd67a583eea6f5",
+   "date": "2026-11-07T19:04:38+01:00",
+   "path": "endorsed/src/org.apache.sis.portrayal/test/org/apache/sis/style/se1/ColorReplacementTest.java"
+  },
+  {
+   "id": "sis@33fed0ffeb22:endorsed/src/org.apache.sis.referencing/main/org/apache/sis/referencing/internal/shared/EllipsoidalHeightCombiner.java",
+   "region": 0,
+   "lang": "Java",
+   "merge": "33fed0ffeb220d51b3e12836dbfd67a583eea6f5",
+   "date": "2026-11-07T19:04:38+01:00",
+   "path": "endorsed/src/org.apache.sis.referencing/main/org/apache/sis/referencing/internal/shared/EllipsoidalHeightCombiner.java"
+  },
+  {
+   "id": "sis@a60d84a9a39d:endorsed/src/org.apache.sis.portrayal/main/module-info.java",
+   "region": 0,
+   "lang": "Java",
+   "merge": "a60d84a9a39d7e4c6fd583e88a7e2afb77ad9c42",
+   "date": "2026-11-07T16:24:33+01:00",
+   "path": "endorsed/src/org.apache.sis.portrayal/main/module-info.java"
+  },
+  {
+   "id": "sis@a60d84a9a39d:endorsed/src/org.apache.sis.referencing/main/org/apache/sis/referencing/operation/CoordinateOperationRegistry.java",
+   "region": 0,
+   "lang": "Java",
+   "merge": "a60d84a9a39d7e4c6fd583e88a7e2afb77ad9c42",
+   "date": "2026-11-07T16:24:33+01:00",
+   "path": "endorsed/src/org.apache.sis.referencing/main/org/apache/sis/referencing/operation/CoordinateOperationRegistry.java"
+  },
+  {
+   "id": "sis@cae193415642:endorsed/src/org.apache.sis.referencing/main/org/apache/sis/referencing/operation/CoordinateOperationRegistry.java",
+   "region": 0,
+   "lang": "Java",
+   "merge": "cae1934156424e7ba3c1f75d0cc9e51bc7b5a928",
+   "date": "2026-11-07T16:06:22+01:00",
+   "path": "endorsed/src/org.apache.sis.referencing/main/org/apache/sis/referencing/operation/CoordinateOperationRegistry.java"
+  },
+  {
+   "id": "sis@6942b672823f:endorsed/src/org.apache.sis.feature/main/org/apache/sis/coverage/SampleDimension.java",
+   "region": 0,
+   "lang": "Java",
+   "merge": "6942b672823f769dc75077209efbe4bbf4af890b",
+   "date": "2026-11-04T20:31:24+01:00",
+   "path": "endorsed/src/org.apache.sis.feature/main/org/apache/sis/coverage/SampleDimension.java"
+  },
+  {
+   "id": "sis@6942b672823f:endorsed/src/org.apache.sis.feature/main/org/apache/sis/feature/Features.java",
+   "region": 0,
+   "lang": "Java",
+   "merge": "6942b672823f769dc75077209efbe4bbf4af890b",
+   "date": "2026-11-04T20:31:24+01:00",
+   "path": "endorsed/src/org.apache.sis.feature/main/org/apache/sis/feature/Features.java"
+  },
+  {
+   "id": "sis@6942b672823f:endorsed/src/org.apache.sis.metadata/main/org/apache/sis/metadata/iso/acquisition/DefaultObjective.java",
+   "region": 0,
+   "lang": "Java",
+   "merge": "6942b672823f769dc75077209efbe4bbf4af890b",
+   "date": "2026-11-04T20:31:24+01:00",
+   "path": "endorsed/src/org.apache.sis.metadata/main/org/apache/sis/metadata/iso/acquisition/DefaultObjective.java"
+  },
+  {
+   "id": "sis@6942b672823f:endorsed/src/org.apache.sis.metadata/main/org/apache/sis/metadata/iso/acquisition/DefaultObjective.java",
+   "region": 1,
+   "lang": "Java",
+   "merge": "6942b672823f769dc75077209efbe4bbf4af890b",
+   "date": "2026-11-04T20:31:24+01:00",
+   "path": "endorsed/src/org.apache.sis.metadata/main/org/apache/sis/metadata/iso/acquisition/DefaultObjective.java"
+  },
+  {
+   "id": "sis@6942b672823f:endorsed/src/org.apache.sis.metadata/main/org/apache/sis/metadata/iso/citation/DefaultTelephone.java",
+   "region": 0,
+   "lang": "Java",
+   "merge": "6942b672823f769dc75077209efbe4bbf4af890b",
+   "date": "2026-11-04T20:31:24+01:00",
+   "path": "endorsed/src/org.apache.sis.metadata/main/org/apache/sis/metadata/iso/citation/DefaultTelephone.java"
+  },
+  {
+   "id": "sis@6942b672823f:endorsed/src/org.apache.sis.referencing.gazetteer/main/org/apache/sis/referencing/gazetteer/ReferencingByIdentifiers.java",
+   "region": 0,
+   "lang": "Java",
+   "merge": "6942b672823f769dc75077209efbe4bbf4af890b",
+   "date": "2026-11-04T20:31:24+01:00",
+   "path": "endorsed/src/org.apache.sis.referencing.gazetteer/main/org/apache/sis/referencing/gazetteer/ReferencingByIdentifiers.java"
+  },
+  {
+   "id": "sis@6942b672823f:endorsed/src/org.apache.sis.referencing/main/org/apache/sis/coordinate/DefaultCoordinateMetadata.java",
+   "region": 0,
+   "lang": "Java",
+   "merge": "6942b672823f769dc75077209efbe4bbf4af890b",
+   "date": "2026-11-04T20:31:24+01:00",
+   "path": "endorsed/src/org.apache.sis.referencing/main/org/apache/sis/coordinate/DefaultCoordinateMetadata.java"
+  },
+  {
+   "id": "sis@6942b672823f:endorsed/src/org.apache.sis.referencing/main/org/apache/sis/referencing/DefaultObjectDomain.java",
+   "region": 0,
+   "lang": "Java",
+   "merge": "6942b672823f769dc75077209efbe4bbf4af890b",
+   "date": "2026-11-04T20:31:24+01:00",
+   "path": "endorsed/src/org.apache.sis.referencing/main/org/apache/sis/referencing/DefaultObjectDomain.java"
+  },
+  {
+   "id": "sis@6942b672823f:endorsed/src/org.apache.sis.referencing/main/org/apache/sis/referencing/DefaultObjectDomain.java",
+   "region": 1,
+   "lang": "Java",
+   "merge": "6942b672823f769dc75077209efbe4bbf4af890b",
+   "date": "2026-11-04T20:31:24+01:00",
+   "path": "endorsed/src/org.apache.sis.referencing/main/org/apache/sis/referencing/DefaultObjectDomain.java"
+  },
+  {
+   "id": "sis@6942b672823f:endorsed/src/org.apache.sis.referencing/main/org/apache/sis/referencing/crs/DefaultParametricCRS.java",
+   "region": 0,
+   "lang": "Java",
+   "merge": "6942b672823f769dc75077209efbe4bbf4af890b",
+   "date": "2026-11-04T20:31:24+01:00",
+   "path": "endorsed/src/org.apache.sis.referencing/main/org/apache/sis/referencing/crs/DefaultParametricCRS.java"
+  },
+  {
+   "id": "sis@6942b672823f:endorsed/src/org.apache.sis.referencing/main/org/apache/sis/referencing/crs/DefaultParametricCRS.java",
+   "region": 1,
+   "lang": "Java",
+   "merge": "6942b672823f769dc75077209efbe4bbf4af890b",
+   "date": "2026-11-04T20:31:24+01:00",
+   "path": "endorsed/src/org.apache.sis.referencing/main/org/apache/sis/referencing/crs/DefaultParametricCRS.java"
+  },
+  {
+   "id": "sis@6942b672823f:endorsed/src/org.apache.sis.referencing/main/org/apache/sis/referencing/cs/DefaultCompoundCS.java",
+   "region": 0,
+   "lang": "Java",
+   "merge": "6942b672823f769dc75077209efbe4bbf4af890b",
+   "date": "2026-11-04T20:31:24+01:00",
+   "path": "endorsed/src/org.apache.sis.referencing/main/org/apache/sis/referencing/cs/DefaultCompoundCS.java"
+  },
+  {
+   "id": "sis@6942b672823f:endorsed/src/org.apache.sis.referencing/main/org/apache/sis/referencing/cs/DefaultParametricCS.java",
+   "region": 0,
+   "lang": "Java",
+   "merge": "6942b672823f769dc75077209efbe4bbf4af890b",
+   "date": "2026-11-04T20:31:24+01:00",
+   "path": "endorsed/src/org.apache.sis.referencing/main/org/apache/sis/referencing/cs/DefaultParametricCS.java"
+  },
+  {
+   "id": "sis@6942b672823f:endorsed/src/org.apache.sis.referencing/main/org/apache/sis/referencing/cs/DefaultTimeCS.java",
+   "region": 0,
+   "lang": "Java",
+   "merge": "6942b672823f769dc75077209efbe4bbf4af890b",
+   "date": "2026-11-04T20:31:24+01:00",
+   "path": "endorsed/src/org.apache.sis.referencing/main/org/apache/sis/referencing/cs/DefaultTimeCS.java"
+  },
+  {
+   "id": "sis@6942b672823f:endorsed/src/org.apache.sis.referencing/main/org/apache/sis/referencing/datum/DatumOrEnsemble.java",
+   "region": 0,
+   "lang": "Java",
+   "merge": "6942b672823f769dc75077209efbe4bbf4af890b",
+   "date": "2026-11-04T20:31:24+01:00",
+   "path": "endorsed/src/org.apache.sis.referencing/main/org/apache/sis/referencing/datum/DatumOrEnsemble.java"
+  },
+  {
+   "id": "sis@6942b672823f:endorsed/src/org.apache.sis.referencing/main/org/apache/sis/referencing/datum/DatumOrEnsemble.java",
+   "region": 1,
+   "lang": "Java",
+   "merge": "6942b672823f769dc75077209efbe4bbf4af890b",
+   "date": "2026-11-04T20:31:24+01:00",
+   "path": "endorsed/src/org.apache.sis.referencing/main/org/apache/sis/referencing/datum/DatumOrEnsemble.java"
+  },
+  {
+   "id": "sis@6942b672823f:endorsed/src/org.apache.sis.referencing/main/org/apache/sis/referencing/datum/DefaultParametricDatum.java",
+   "region": 0,
+   "lang": "Java",
+   "merge": "6942b672823f769dc75077209efbe4bbf4af890b",
+   "date": "2026-11-04T20:31:24+01:00",
+   "path": "endorsed/src/org.apache.sis.referencing/main/org/apache/sis/referencing/datum/DefaultParametricDatum.java"
+  },
+  {
+   "id": "sis@6942b672823f:endorsed/src/org.apache.sis.referencing/main/org/apache/sis/referencing/datum/DefaultVerticalDatum.java",
+   "region": 0,
+   "lang": "Java",
+   "merge": "6942b672823f769dc75077209efbe4bbf4af890b",
+   "date": "2026-11-04T20:31:24+01:00",
+   "path": "endorsed/src/org.apache.sis.referencing/main/org/apache/sis/referencing/datum/DefaultVerticalDatum.java"
+  },
+  {
+   "id": "sis@6942b672823f:endorsed/src/org.apache.sis.referencing/main/org/apache/sis/referencing/datum/DefaultVerticalDatum.java",
+   "region": 1,
+   "lang": "Java",
+   "merge": "6942b672823f769dc75077209efbe4bbf4af890b",
+   "date": "2026-11-04T20:31:24+01:00",
+   "path": "endorsed/src/org.apache.sis.referencing/main/org/apache/sis/referencing/datum/DefaultVerticalDatum.java"
+  },
+  {
+   "id": "sis@6942b672823f:endorsed/src/org.apache.sis.referencing/main/org/apache/sis/referencing/datum/DefaultVerticalDatum.java",
+   "region": 2,
+   "lang": "Java",
+   "merge": "6942b672823f769dc75077209efbe4bbf4af890b",
+   "date": "2026-11-04T20:31:24+01:00",
+   "path": "endorsed/src/org.apache.sis.referencing/main/org/apache/sis/referencing/datum/DefaultVerticalDatum.java"
+  },
+  {
+   "id": "sis@6942b672823f:endorsed/src/org.apache.sis.referencing/main/org/apache/sis/referencing/factory/ConcurrentAuthorityFactory.java",
+   "region": 0,
+   "lang": "Java",
+   "merge": "6942b672823f769dc75077209efbe4bbf4af890b",
+   "date": "2026-11-04T20:31:24+01:00",
+   "path": "endorsed/src/org.apache.sis.referencing/main/org/apache/sis/referencing/factory/ConcurrentAuthorityFactory.java"
+  },
+  {
+   "id": "sis@6942b672823f:endorsed/src/org.apache.sis.referencing/main/org/apache/sis/referencing/factory/ConcurrentAuthorityFactory.java",
+   "region": 1,
+   "lang": "Java",
+   "merge": "6942b672823f769dc75077209efbe4bbf4af890b",
+   "date": "2026-11-04T20:31:24+01:00",
+   "path": "endorsed/src/org.apache.sis.referencing/main/org/apache/sis/referencing/factory/ConcurrentAuthorityFactory.java"
+  },
+  {
+   "id": "sis@6942b672823f:endorsed/src/org.apache.sis.referencing/main/org/apache/sis/referencing/factory/ConcurrentAuthorityFactory.java",
+   "region": 2,
+   "lang": "Java",
+   "merge": "6942b672823f769dc75077209efbe4bbf4af890b",
+   "date": "2026-11-04T20:31:24+01:00",
+   "path": "endorsed/src/org.apache.sis.referencing/main/org/apache/sis/referencing/factory/ConcurrentAuthorityFactory.java"
+  },
+  {
+   "id": "sis@6942b672823f:endorsed/src/org.apache.sis.referencing/main/org/apache/sis/referencing/factory/ConcurrentAuthorityFactory.java",
+   "region": 3,
+   "lang": "Java",
+   "merge": "6942b672823f769dc75077209efbe4bbf4af890b",
+   "date": "2026-11-04T20:31:24+01:00",
+   "path": "endorsed/src/org.apache.sis.referencing/main/org/apache/sis/referencing/factory/ConcurrentAuthorityFactory.java"
+  },
+  {
+   "id": "sis@6942b672823f:endorsed/src/org.apache.sis.referencing/main/org/apache/sis/referencing/factory/GeodeticAuthorityFactory.java",
+   "region": 0,
+   "lang": "Java",
+   "merge": "6942b672823f769dc75077209efbe4bbf4af890b",
+   "date": "2026-11-04T20:31:24+01:00",
+   "path": "endorsed/src/org.apache.sis.referencing/main/org/apache/sis/referencing/factory/GeodeticAuthorityFactory.java"
+  },
+  {
+   "id": "sis@6942b672823f:endorsed/src/org.apache.sis.referencing/main/org/apache/sis/referencing/factory/GeodeticObjectFactory.java",
+   "region": 0,
+   "lang": "Java",
+   "merge": "6942b672823f769dc75077209efbe4bbf4af890b",
+   "date": "2026-11-04T20:31:24+01:00",
+   "path": "endorsed/src/org.apache.sis.referencing/main/org/apache/sis/referencing/factory/GeodeticObjectFactory.java"
+  },
+  {
+   "id": "sis@6942b672823f:endorsed/src/org.apache.sis.referencing/main/org/apache/sis/referencing/factory/GeodeticObjectFactory.java",
+   "region": 1,
+   "lang": "Java",
+   "merge": "6942b672823f769dc75077209efbe4bbf4af890b",
+   "date": "2026-11-04T20:31:24+01:00",
+   "path": "endorsed/src/org.apache.sis.referencing/main/org/apache/sis/referencing/factory/GeodeticObjectFactory.java"
+  },
+  {
+   "id": "sis@6942b672823f:endorsed/src/org.apache.sis.referencing/main/org/apache/sis/referencing/factory/GeodeticObjectFactory.java",
+   "region": 2,
+   "lang": "Java",
+   "merge": "6942b672823f769dc75077209efbe4bbf4af890b",
+   "date": "2026-11-04T20:31:24+01:00",
+   "path": "endorsed/src/org.apache.sis.referencing/main/org/apache/sis/referencing/factory/GeodeticObjectFactory.java"
+  },
+  {
+   "id": "sis@6942b672823f:endorsed/src/org.apache.sis.referencing/main/org/apache/sis/referencing/factory/MultiAuthoritiesFactory.java",
+   "region": 0,
+   "lang": "Java",
+   "merge": "6942b672823f769dc75077209efbe4bbf4af890b",
+   "date": "2026-11-04T20:31:24+01:00",
+   "path": "endorsed/src/org.apache.sis.referencing/main/org/apache/sis/referencing/factory/MultiAuthoritiesFactory.java"
+  },
+  {
+   "id": "sis@6942b672823f:endorsed/src/org.apache.sis.referencing/main/org/apache/sis/referencing/operation/transform/DefaultMathTransformFactory.java",
+   "region": 0,
+   "lang": "Java",
+   "merge": "6942b672823f769dc75077209efbe4bbf4af890b",
+   "date": "2026-11-04T20:31:24+01:00",
+   "path": "endorsed/src/org.apache.sis.referencing/main/org/apache/sis/referencing/operation/transform/DefaultMathTransformFactory.java"
+  },
+  {
+   "id": "sis@6942b672823f:endorsed/src/org.apache.sis.referencing/main/org/apache/sis/referencing/operation/transform/MathTransforms.java",
+   "region": 0,
+   "lang": "Java",
+   "merge": "6942b672823f769dc75077209efbe4bbf4af890b",
+   "date": "2026-11-04T20:31:24+01:00",
+   "path": "endorsed/src/org.apache.sis.referencing/main/org/apache/sis/referencing/operation/transform/MathTransforms.java"
+  },
+  {
+   "id": "sis@6942b672823f:endorsed/src/org.apache.sis.storage/main/org/apache/sis/storage/aggregate/JoinFeatureSet.java",
+   "region": 0,
+   "lang": "Java",
+   "merge": "6942b672823f769dc75077209efbe4bbf4af890b",
+   "date": "2026-11-04T20:31:24+01:00",
+   "path": "endorsed/src/org.apache.sis.storage/main/org/apache/sis/storage/aggregate/JoinFeatureSet.java"
+  },
+  {
+   "id": "sis@6942b672823f:endorsed/src/org.apache.sis.util/main/org/apache/sis/setup/GeometryLibrary.java",
+   "region": 0,
+   "lang": "Java",
+   "merge": "6942b672823f769dc75077209efbe4bbf4af890b",
+   "date": "2026-11-04T20:31:24+01:00",
+   "path": "endorsed/src/org.apache.sis.util/main/org/apache/sis/setup/GeometryLibrary.java"
+  },
+  {
+   "id": "sis@6942b672823f:endorsed/src/org.apache.sis.util/main/org/apache/sis/util/ArgumentChecks.java",
+   "region": 0,
+   "lang": "Java",
+   "merge": "6942b672823f769dc75077209efbe4bbf4af890b",
+   "date": "2026-11-04T20:31:24+01:00",
+   "path": "endorsed/src/org.apache.sis.util/main/org/apache/sis/util/ArgumentChecks.java"
+  },
+  {
+   "id": "sis@7d377bd53e78:endorsed/src/org.apache.sis.metadata/main/org/apache/sis/metadata/iso/acquisition/DefaultRequestedDate.java",
+   "region": 0,
+   "lang": "Java",
+   "merge": "7d377bd53e7889fc710c4eaeb93ab25723dbeee0",
+   "date": "2026-11-04T20:26:48+01:00",
+   "path": "endorsed/src/org.apache.sis.metadata/main/org/apache/sis/metadata/iso/acquisition/DefaultRequestedDate.java"
+  },
+  {
+   "id": "sis@7d377bd53e78:endorsed/src/org.apache.sis.metadata/main/org/apache/sis/metadata/iso/acquisition/DefaultRequirement.java",
+   "region": 0,
+   "lang": "Java",
+   "merge": "7d377bd53e7889fc710c4eaeb93ab25723dbeee0",
+   "date": "2026-11-04T20:26:48+01:00",
+   "path": "endorsed/src/org.apache.sis.metadata/main/org/apache/sis/metadata/iso/acquisition/DefaultRequirement.java"
+  },
+  {
+   "id": "sis@7d377bd53e78:endorsed/src/org.apache.sis.metadata/main/org/apache/sis/metadata/iso/citation/DefaultCitation.java",
+   "region": 0,
+   "lang": "Java",
+   "merge": "7d377bd53e7889fc710c4eaeb93ab25723dbeee0",
+   "date": "2026-11-04T20:26:48+01:00",
+   "path": "endorsed/src/org.apache.sis.metadata/main/org/apache/sis/metadata/iso/citation/DefaultCitation.java"
+  },
+  {
+   "id": "sis@7d377bd53e78:endorsed/src/org.apache.sis.referencing/main/org/apache/sis/referencing/crs/DefaultGeocentricCRS.java",
+   "region": 0,
+   "lang": "Java",
+   "merge": "7d377bd53e7889fc710c4eaeb93ab25723dbeee0",
+   "date": "2026-11-04T20:26:48+01:00",
+   "path": "endorsed/src/org.apache.sis.referencing/main/org/apache/sis/referencing/crs/DefaultGeocentricCRS.java"
+  },
+  {
+   "id": "sis@df002cfc99c2:buildSrc/src/main/java/org/apache/sis/buildtools/gradle/Dependency.java",
+   "region": 0,
+   "lang": "Java",
+   "merge": "df002cfc99c212def62c33ee2aac1680d23d6b5c",
+   "date": "2026-11-04T15:43:04+01:00",
+   "path": "buildSrc/src/main/java/org/apache/sis/buildtools/gradle/Dependency.java"
+  },
+  {
+   "id": "sis@45c820c45fdb:endorsed/src/org.apache.sis.feature/main/org/apache/sis/filter/BinaryGeometryFilter.java",
+   "region": 0,
+   "lang": "Java",
+   "merge": "45c820c45fdb9b5349b5a501dcc04edab3f0ca22",
+   "date": "2026-11-03T12:23:48+01:00",
+   "path": "endorsed/src/org.apache.sis.feature/main/org/apache/sis/filter/BinaryGeometryFilter.java"
+  },
+  {
+   "id": "sis@45c820c45fdb:endorsed/src/org.apache.sis.feature/main/org/apache/sis/filter/BinaryGeometryFilter.java",
+   "region": 1,
+   "lang": "Java",
+   "merge": "45c820c45fdb9b5349b5a501dcc04edab3f0ca22",
+   "date": "2026-11-03T12:23:48+01:00",
+   "path": "endorsed/src/org.apache.sis.feature/main/org/apache/sis/filter/BinaryGeometryFilter.java"
+  },
+  {
+   "id": "sis@45c820c45fdb:endorsed/src/org.apache.sis.feature/main/org/apache/sis/filter/sqlmm/TwoGeometries.java",
+   "region": 0,
+   "lang": "Java",
+   "merge": "45c820c45fdb9b5349b5a501dcc04edab3f0ca22",
+   "date": "2026-11-03T12:23:48+01:00",
+   "path": "endorsed/src/org.apache.sis.feature/main/org/apache/sis/filter/sqlmm/TwoGeometries.java"
+  },
+  {
+   "id": "sis@45c820c45fdb:endorsed/src/org.apache.sis.feature/main/org/apache/sis/geometry/wrapper/GeometryWrapper.java",
+   "region": 0,
+   "lang": "Java",
+   "merge": "45c820c45fdb9b5349b5a501dcc04edab3f0ca22",
+   "date": "2026-11-03T12:23:48+01:00",
+   "path": "endorsed/src/org.apache.sis.feature/main/org/apache/sis/geometry/wrapper/GeometryWrapper.java"
+  },
+  {
+   "id": "sis@45c820c45fdb:endorsed/src/org.apache.sis.feature/main/org/apache/sis/geometry/wrapper/GeometryWrapper.java",
+   "region": 1,
+   "lang": "Java",
+   "merge": "45c820c45fdb9b5349b5a501dcc04edab3f0ca22",
+   "date": "2026-11-03T12:23:48+01:00",
+   "path": "endorsed/src/org.apache.sis.feature/main/org/apache/sis/geometry/wrapper/GeometryWrapper.java"
+  },
+  {
+   "id": "sis@45c820c45fdb:endorsed/src/org.apache.sis.feature/main/org/apache/sis/geometry/wrapper/jts/Wrapper.java",
+   "region": 0,
+   "lang": "Java",
+   "merge": "45c820c45fdb9b5349b5a501dcc04edab3f0ca22",
+   "date": "2026-11-03T12:23:48+01:00",
+   "path": "endorsed/src/org.apache.sis.feature/main/org/apache/sis/geometry/wrapper/jts/Wrapper.java"
+  },
+  {
+   "id": "sis@45c820c45fdb:endorsed/src/org.apache.sis.referencing/main/org/apache/sis/referencing/CRS.java",
+   "region": 0,
+   "lang": "Java",
+   "merge": "45c820c45fdb9b5349b5a501dcc04edab3f0ca22",
+   "date": "2026-11-03T12:23:48+01:00",
+   "path": "endorsed/src/org.apache.sis.referencing/main/org/apache/sis/referencing/CRS.java"
+  },
+  {
+   "id": "sis@45c820c45fdb:endorsed/src/org.apache.sis.referencing/main/org/apache/sis/referencing/CRS.java",
+   "region": 3,
+   "lang": "Java",
+   "merge": "45c820c45fdb9b5349b5a501dcc04edab3f0ca22",
+   "date": "2026-11-03T12:23:48+01:00",
+   "path": "endorsed/src/org.apache.sis.referencing/main/org/apache/sis/referencing/CRS.java"
+  },
+  {
+   "id": "sis@45c820c45fdb:endorsed/src/org.apache.sis.referencing/main/org/apache/sis/referencing/EllipsoidalHeightSeparator.java",
+   "region": 0,
+   "lang": "Java",
+   "merge": "45c820c45fdb9b5349b5a501dcc04edab3f0ca22",
+   "date": "2026-11-03T12:23:48+01:00",
+   "path": "endorsed/src/org.apache.sis.referencing/main/org/apache/sis/referencing/EllipsoidalHeightSeparator.java"
+  },
+  {
+   "id": "sis@45c820c45fdb:endorsed/src/org.apache.sis.referencing/main/org/apache/sis/referencing/EllipsoidalHeightSeparator.java",
+   "region": 1,
+   "lang": "Java",
+   "merge": "45c820c45fdb9b5349b5a501dcc04edab3f0ca22",
+   "date": "2026-11-03T12:23:48+01:00",
+   "path": "endorsed/src/org.apache.sis.referencing/main/org/apache/sis/referencing/EllipsoidalHeightSeparator.java"
+  },
+  {
+   "id": "sis@45c820c45fdb:endorsed/src/org.apache.sis.referencing/main/org/apache/sis/referencing/EllipsoidalHeightSeparator.java",
+   "region": 2,
+   "lang": "Java",
+   "merge": "45c820c45fdb9b5349b5a501dcc04edab3f0ca22",
+   "date": "2026-11-03T12:23:48+01:00",
+   "path": "endorsed/src/org.apache.sis.referencing/main/org/apache/sis/referencing/EllipsoidalHeightSeparator.java"
+  },
+  {
+   "id": "sis@45c820c45fdb:endorsed/src/org.apache.sis.referencing/main/org/apache/sis/referencing/internal/shared/EllipsoidalHeightCombiner.java",
+   "region": 0,
+   "lang": "Java",
+   "merge": "45c820c45fdb9b5349b5a501dcc04edab3f0ca22",
+   "date": "2026-11-03T12:23:48+01:00",
+   "path": "endorsed/src/org.apache.sis.referencing/main/org/apache/sis/referencing/internal/shared/EllipsoidalHeightCombiner.java"
+  },
+  {
+   "id": "sis@45c820c45fdb:endorsed/src/org.apache.sis.referencing/main/org/apache/sis/referencing/internal/shared/EllipsoidalHeightCombiner.java",
+   "region": 1,
+   "lang": "Java",
+   "merge": "45c820c45fdb9b5349b5a501dcc04edab3f0ca22",
+   "date": "2026-11-03T12:23:48+01:00",
+   "path": "endorsed/src/org.apache.sis.referencing/main/org/apache/sis/referencing/internal/shared/EllipsoidalHeightCombiner.java"
+  },
+  {
+   "id": "sis@45c820c45fdb:endorsed/src/org.apache.sis.referencing/main/org/apache/sis/referencing/internal/shared/ReferencingUtilities.java",
+   "region": 0,
+   "lang": "Java",
+   "merge": "45c820c45fdb9b5349b5a501dcc04edab3f0ca22",
+   "date": "2026-11-03T12:23:48+01:00",
+   "path": "endorsed/src/org.apache.sis.referencing/main/org/apache/sis/referencing/internal/shared/ReferencingUtilities.java"
+  },
+  {
+   "id": "sis@45c820c45fdb:endorsed/src/org.apache.sis.referencing/main/org/apache/sis/referencing/internal/shared/ReferencingUtilities.java",
+   "region": 1,
+   "lang": "Java",
+   "merge": "45c820c45fdb9b5349b5a501dcc04edab3f0ca22",
+   "date": "2026-11-03T12:23:48+01:00",
+   "path": "endorsed/src/org.apache.sis.referencing/main/org/apache/sis/referencing/internal/shared/ReferencingUtilities.java"
+  },
+  {
+   "id": "sis@87f745fce9ea:endorsed/src/org.apache.sis.feature/main/org/apache/sis/geometry/wrapper/jts/Wrapper.java",
+   "region": 0,
+   "lang": "Java",
+   "merge": "87f745fce9eafaec5459187b66ca795fd4bd7c99",
+   "date": "2026-11-03T10:51:09+01:00",
+   "path": "endorsed/src/org.apache.sis.feature/main/org/apache/sis/geometry/wrapper/jts/Wrapper.java"
+  },
+  {
+   "id": "sis@87f745fce9ea:endorsed/src/org.apache.sis.referencing/main/org/apache/sis/referencing/CRS.java",
+   "region": 0,
+   "lang": "Java",
+   "merge": "87f745fce9eafaec5459187b66ca795fd4bd7c99",
+   "date": "2026-11-03T10:51:09+01:00",
+   "path": "endorsed/src/org.apache.sis.referencing/main/org/apache/sis/referencing/CRS.java"
+  },
+  {
+   "id": "sis@87f745fce9ea:endorsed/src/org.apache.sis.referencing/main/org/apache/sis/referencing/CRS.java",
+   "region": 1,
+   "lang": "Java",
+   "merge": "87f745fce9eafaec5459187b66ca795fd4bd7c99",
+   "date": "2026-11-03T10:51:09+01:00",
+   "path": "endorsed/src/org.apache.sis.referencing/main/org/apache/sis/referencing/CRS.java"
+  },
+  {
+   "id": "sis@87f745fce9ea:endorsed/src/org.apache.sis.referencing/main/org/apache/sis/referencing/EllipsoidalHeightSeparator.java",
+   "region": 0,
+   "lang": "Java",
+   "merge": "87f745fce9eafaec5459187b66ca795fd4bd7c99",
+   "date": "2026-11-03T10:51:09+01:00",
+   "path": "endorsed/src/org.apache.sis.referencing/main/org/apache/sis/referencing/EllipsoidalHeightSeparator.java"
+  },
+  {
+   "id": "sis@87f745fce9ea:endorsed/src/org.apache.sis.referencing/main/org/apache/sis/referencing/internal/shared/EllipsoidalHeightCombiner.java",
+   "region": 0,
+   "lang": "Java",
+   "merge": "87f745fce9eafaec5459187b66ca795fd4bd7c99",
+   "date": "2026-11-03T10:51:09+01:00",
+   "path": "endorsed/src/org.apache.sis.referencing/main/org/apache/sis/referencing/internal/shared/EllipsoidalHeightCombiner.java"
+  },
+  {
+   "id": "sis@87f745fce9ea:endorsed/src/org.apache.sis.referencing/main/org/apache/sis/referencing/internal/shared/EllipsoidalHeightCombiner.java",
+   "region": 1,
+   "lang": "Java",
+   "merge": "87f745fce9eafaec5459187b66ca795fd4bd7c99",
+   "date": "2026-11-03T10:51:09+01:00",
+   "path": "endorsed/src/org.apache.sis.referencing/main/org/apache/sis/referencing/internal/shared/EllipsoidalHeightCombiner.java"
+  },
+  {
+   "id": "sis@7b052340a2bf:endorsed/src/org.apache.sis.feature/main/org/apache/sis/coverage/RegionOfInterest.java",
+   "region": 0,
+   "lang": "Java",
+   "merge": "7b052340a2bf67de70f319d7bcdeff49b9b6ecc9",
+   "date": "2026-10-28T15:00:09+01:00",
+   "path": "endorsed/src/org.apache.sis.feature/main/org/apache/sis/coverage/RegionOfInterest.java"
+  },
+  {
+   "id": "sis@7b052340a2bf:endorsed/src/org.apache.sis.feature/main/org/apache/sis/coverage/grid/DomainLinearizer.java",
+   "region": 0,
+   "lang": "Java",
+   "merge": "7b052340a2bf67de70f319d7bcdeff49b9b6ecc9",
+   "date": "2026-10-28T15:00:09+01:00",
+   "path": "endorsed/src/org.apache.sis.feature/main/org/apache/sis/coverage/grid/DomainLinearizer.java"
+  },
+  {
+   "id": "sis@7b052340a2bf:endorsed/src/org.apache.sis.feature/main/org/apache/sis/coverage/grid/GridGeometry.java",
+   "region": 0,
+   "lang": "Java",
+   "merge": "7b052340a2bf67de70f319d7bcdeff49b9b6ecc9",
+   "date": "2026-10-28T15:00:09+01:00",
+   "path": "endorsed/src/org.apache.sis.feature/main/org/apache/sis/coverage/grid/GridGeometry.java"
+  },
+  {
+   "id": "sis@7b052340a2bf:endorsed/src/org.apache.sis.feature/main/org/apache/sis/coverage/grid/GridGeometry.java",
+   "region": 1,
+   "lang": "Java",
+   "merge": "7b052340a2bf67de70f319d7bcdeff49b9b6ecc9",
+   "date": "2026-10-28T15:00:09+01:00",
+   "path": "endorsed/src/org.apache.sis.feature/main/org/apache/sis/coverage/grid/GridGeometry.java"
+  },
+  {
+   "id": "sis@7b052340a2bf:endorsed/src/org.apache.sis.feature/main/org/apache/sis/geometry/wrapper/GeometryWrapper.java",
+   "region": 0,
+   "lang": "Java",
+   "merge": "7b052340a2bf67de70f319d7bcdeff49b9b6ecc9",
+   "date": "2026-10-28T15:00:09+01:00",
+   "path": "endorsed/src/org.apache.sis.feature/main/org/apache/sis/geometry/wrapper/GeometryWrapper.java"
+  },
+  {
+   "id": "sis@7b052340a2bf:endorsed/src/org.apache.sis.feature/main/org/apache/sis/geometry/wrapper/jts/Wrapper.java",
+   "region": 0,
+   "lang": "Java",
+   "merge": "7b052340a2bf67de70f319d7bcdeff49b9b6ecc9",
+   "date": "2026-10-28T15:00:09+01:00",
+   "path": "endorsed/src/org.apache.sis.feature/main/org/apache/sis/geometry/wrapper/jts/Wrapper.java"
+  },
+  {
+   "id": "sis@7b052340a2bf:endorsed/src/org.apache.sis.referencing/main/org/apache/sis/geometry/WraparoundAdjustment.java",
+   "region": 0,
+   "lang": "Java",
+   "merge": "7b052340a2bf67de70f319d7bcdeff49b9b6ecc9",
+   "date": "2026-10-28T15:00:09+01:00",
+   "path": "endorsed/src/org.apache.sis.referencing/main/org/apache/sis/geometry/WraparoundAdjustment.java"
+  },
+  {
+   "id": "sis@7b052340a2bf:endorsed/src/org.apache.sis.referencing/main/org/apache/sis/referencing/CRS.java",
+   "region": 0,
+   "lang": "Java",
+   "merge": "7b052340a2bf67de70f319d7bcdeff49b9b6ecc9",
+   "date": "2026-10-28T15:00:09+01:00",
+   "path": "endorsed/src/org.apache.sis.referencing/main/org/apache/sis/referencing/CRS.java"
+  },
+  {
+   "id": "sis@7b052340a2bf:endorsed/src/org.apache.sis.referencing/main/org/apache/sis/referencing/CRS.java",
+   "region": 1,
+   "lang": "Java",
+   "merge": "7b052340a2bf67de70f319d7bcdeff49b9b6ecc9",
+   "date": "2026-10-28T15:00:09+01:00",
+   "path": "endorsed/src/org.apache.sis.referencing/main/org/apache/sis/referencing/CRS.java"
+  },
+  {
+   "id": "sis@7b052340a2bf:endorsed/src/org.apache.sis.referencing/main/org/apache/sis/referencing/operation/SubOperationInfo.java",
+   "region": 0,
+   "lang": "Java",
+   "merge": "7b052340a2bf67de70f319d7bcdeff49b9b6ecc9",
+   "date": "2026-10-28T15:00:09+01:00",
+   "path": "endorsed/src/org.apache.sis.referencing/main/org/apache/sis/referencing/operation/SubOperationInfo.java"
+  },
+  {
+   "id": "sis@7b052340a2bf:endorsed/src/org.apache.sis.storage.netcdf/main/org/apache/sis/storage/netcdf/base/GridMapping.java",
+   "region": 0,
+   "lang": "Java",
+   "merge": "7b052340a2bf67de70f319d7bcdeff49b9b6ecc9",
+   "date": "2026-10-28T15:00:09+01:00",
+   "path": "endorsed/src/org.apache.sis.storage.netcdf/main/org/apache/sis/storage/netcdf/base/GridMapping.java"
+  },
+  {
+   "id": "sis@7b052340a2bf:endorsed/src/org.apache.sis.storage.netcdf/main/org/apache/sis/storage/netcdf/base/GridMapping.java",
+   "region": 1,
+   "lang": "Java",
+   "merge": "7b052340a2bf67de70f319d7bcdeff49b9b6ecc9",
+   "date": "2026-10-28T15:00:09+01:00",
+   "path": "endorsed/src/org.apache.sis.storage.netcdf/main/org/apache/sis/storage/netcdf/base/GridMapping.java"
+  },
+  {
+   "id": "sis@7b052340a2bf:endorsed/src/org.apache.sis.storage.netcdf/main/org/apache/sis/storage/netcdf/base/GridMapping.java",
+   "region": 2,
+   "lang": "Java",
+   "merge": "7b052340a2bf67de70f319d7bcdeff49b9b6ecc9",
+   "date": "2026-10-28T15:00:09+01:00",
+   "path": "endorsed/src/org.apache.sis.storage.netcdf/main/org/apache/sis/storage/netcdf/base/GridMapping.java"
+  },
+  {
+   "id": "sis@7b052340a2bf:endorsed/src/org.apache.sis.storage.netcdf/main/org/apache/sis/storage/netcdf/base/GridMapping.java",
+   "region": 3,
+   "lang": "Java",
+   "merge": "7b052340a2bf67de70f319d7bcdeff49b9b6ecc9",
+   "date": "2026-10-28T15:00:09+01:00",
+   "path": "endorsed/src/org.apache.sis.storage.netcdf/main/org/apache/sis/storage/netcdf/base/GridMapping.java"
+  },
+  {
+   "id": "sis@7b052340a2bf:endorsed/src/org.apache.sis.storage/main/org/apache/sis/storage/tiling/TileReadEvent.java",
+   "region": 0,
+   "lang": "Java",
+   "merge": "7b052340a2bf67de70f319d7bcdeff49b9b6ecc9",
+   "date": "2026-10-28T15:00:09+01:00",
+   "path": "endorsed/src/org.apache.sis.storage/main/org/apache/sis/storage/tiling/TileReadEvent.java"
+  },
+  {
+   "id": "sis@f78936afd08b:endorsed/src/org.apache.sis.referencing/main/org/apache/sis/referencing/operation/DefaultConcatenatedOperation.java",
+   "region": 0,
+   "lang": "Java",
+   "merge": "f78936afd08b7e133ad461cf29f7d8b4acd85396",
+   "date": "2026-10-28T13:15:27+01:00",
+   "path": "endorsed/src/org.apache.sis.referencing/main/org/apache/sis/referencing/operation/DefaultConcatenatedOperation.java"
+  },
+  {
+   "id": "sis@f78936afd08b:endorsed/src/org.apache.sis.storage.netcdf/main/org/apache/sis/storage/netcdf/base/GridMapping.java",
+   "region": 0,
+   "lang": "Java",
+   "merge": "f78936afd08b7e133ad461cf29f7d8b4acd85396",
+   "date": "2026-10-28T13:15:27+01:00",
+   "path": "endorsed/src/org.apache.sis.storage.netcdf/main/org/apache/sis/storage/netcdf/base/GridMapping.java"
+  },
+  {
+   "id": "sis@57b84010bf46:endorsed/src/org.apache.sis.feature/main/org/apache/sis/feature/InvalidFeatureException.java",
+   "region": 0,
+   "lang": "Java",
+   "merge": "57b84010bf46fc5be2d844c0be508603594c08cc",
+   "date": "2026-10-17T23:07:24+02:00",
+   "path": "endorsed/src/org.apache.sis.feature/main/org/apache/sis/feature/InvalidFeatureException.java"
+  },
+  {
+   "id": "sis@57b84010bf46:endorsed/src/org.apache.sis.feature/main/org/apache/sis/feature/InvalidFeatureException.java",
+   "region": 1,
+   "lang": "Java",
+   "merge": "57b84010bf46fc5be2d844c0be508603594c08cc",
+   "date": "2026-10-17T23:07:24+02:00",
+   "path": "endorsed/src/org.apache.sis.feature/main/org/apache/sis/feature/InvalidFeatureException.java"
+  },
+  {
+   "id": "sis@57b84010bf46:endorsed/src/org.apache.sis.referencing.gazetteer/main/org/apache/sis/referencing/gazetteer/GeohashReferenceSystem.java",
+   "region": 0,
+   "lang": "Java",
+   "merge": "57b84010bf46fc5be2d844c0be508603594c08cc",
+   "date": "2026-10-17T23:07:24+02:00",
+   "path": "endorsed/src/org.apache.sis.referencing.gazetteer/main/org/apache/sis/referencing/gazetteer/GeohashReferenceSystem.java"
+  },
+  {
+   "id": "sis@57b84010bf46:endorsed/src/org.apache.sis.referencing.gazetteer/main/org/apache/sis/referencing/gazetteer/MilitaryGridReferenceSystem.java",
+   "region": 0,
+   "lang": "Java",
+   "merge": "57b84010bf46fc5be2d844c0be508603594c08cc",
+   "date": "2026-10-17T23:07:24+02:00",
+   "path": "endorsed/src/org.apache.sis.referencing.gazetteer/main/org/apache/sis/referencing/gazetteer/MilitaryGridReferenceSystem.java"
+  },
+  {
+   "id": "sis@70ade1957417:incubator/src/org.apache.sis.geometry/main/org/apache/sis/geometries/internal/shared/DefaultBSplineSurface.java",
+   "region": 0,
+   "lang": "Java",
+   "merge": "70ade1957417e56a595314e2d8ea15402316d3af",
+   "date": "2026-10-17T22:43:29+02:00",
+   "path": "incubator/src/org.apache.sis.geometry/main/org/apache/sis/geometries/internal/shared/DefaultBSplineSurface.java"
+  },
+  {
+   "id": "sis@70ade1957417:incubator/src/org.apache.sis.geometry/main/org/apache/sis/geometries/internal/shared/DefaultBSplineSurface.java",
+   "region": 1,
+   "lang": "Java",
+   "merge": "70ade1957417e56a595314e2d8ea15402316d3af",
+   "date": "2026-10-17T22:43:29+02:00",
+   "path": "incubator/src/org.apache.sis.geometry/main/org/apache/sis/geometries/internal/shared/DefaultBSplineSurface.java"
+  },
+  {
+   "id": "sis@70ade1957417:incubator/src/org.apache.sis.geometry/main/org/apache/sis/geometries/internal/shared/DefaultBilinearGrid.java",
+   "region": 0,
+   "lang": "Java",
+   "merge": "70ade1957417e56a595314e2d8ea15402316d3af",
+   "date": "2026-10-17T22:43:29+02:00",
+   "path": "incubator/src/org.apache.sis.geometry/main/org/apache/sis/geometries/internal/shared/DefaultBilinearGrid.java"
+  },
+  {
+   "id": "sis@70ade1957417:incubator/src/org.apache.sis.geometry/main/org/apache/sis/geometries/internal/shared/DefaultNurbSurface.java",
+   "region": 0,
+   "lang": "Java",
+   "merge": "70ade1957417e56a595314e2d8ea15402316d3af",
+   "date": "2026-10-17T22:43:29+02:00",
+   "path": "incubator/src/org.apache.sis.geometry/main/org/apache/sis/geometries/internal/shared/DefaultNurbSurface.java"
+  },
+  {
+   "id": "sis@70ade1957417:incubator/src/org.apache.sis.geometry/main/org/apache/sis/geometries/internal/shared/DefaultNurbSurface.java",
+   "region": 1,
+   "lang": "Java",
+   "merge": "70ade1957417e56a595314e2d8ea15402316d3af",
+   "date": "2026-10-17T22:43:29+02:00",
+   "path": "incubator/src/org.apache.sis.geometry/main/org/apache/sis/geometries/internal/shared/DefaultNurbSurface.java"
+  },
+  {
+   "id": "sis@70ade1957417:incubator/src/org.apache.sis.geometry/main/org/apache/sis/geometries/surface/Ellipsoid.java",
+   "region": 1,
+   "lang": "Java",
+   "merge": "70ade1957417e56a595314e2d8ea15402316d3af",
+   "date": "2026-10-17T22:43:29+02:00",
+   "path": "incubator/src/org.apache.sis.geometry/main/org/apache/sis/geometries/surface/Ellipsoid.java"
+  },
+  {
+   "id": "sis@2fae73075932:incubator/src/org.apache.sis.geometry/main/org/apache/sis/geometries/internal/shared/DefaultBSplineSurface.java",
+   "region": 0,
+   "lang": "Java",
+   "merge": "2fae730759328fe8e11243cf85044e0c497a5ba4",
+   "date": "2026-10-09T14:01:13+02:00",
+   "path": "incubator/src/org.apache.sis.geometry/main/org/apache/sis/geometries/internal/shared/DefaultBSplineSurface.java"
+  },
+  {
+   "id": "sis@2fae73075932:incubator/src/org.apache.sis.geometry/main/org/apache/sis/geometries/solid/Sphere.java",
+   "region": 0,
+   "lang": "Java",
+   "merge": "2fae730759328fe8e11243cf85044e0c497a5ba4",
+   "date": "2026-10-09T14:01:13+02:00",
+   "path": "incubator/src/org.apache.sis.geometry/main/org/apache/sis/geometries/solid/Sphere.java"
+  },
+  {
+   "id": "sis@2fae73075932:incubator/src/org.apache.sis.geometry/main/org/apache/sis/geometries/solid/Sphere.java",
+   "region": 1,
+   "lang": "Java",
+   "merge": "2fae730759328fe8e11243cf85044e0c497a5ba4",
+   "date": "2026-10-09T14:01:13+02:00",
+   "path": "incubator/src/org.apache.sis.geometry/main/org/apache/sis/geometries/solid/Sphere.java"
+  },
+  {
+   "id": "sis@98a67510b91e:endorsed/src/org.apache.sis.feature/main/org/apache/sis/feature/DefaultFeatureType.java",
+   "region": 0,
+   "lang": "Java",
+   "merge": "98a67510b91eaeaaae60fa05be8fa4111eac3abc",
+   "date": "2026-10-02T12:58:54+02:00",
+   "path": "endorsed/src/org.apache.sis.feature/main/org/apache/sis/feature/DefaultFeatureType.java"
+  },
+  {
+   "id": "sis@98a67510b91e:endorsed/src/org.apache.sis.feature/main/org/apache/sis/filter/sqlmm/SQLMM.java",
+   "region": 0,
+   "lang": "Java",
+   "merge": "98a67510b91eaeaaae60fa05be8fa4111eac3abc",
+   "date": "2026-10-02T12:58:54+02:00",
+   "path": "endorsed/src/org.apache.sis.feature/main/org/apache/sis/filter/sqlmm/SQLMM.java"
+  },
+  {
+   "id": "sis@98a67510b91e:endorsed/src/org.apache.sis.metadata/main/org/apache/sis/metadata/iso/citation/DefaultContact.java",
+   "region": 0,
+   "lang": "Java",
+   "merge": "98a67510b91eaeaaae60fa05be8fa4111eac3abc",
+   "date": "2026-10-02T12:58:54+02:00",
+   "path": "endorsed/src/org.apache.sis.metadata/main/org/apache/sis/metadata/iso/citation/DefaultContact.java"
+  },
+  {
+   "id": "sis@98a67510b91e:endorsed/src/org.apache.sis.metadata/test/org/apache/sis/metadata/TreeNodeTest.java",
+   "region": 0,
+   "lang": "Java",
+   "merge": "98a67510b91eaeaaae60fa05be8fa4111eac3abc",
+   "date": "2026-10-02T12:58:54+02:00",
+   "path": "endorsed/src/org.apache.sis.metadata/test/org/apache/sis/metadata/TreeNodeTest.java"
+  },
+  {
+   "id": "sis@98a67510b91e:endorsed/src/org.apache.sis.metadata/test/org/apache/sis/metadata/TreeNodeTest.java",
+   "region": 1,
+   "lang": "Java",
+   "merge": "98a67510b91eaeaaae60fa05be8fa4111eac3abc",
+   "date": "2026-10-02T12:58:54+02:00",
+   "path": "endorsed/src/org.apache.sis.metadata/test/org/apache/sis/metadata/TreeNodeTest.java"
+  },
+  {
+   "id": "sis@98a67510b91e:endorsed/src/org.apache.sis.metadata/test/org/apache/sis/metadata/TreeNodeTest.java",
+   "region": 2,
+   "lang": "Java",
+   "merge": "98a67510b91eaeaaae60fa05be8fa4111eac3abc",
+   "date": "2026-10-02T12:58:54+02:00",
+   "path": "endorsed/src/org.apache.sis.metadata/test/org/apache/sis/metadata/TreeNodeTest.java"
+  },
+  {
+   "id": "sis@98a67510b91e:endorsed/src/org.apache.sis.metadata/test/org/apache/sis/metadata/TreeNodeTest.java",
+   "region": 3,
+   "lang": "Java",
+   "merge": "98a67510b91eaeaaae60fa05be8fa4111eac3abc",
+   "date": "2026-10-02T12:58:54+02:00",
+   "path": "endorsed/src/org.apache.sis.metadata/test/org/apache/sis/metadata/TreeNodeTest.java"
+  },
+  {
+   "id": "sis@98a67510b91e:endorsed/src/org.apache.sis.referencing/main/org/apache/sis/referencing/CRS.java",
+   "region": 0,
+   "lang": "Java",
+   "merge": "98a67510b91eaeaaae60fa05be8fa4111eac3abc",
+   "date": "2026-10-02T12:58:54+02:00",
+   "path": "endorsed/src/org.apache.sis.referencing/main/org/apache/sis/referencing/CRS.java"
+  },
+  {
+   "id": "sis@98a67510b91e:endorsed/src/org.apache.sis.referencing/main/org/apache/sis/referencing/CRS.java",
+   "region": 1,
+   "lang": "Java",
+   "merge": "98a67510b91eaeaaae60fa05be8fa4111eac3abc",
+   "date": "2026-10-02T12:58:54+02:00",
+   "path": "endorsed/src/org.apache.sis.referencing/main/org/apache/sis/referencing/CRS.java"
+  },
+  {
+   "id": "sis@98a67510b91e:endorsed/src/org.apache.sis.referencing/main/org/apache/sis/referencing/CommonCRS.java",
+   "region": 0,
+   "lang": "Java",
+   "merge": "98a67510b91eaeaaae60fa05be8fa4111eac3abc",
+   "date": "2026-10-02T12:58:54+02:00",
+   "path": "endorsed/src/org.apache.sis.referencing/main/org/apache/sis/referencing/CommonCRS.java"
+  },
+  {
+   "id": "sis@98a67510b91e:endorsed/src/org.apache.sis.referencing/main/org/apache/sis/referencing/CommonCRS.java",
+   "region": 1,
+   "lang": "Java",
+   "merge": "98a67510b91eaeaaae60fa05be8fa4111eac3abc",
+   "date": "2026-10-02T12:58:54+02:00",
+   "path": "endorsed/src/org.apache.sis.referencing/main/org/apache/sis/referencing/CommonCRS.java"
+  },
+  {
+   "id": "sis@98a67510b91e:endorsed/src/org.apache.sis.referencing/main/org/apache/sis/referencing/datum/DatumOrEnsemble.java",
+   "region": 0,
+   "lang": "Java",
+   "merge": "98a67510b91eaeaaae60fa05be8fa4111eac3abc",
+   "date": "2026-10-02T12:58:54+02:00",
+   "path": "endorsed/src/org.apache.sis.referencing/main/org/apache/sis/referencing/datum/DatumOrEnsemble.java"
+  },
+  {
+   "id": "sis@98a67510b91e:endorsed/src/org.apache.sis.referencing/main/org/apache/sis/referencing/datum/DatumOrEnsemble.java",
+   "region": 1,
+   "lang": "Java",
+   "merge": "98a67510b91eaeaaae60fa05be8fa4111eac3abc",
+   "date": "2026-10-02T12:58:54+02:00",
+   "path": "endorsed/src/org.apache.sis.referencing/main/org/apache/sis/referencing/datum/DatumOrEnsemble.java"
+  },
+  {
+   "id": "sis@98a67510b91e:endorsed/src/org.apache.sis.referencing/main/org/apache/sis/referencing/datum/DatumOrEnsemble.java",
+   "region": 2,
+   "lang": "Java",
+   "merge": "98a67510b91eaeaaae60fa05be8fa4111eac3abc",
+   "date": "2026-10-02T12:58:54+02:00",
+   "path": "endorsed/src/org.apache.sis.referencing/main/org/apache/sis/referencing/datum/DatumOrEnsemble.java"
+  },
+  {
+   "id": "sis@98a67510b91e:endorsed/src/org.apache.sis.storage.netcdf/main/org/apache/sis/storage/netcdf/base/Axis.java",
+   "region": 0,
+   "lang": "Java",
+   "merge": "98a67510b91eaeaaae60fa05be8fa4111eac3abc",
+   "date": "2026-10-02T12:58:54+02:00",
+   "path": "endorsed/src/org.apache.sis.storage.netcdf/main/org/apache/sis/storage/netcdf/base/Axis.java"
+  },
+  {
+   "id": "sis@98a67510b91e:endorsed/src/org.apache.sis.storage/main/org/apache/sis/storage/FeatureNaming.java",
+   "region": 0,
+   "lang": "Java",
+   "merge": "98a67510b91eaeaaae60fa05be8fa4111eac3abc",
+   "date": "2026-10-02T12:58:54+02:00",
+   "path": "endorsed/src/org.apache.sis.storage/main/org/apache/sis/storage/FeatureNaming.java"
+  },
+  {
+   "id": "sis@98a67510b91e:endorsed/src/org.apache.sis.util/main/org/apache/sis/measure/Range.java",
+   "region": 0,
+   "lang": "Java",
+   "merge": "98a67510b91eaeaaae60fa05be8fa4111eac3abc",
+   "date": "2026-10-02T12:58:54+02:00",
+   "path": "endorsed/src/org.apache.sis.util/main/org/apache/sis/measure/Range.java"
+  },
+  {
+   "id": "sis@e3efcc2eaa36:endorsed/src/org.apache.sis.metadata/test/org/apache/sis/metadata/TreeNodeTest.java",
+   "region": 2,
+   "lang": "Java",
+   "merge": "e3efcc2eaa365f15b174f4ffdd84f1c0b0621b7e",
+   "date": "2026-10-02T12:46:18+02:00",
+   "path": "endorsed/src/org.apache.sis.metadata/test/org/apache/sis/metadata/TreeNodeTest.java"
+  },
+  {
+   "id": "sis@e3efcc2eaa36:endorsed/src/org.apache.sis.metadata/test/org/apache/sis/metadata/TreeNodeTest.java",
+   "region": 3,
+   "lang": "Java",
+   "merge": "e3efcc2eaa365f15b174f4ffdd84f1c0b0621b7e",
+   "date": "2026-10-02T12:46:18+02:00",
+   "path": "endorsed/src/org.apache.sis.metadata/test/org/apache/sis/metadata/TreeNodeTest.java"
+  },
+  {
+   "id": "sis@9ce2bc304217:incubator/src/org.apache.sis.storage.shapefile/main/org/apache/sis/storage/internal/shared/FeatureSetContentEvent.java",
+   "region": 0,
+   "lang": "Java",
+   "merge": "9ce2bc304217beac87c79fcb80d80dab289b2c4d",
+   "date": "2026-10-01T13:52:27+02:00",
+   "path": "incubator/src/org.apache.sis.storage.shapefile/main/org/apache/sis/storage/internal/shared/FeatureSetContentEvent.java"
+  },
+  {
+   "id": "sis@9ce2bc304217:incubator/src/org.apache.sis.storage.shapefile/main/org/apache/sis/storage/internal/shared/FeatureSetModelEvent.java",
+   "region": 0,
+   "lang": "Java",
+   "merge": "9ce2bc304217beac87c79fcb80d80dab289b2c4d",
+   "date": "2026-10-01T13:52:27+02:00",
+   "path": "incubator/src/org.apache.sis.storage.shapefile/main/org/apache/sis/storage/internal/shared/FeatureSetModelEvent.java"
+  },
+  {
+   "id": "sis@11d079adf9ea:incubator/src/org.apache.sis.geometry/main/org/apache/sis/geometries/internal/shared/DefaultBSplineSurface.java",
+   "region": 0,
+   "lang": "Java",
+   "merge": "11d079adf9eace937007ea9505a9c33d360c3a42",
+   "date": "2026-10-01T13:50:19+02:00",
+   "path": "incubator/src/org.apache.sis.geometry/main/org/apache/sis/geometries/internal/shared/DefaultBSplineSurface.java"
+  },
+  {
+   "id": "sis@11d079adf9ea:incubator/src/org.apache.sis.geometry/main/org/apache/sis/geometries/internal/shared/DefaultBilinearGrid.java",
+   "region": 0,
+   "lang": "Java",
+   "merge": "11d079adf9eace937007ea9505a9c33d360c3a42",
+   "date": "2026-10-01T13:50:19+02:00",
+   "path": "incubator/src/org.apache.sis.geometry/main/org/apache/sis/geometries/internal/shared/DefaultBilinearGrid.java"
+  },
+  {
+   "id": "sis@11d079adf9ea:incubator/src/org.apache.sis.geometry/main/org/apache/sis/geometries/internal/shared/DefaultNurbSurface.java",
+   "region": 0,
+   "lang": "Java",
+   "merge": "11d079adf9eace937007ea9505a9c33d360c3a42",
+   "date": "2026-10-01T13:50:19+02:00",
+   "path": "incubator/src/org.apache.sis.geometry/main/org/apache/sis/geometries/internal/shared/DefaultNurbSurface.java"
+  },
+  {
+   "id": "sis@11d079adf9ea:incubator/src/org.apache.sis.geometry/main/org/apache/sis/geometries/solid/Sphere.java",
+   "region": 0,
+   "lang": "Java",
+   "merge": "11d079adf9eace937007ea9505a9c33d360c3a42",
+   "date": "2026-10-01T13:50:19+02:00",
+   "path": "incubator/src/org.apache.sis.geometry/main/org/apache/sis/geometries/solid/Sphere.java"
+  },
+  {
+   "id": "sis@11d079adf9ea:incubator/src/org.apache.sis.geometry/main/org/apache/sis/geometries/solid/Sphere.java",
+   "region": 1,
+   "lang": "Java",
+   "merge": "11d079adf9eace937007ea9505a9c33d360c3a42",
+   "date": "2026-10-01T13:50:19+02:00",
+   "path": "incubator/src/org.apache.sis.geometry/main/org/apache/sis/geometries/solid/Sphere.java"
+  },
+  {
+   "id": "sis@91b3d93094c6:endorsed/src/org.apache.sis.feature/main/module-info.java",
+   "region": 0,
+   "lang": "Java",
+   "merge": "91b3d93094c687ae1adbd3abc57c82b58aaf79ab",
+   "date": "2026-10-01T13:30:54+02:00",
+   "path": "endorsed/src/org.apache.sis.feature/main/module-info.java"
+  },
+  {
+   "id": "sis@91b3d93094c6:endorsed/src/org.apache.sis.feature/main/org/apache/sis/coverage/grid/GridCRSBuilder.java",
+   "region": 0,
+   "lang": "Java",
+   "merge": "91b3d93094c687ae1adbd3abc57c82b58aaf79ab",
+   "date": "2026-10-01T13:30:54+02:00",
+   "path": "endorsed/src/org.apache.sis.feature/main/org/apache/sis/coverage/grid/GridCRSBuilder.java"
+  },
+  {
+   "id": "sis@91b3d93094c6:endorsed/src/org.apache.sis.metadata/test/org/apache/sis/xml/ReferenceResolverTest.java",
+   "region": 0,
+   "lang": "Java",
+   "merge": "91b3d93094c687ae1adbd3abc57c82b58aaf79ab",
+   "date": "2026-10-01T13:30:54+02:00",
+   "path": "endorsed/src/org.apache.sis.metadata/test/org/apache/sis/xml/ReferenceResolverTest.java"
+  },
+  {
+   "id": "sis@91b3d93094c6:endorsed/src/org.apache.sis.referencing/main/org/apache/sis/referencing/operation/transform/MathTransformBuilder.java",
+   "region": 0,
+   "lang": "Java",
+   "merge": "91b3d93094c687ae1adbd3abc57c82b58aaf79ab",
+   "date": "2026-10-01T13:30:54+02:00",
+   "path": "endorsed/src/org.apache.sis.referencing/main/org/apache/sis/referencing/operation/transform/MathTransformBuilder.java"
+  },
+  {
+   "id": "sis@91b3d93094c6:endorsed/src/org.apache.sis.storage.earthobservation/test/org/apache/sis/storage/landsat/MetadataReaderTest.java",
+   "region": 0,
+   "lang": "Java",
+   "merge": "91b3d93094c687ae1adbd3abc57c82b58aaf79ab",
+   "date": "2026-10-01T13:30:54+02:00",
+   "path": "endorsed/src/org.apache.sis.storage.earthobservation/test/org/apache/sis/storage/landsat/MetadataReaderTest.java"
+  },
+  {
+   "id": "sis@91b3d93094c6:endorsed/src/org.apache.sis.storage.earthobservation/test/org/apache/sis/storage/landsat/MetadataReaderTest.java",
+   "region": 1,
+   "lang": "Java",
+   "merge": "91b3d93094c687ae1adbd3abc57c82b58aaf79ab",
+   "date": "2026-10-01T13:30:54+02:00",
+   "path": "endorsed/src/org.apache.sis.storage.earthobservation/test/org/apache/sis/storage/landsat/MetadataReaderTest.java"
+  },
+  {
+   "id": "sis@91b3d93094c6:incubator/src/org.apache.sis.storage.shapefile/main/org/apache/sis/storage/shapefile/ShapefileStore.java",
+   "region": 0,
+   "lang": "Java",
+   "merge": "91b3d93094c687ae1adbd3abc57c82b58aaf79ab",
+   "date": "2026-10-01T13:30:54+02:00",
+   "path": "incubator/src/org.apache.sis.storage.shapefile/main/org/apache/sis/storage/shapefile/ShapefileStore.java"
+  },
+  {
+   "id": "sis@91b3d93094c6:incubator/src/org.apache.sis.storage.shapefile/main/org/apache/sis/storage/shapefile/ShapefileStore.java",
+   "region": 3,
+   "lang": "Java",
+   "merge": "91b3d93094c687ae1adbd3abc57c82b58aaf79ab",
+   "date": "2026-10-01T13:30:54+02:00",
+   "path": "incubator/src/org.apache.sis.storage.shapefile/main/org/apache/sis/storage/shapefile/ShapefileStore.java"
+  },
+  {
+   "id": "sis@91b3d93094c6:incubator/src/org.apache.sis.storage.shapefile/main/org/apache/sis/storage/shapefile/ShapefileStore.java",
+   "region": 4,
+   "lang": "Java",
+   "merge": "91b3d93094c687ae1adbd3abc57c82b58aaf79ab",
+   "date": "2026-10-01T13:30:54+02:00",
+   "path": "incubator/src/org.apache.sis.storage.shapefile/main/org/apache/sis/storage/shapefile/ShapefileStore.java"
+  },
+  {
+   "id": "sis@91b3d93094c6:incubator/src/org.apache.sis.storage.shapefile/main/org/apache/sis/storage/shapefile/ShapefileStore.java",
+   "region": 5,
+   "lang": "Java",
+   "merge": "91b3d93094c687ae1adbd3abc57c82b58aaf79ab",
+   "date": "2026-10-01T13:30:54+02:00",
+   "path": "incubator/src/org.apache.sis.storage.shapefile/main/org/apache/sis/storage/shapefile/ShapefileStore.java"
+  },
+  {
+   "id": "sis@91b3d93094c6:incubator/src/org.apache.sis.storage.shapefile/main/org/apache/sis/storage/shapefile/ShapefileStore.java",
+   "region": 6,
+   "lang": "Java",
+   "merge": "91b3d93094c687ae1adbd3abc57c82b58aaf79ab",
+   "date": "2026-10-01T13:30:54+02:00",
+   "path": "incubator/src/org.apache.sis.storage.shapefile/main/org/apache/sis/storage/shapefile/ShapefileStore.java"
+  },
+  {
+   "id": "sis@91b3d93094c6:incubator/src/org.apache.sis.storage.shapefile/main/org/apache/sis/storage/shapefile/ShapefileStore.java",
+   "region": 9,
+   "lang": "Java",
+   "merge": "91b3d93094c687ae1adbd3abc57c82b58aaf79ab",
+   "date": "2026-10-01T13:30:54+02:00",
+   "path": "incubator/src/org.apache.sis.storage.shapefile/main/org/apache/sis/storage/shapefile/ShapefileStore.java"
+  },
+  {
+   "id": "sis@91b3d93094c6:incubator/src/org.apache.sis.storage.shapefile/test/org/apache/sis/storage/shapefile/ShapefileStoreTest.java",
+   "region": 0,
+   "lang": "Java",
+   "merge": "91b3d93094c687ae1adbd3abc57c82b58aaf79ab",
+   "date": "2026-10-01T13:30:54+02:00",
+   "path": "incubator/src/org.apache.sis.storage.shapefile/test/org/apache/sis/storage/shapefile/ShapefileStoreTest.java"
+  },
+  {
+   "id": "sis@91b3d93094c6:incubator/src/org.apache.sis.storage.shapefile/test/org/apache/sis/storage/shapefile/ShapefileStoreTest.java",
+   "region": 1,
+   "lang": "Java",
+   "merge": "91b3d93094c687ae1adbd3abc57c82b58aaf79ab",
+   "date": "2026-10-01T13:30:54+02:00",
+   "path": "incubator/src/org.apache.sis.storage.shapefile/test/org/apache/sis/storage/shapefile/ShapefileStoreTest.java"
+  },
+  {
+   "id": "sis@91b3d93094c6:incubator/src/org.apache.sis.storage.shapefile/test/org/apache/sis/storage/shapefile/ShapefileStoreTest.java",
+   "region": 2,
+   "lang": "Java",
+   "merge": "91b3d93094c687ae1adbd3abc57c82b58aaf79ab",
+   "date": "2026-10-01T13:30:54+02:00",
+   "path": "incubator/src/org.apache.sis.storage.shapefile/test/org/apache/sis/storage/shapefile/ShapefileStoreTest.java"
+  },
+  {
+   "id": "spring-boot@2b4abed87bdc:loader/spring-boot-loader/src/main/java/org/springframework/boot/loader/net/protocol/jar/JarUrlClassLoader.java",
+   "region": 0,
+   "lang": "Java",
+   "merge": "2b4abed87bdc129985f59afb14184ccdcdebb282",
+   "date": "2026-11-12T18:19:27-08:00",
+   "path": "loader/spring-boot-loader/src/main/java/org/springframework/boot/loader/net/protocol/jar/JarUrlClassLoader.java"
+  },
+  {
+   "id": "spring-boot@b1287153b6c5:build-plugin/spring-boot-gradle-plugin/src/test/java/org/springframework/boot/gradle/tasks/bundling/AbstractBootArchiveTests.java",
+   "region": 0,
+   "lang": "Java",
+   "merge": "b1287153b6c54c200ce397c401783c6d015fc852",
+   "date": "2026-11-12T13:19:51-08:00",
+   "path": "build-plugin/spring-boot-gradle-plugin/src/test/java/org/springframework/boot/gradle/tasks/bundling/AbstractBootArchiveTests.java"
+  },
+  {
+   "id": "spring-boot@30ef2bd262b1:module/spring-boot-batch-data-mongodb/src/main/java/org/springframework/boot/batch/mongodb/autoconfigure/BatchDataMongoAutoConfiguration.java",
+   "region": 0,
+   "lang": "Java",
+   "merge": "30ef2bd262b171115744b7de2c500c03afce2b12",
+   "date": "2026-11-03T14:18:53+01:00",
+   "path": "module/spring-boot-batch-data-mongodb/src/main/java/org/springframework/boot/batch/mongodb/autoconfigure/BatchDataMongoAutoConfiguration.java"
+  },
+  {
+   "id": "spring-boot@30ef2bd262b1:module/spring-boot-batch-data-mongodb/src/test/java/org/springframework/boot/batch/mongodb/autoconfigure/BatchDataMongoAutoConfigurationTests.java",
+   "region": 0,
+   "lang": "Java",
+   "merge": "30ef2bd262b171115744b7de2c500c03afce2b12",
+   "date": "2026-11-03T14:18:53+01:00",
+   "path": "module/spring-boot-batch-data-mongodb/src/test/java/org/springframework/boot/batch/mongodb/autoconfigure/BatchDataMongoAutoConfigurationTests.java"
+  },
+  {
+   "id": "spring-boot@962e348d8f90:module/spring-boot-batch-data-mongodb/src/test/java/org/springframework/boot/batch/mongodb/autoconfigure/BatchDataMongoAutoConfigurationTests.java",
+   "region": 0,
+   "lang": "Java",
+   "merge": "962e348d8f902eb635a456b93cb5a044907c9782",
+   "date": "2026-11-03T09:40:29Z",
+   "path": "module/spring-boot-batch-data-mongodb/src/test/java/org/springframework/boot/batch/mongodb/autoconfigure/BatchDataMongoAutoConfigurationTests.java"
+  },
+  {
+   "id": "spring-boot@09a1040cfd4e:module/spring-boot-amqp/src/test/java/org/springframework/boot/amqp/autoconfigure/RabbitPropertiesTests.java",
+   "region": 0,
+   "lang": "Java",
+   "merge": "09a1040cfd4efd0268aeaa998f1d17071ef16ffa",
+   "date": "2026-11-02T10:34:12+01:00",
+   "path": "module/spring-boot-amqp/src/test/java/org/springframework/boot/amqp/autoconfigure/RabbitPropertiesTests.java"
+  },
+  {
+   "id": "spring-boot@4bbdcd9e7832:module/spring-boot-micrometer-tracing-opentelemetry/src/main/java/org/springframework/boot/micrometer/tracing/opentelemetry/docker/compose/otlp/OpenTelemetryTracingDockerComposeConnectionDetailsFactory.java",
+   "region": 0,
+   "lang": "Java",
+   "merge": "4bbdcd9e78321a2d80efeeceaeb4f8136cfd6fd9",
+   "date": "2026-10-27T10:39:59Z",
+   "path": "module/spring-boot-micrometer-tracing-opentelemetry/src/main/java/org/springframework/boot/micrometer/tracing/opentelemetry/docker/compose/otlp/OpenTelemetryTracingDockerComposeConnectionDetailsFactory.java"
+  },
+  {
+   "id": "spring-boot@4bbdcd9e7832:module/spring-boot-micrometer-tracing-opentelemetry/src/main/java/org/springframework/boot/micrometer/tracing/opentelemetry/docker/compose/otlp/OpenTelemetryTracingDockerComposeConnectionDetailsFactory.java",
+   "region": 1,
+   "lang": "Java",
+   "merge": "4bbdcd9e78321a2d80efeeceaeb4f8136cfd6fd9",
+   "date": "2026-10-27T10:39:59Z",
+   "path": "module/spring-boot-micrometer-tracing-opentelemetry/src/main/java/org/springframework/boot/micrometer/tracing/opentelemetry/docker/compose/otlp/OpenTelemetryTracingDockerComposeConnectionDetailsFactory.java"
+  },
+  {
+   "id": "spring-boot@4bbdcd9e7832:module/spring-boot-micrometer-tracing-opentelemetry/src/main/java/org/springframework/boot/micrometer/tracing/opentelemetry/docker/compose/otlp/OpenTelemetryTracingDockerComposeConnectionDetailsFactory.java",
+   "region": 2,
+   "lang": "Java",
+   "merge": "4bbdcd9e78321a2d80efeeceaeb4f8136cfd6fd9",
+   "date": "2026-10-27T10:39:59Z",
+   "path": "module/spring-boot-micrometer-tracing-opentelemetry/src/main/java/org/springframework/boot/micrometer/tracing/opentelemetry/docker/compose/otlp/OpenTelemetryTracingDockerComposeConnectionDetailsFactory.java"
+  },
+  {
+   "id": "spring-boot@4bbdcd9e7832:module/spring-boot-opentelemetry/src/main/java/org/springframework/boot/opentelemetry/docker/compose/OtlpLoggingDockerComposeConnectionDetailsFactory.java",
+   "region": 0,
+   "lang": "Java",
+   "merge": "4bbdcd9e78321a2d80efeeceaeb4f8136cfd6fd9",
+   "date": "2026-10-27T10:39:59Z",
+   "path": "module/spring-boot-opentelemetry/src/main/java/org/springframework/boot/opentelemetry/docker/compose/OtlpLoggingDockerComposeConnectionDetailsFactory.java"
+  },
+  {
+   "id": "spring-boot@4bbdcd9e7832:module/spring-boot-opentelemetry/src/main/java/org/springframework/boot/opentelemetry/docker/compose/OtlpLoggingDockerComposeConnectionDetailsFactory.java",
+   "region": 2,
+   "lang": "Java",
+   "merge": "4bbdcd9e78321a2d80efeeceaeb4f8136cfd6fd9",
+   "date": "2026-10-27T10:39:59Z",
+   "path": "module/spring-boot-opentelemetry/src/main/java/org/springframework/boot/opentelemetry/docker/compose/OtlpLoggingDockerComposeConnectionDetailsFactory.java"
+  },
+  {
+   "id": "spring-boot@6d94aa43a228:loader/spring-boot-loader/src/main/java/org/springframework/boot/loader/net/protocol/jar/JarUrlClassLoader.java",
+   "region": 0,
+   "lang": "Java",
+   "merge": "6d94aa43a2289d117055aed5fd4ee70a46eaf052",
+   "date": "2026-10-18T12:32:36-07:00",
+   "path": "loader/spring-boot-loader/src/main/java/org/springframework/boot/loader/net/protocol/jar/JarUrlClassLoader.java"
+  },
+  {
+   "id": "spring-boot@6d94aa43a228:loader/spring-boot-loader/src/main/java/org/springframework/boot/loader/net/protocol/jar/JarUrlClassLoader.java",
+   "region": 1,
+   "lang": "Java",
+   "merge": "6d94aa43a2289d117055aed5fd4ee70a46eaf052",
+   "date": "2026-10-18T12:32:36-07:00",
+   "path": "loader/spring-boot-loader/src/main/java/org/springframework/boot/loader/net/protocol/jar/JarUrlClassLoader.java"
+  },
+  {
+   "id": "spring-boot@6d94aa43a228:loader/spring-boot-loader/src/main/java/org/springframework/boot/loader/net/protocol/jar/JarUrlClassLoader.java",
+   "region": 2,
+   "lang": "Java",
+   "merge": "6d94aa43a2289d117055aed5fd4ee70a46eaf052",
+   "date": "2026-10-18T12:32:36-07:00",
+   "path": "loader/spring-boot-loader/src/main/java/org/springframework/boot/loader/net/protocol/jar/JarUrlClassLoader.java"
+  },
+  {
+   "id": "spring-boot@6d94aa43a228:loader/spring-boot-loader/src/main/java/org/springframework/boot/loader/net/protocol/jar/JarUrlClassLoader.java",
+   "region": 3,
+   "lang": "Java",
+   "merge": "6d94aa43a2289d117055aed5fd4ee70a46eaf052",
+   "date": "2026-10-18T12:32:36-07:00",
+   "path": "loader/spring-boot-loader/src/main/java/org/springframework/boot/loader/net/protocol/jar/JarUrlClassLoader.java"
+  },
+  {
+   "id": "spring-boot@7c1870b15449:loader/spring-boot-loader/src/main/java/org/springframework/boot/loader/net/protocol/jar/JarUrlClassLoader.java",
+   "region": 0,
+   "lang": "Java",
+   "merge": "7c1870b1544912888d0b55dc70ae694d4da8a1ab",
+   "date": "2026-10-17T00:51:31-07:00",
+   "path": "loader/spring-boot-loader/src/main/java/org/springframework/boot/loader/net/protocol/jar/JarUrlClassLoader.java"
+  },
+  {
+   "id": "spring-boot@7c1870b15449:loader/spring-boot-loader/src/main/java/org/springframework/boot/loader/net/protocol/jar/JarUrlClassLoader.java",
+   "region": 1,
+   "lang": "Java",
+   "merge": "7c1870b1544912888d0b55dc70ae694d4da8a1ab",
+   "date": "2026-10-17T00:51:31-07:00",
+   "path": "loader/spring-boot-loader/src/main/java/org/springframework/boot/loader/net/protocol/jar/JarUrlClassLoader.java"
+  },
+  {
+   "id": "spring-boot@7c1870b15449:loader/spring-boot-loader/src/main/java/org/springframework/boot/loader/net/protocol/jar/JarUrlClassLoader.java",
+   "region": 2,
+   "lang": "Java",
+   "merge": "7c1870b1544912888d0b55dc70ae694d4da8a1ab",
+   "date": "2026-10-17T00:51:31-07:00",
+   "path": "loader/spring-boot-loader/src/main/java/org/springframework/boot/loader/net/protocol/jar/JarUrlClassLoader.java"
+  },
+  {
+   "id": "spring-boot@c6aa7811191a:module/spring-boot-jetty/src/main/java/org/springframework/boot/jetty/GracefulShutdown.java",
+   "region": 0,
+   "lang": "Java",
+   "merge": "c6aa7811191af3ec5d95190aa8dfd6e6591a09b1",
+   "date": "2026-10-14T00:00:29+01:00",
+   "path": "module/spring-boot-jetty/src/main/java/org/springframework/boot/jetty/GracefulShutdown.java"
+  },
+  {
+   "id": "spring-boot@c6aa7811191a:module/spring-boot-jetty/src/main/java/org/springframework/boot/jetty/GracefulShutdown.java",
+   "region": 1,
+   "lang": "Java",
+   "merge": "c6aa7811191af3ec5d95190aa8dfd6e6591a09b1",
+   "date": "2026-10-14T00:00:29+01:00",
+   "path": "module/spring-boot-jetty/src/main/java/org/springframework/boot/jetty/GracefulShutdown.java"
+  },
+  {
+   "id": "stroom@6393e72a1ed6:stroom-app-gwt/src/main/java/stroom/app/client/gin/AppGinjectorUser.java",
+   "region": 1,
+   "lang": "Java",
+   "merge": "6393e72a1ed6f79187d92eb1b8168f001f339df3",
+   "date": "2026-11-12T19:51:39Z",
+   "path": "stroom-app-gwt/src/main/java/stroom/app/client/gin/AppGinjectorUser.java"
+  },
+  {
+   "id": "stroom@6393e72a1ed6:stroom-core-client/src/main/java/stroom/credentials/client/gin/CredentialsModule.java",
+   "region": 0,
+   "lang": "Java",
+   "merge": "6393e72a1ed6f79187d92eb1b8168f001f339df3",
+   "date": "2026-11-12T19:51:39Z",
+   "path": "stroom-core-client/src/main/java/stroom/credentials/client/gin/CredentialsModule.java"
+  },
+  {
+   "id": "stroom@6393e72a1ed6:stroom-core-client/src/main/java/stroom/query/client/DataSourceClient.java",
+   "region": 1,
+   "lang": "Java",
+   "merge": "6393e72a1ed6f79187d92eb1b8168f001f339df3",
+   "date": "2026-11-12T19:51:39Z",
+   "path": "stroom-core-client/src/main/java/stroom/query/client/DataSourceClient.java"
+  },
+  {
+   "id": "stroom@6393e72a1ed6:stroom-query/stroom-query-api/src/main/java/stroom/query/api/datasource/FindFieldCriteria.java",
+   "region": 1,
+   "lang": "Java",
+   "merge": "6393e72a1ed6f79187d92eb1b8168f001f339df3",
+   "date": "2026-11-12T19:51:39Z",
+   "path": "stroom-query/stroom-query-api/src/main/java/stroom/query/api/datasource/FindFieldCriteria.java"
+  },
+  {
+   "id": "stroom@6393e72a1ed6:stroom-query/stroom-query-api/src/main/java/stroom/query/api/datasource/FindFieldCriteria.java",
+   "region": 2,
+   "lang": "Java",
+   "merge": "6393e72a1ed6f79187d92eb1b8168f001f339df3",
+   "date": "2026-11-12T19:51:39Z",
+   "path": "stroom-query/stroom-query-api/src/main/java/stroom/query/api/datasource/FindFieldCriteria.java"
+  },
+  {
+   "id": "stroom@6393e72a1ed6:stroom-query/stroom-query-common/src/main/java/stroom/query/common/v2/DataSourceProviderRegistry.java",
+   "region": 0,
+   "lang": "Java",
+   "merge": "6393e72a1ed6f79187d92eb1b8168f001f339df3",
+   "date": "2026-11-12T19:51:39Z",
+   "path": "stroom-query/stroom-query-common/src/main/java/stroom/query/common/v2/DataSourceProviderRegistry.java"
+  },
+  {
+   "id": "stroom@d15ef9cbb975:stroom-ai/stroom-ai-impl/src/main/java/stroom/ai/impl/AiServiceImpl.java",
+   "region": 0,
+   "lang": "Java",
+   "merge": "d15ef9cbb975c261b9c9e7f6e0bfb380185437bc",
+   "date": "2026-11-11T17:03:40Z",
+   "path": "stroom-ai/stroom-ai-impl/src/main/java/stroom/ai/impl/AiServiceImpl.java"
+  },
+  {
+   "id": "stroom@639639890788:stroom-core-client/src/main/java/stroom/query/client/gin/QueryModule.java",
+   "region": 0,
+   "lang": "Java",
+   "merge": "639639890788ff1bb878e67c0c104afad8d8baa2",
+   "date": "2026-11-10T19:27:19Z",
+   "path": "stroom-core-client/src/main/java/stroom/query/client/gin/QueryModule.java"
+  },
+  {
+   "id": "stroom@ecc36f82c0fa:stroom-ai/stroom-ai-impl/src/main/java/stroom/ai/impl/AskStroomAIService.java",
+   "region": 1,
+   "lang": "Java",
+   "merge": "ecc36f82c0fa58b237a2049efdd5a35e81ddcd2b",
+   "date": "2026-11-09T11:48:01Z",
+   "path": "stroom-ai/stroom-ai-impl/src/main/java/stroom/ai/impl/AskStroomAIService.java"
+  },
+  {
+   "id": "stroom@ecc36f82c0fa:stroom-ai/stroom-ai-impl/src/main/java/stroom/ai/impl/AskStroomAIService.java",
+   "region": 2,
+   "lang": "Java",
+   "merge": "ecc36f82c0fa58b237a2049efdd5a35e81ddcd2b",
+   "date": "2026-11-09T11:48:01Z",
+   "path": "stroom-ai/stroom-ai-impl/src/main/java/stroom/ai/impl/AskStroomAIService.java"
+  },
+  {
+   "id": "stroom@ecc36f82c0fa:stroom-ai/stroom-ai-impl/src/main/java/stroom/ai/impl/AskStroomAIService.java",
+   "region": 3,
+   "lang": "Java",
+   "merge": "ecc36f82c0fa58b237a2049efdd5a35e81ddcd2b",
+   "date": "2026-11-09T11:48:01Z",
+   "path": "stroom-ai/stroom-ai-impl/src/main/java/stroom/ai/impl/AskStroomAIService.java"
+  },
+  {
+   "id": "stroom@ecc36f82c0fa:stroom-core-shared/src/main/java/stroom/credentials/shared/Credential.java",
+   "region": 0,
+   "lang": "Java",
+   "merge": "ecc36f82c0fa58b237a2049efdd5a35e81ddcd2b",
+   "date": "2026-11-09T11:48:01Z",
+   "path": "stroom-core-shared/src/main/java/stroom/credentials/shared/Credential.java"
+  },
+  {
+   "id": "stroom@ecc36f82c0fa:stroom-credentials/stroom-credentials-impl/src/main/java/stroom/credentials/impl/CredentialsService.java",
+   "region": 0,
+   "lang": "Java",
+   "merge": "ecc36f82c0fa58b237a2049efdd5a35e81ddcd2b",
+   "date": "2026-11-09T11:48:01Z",
+   "path": "stroom-credentials/stroom-credentials-impl/src/main/java/stroom/credentials/impl/CredentialsService.java"
+  },
+  {
+   "id": "stroom@1a0cfd9a060c:stroom-docstore/stroom-docstore-impl/src/main/java/stroom/docstore/impl/dao/MockDocDependencyService.java",
+   "region": 0,
+   "lang": "Java",
+   "merge": "1a0cfd9a060c70f1cfe863416db61a068608a49a",
+   "date": "2026-11-06T17:37:16Z",
+   "path": "stroom-docstore/stroom-docstore-impl/src/main/java/stroom/docstore/impl/dao/MockDocDependencyService.java"
+  },
+  {
+   "id": "stroom@1a0cfd9a060c:stroom-processor/stroom-processor-impl-db/src/main/java/stroom/processor/impl/db/jooq/tables/ProcessorFilter.java",
+   "region": 0,
+   "lang": "Java",
+   "merge": "1a0cfd9a060c70f1cfe863416db61a068608a49a",
+   "date": "2026-11-06T17:37:16Z",
+   "path": "stroom-processor/stroom-processor-impl-db/src/main/java/stroom/processor/impl/db/jooq/tables/ProcessorFilter.java"
+  },
+  {
+   "id": "stroom@1a0cfd9a060c:stroom-processor/stroom-processor-impl-db/src/main/java/stroom/processor/impl/db/jooq/tables/records/ProcessorFilterRecord.java",
+   "region": 0,
+   "lang": "Java",
+   "merge": "1a0cfd9a060c70f1cfe863416db61a068608a49a",
+   "date": "2026-11-06T17:37:16Z",
+   "path": "stroom-processor/stroom-processor-impl-db/src/main/java/stroom/processor/impl/db/jooq/tables/records/ProcessorFilterRecord.java"
+  },
+  {
+   "id": "stroom@1a0cfd9a060c:stroom-processor/stroom-processor-impl/src/main/java/stroom/processor/impl/MockProcessorFilterDao.java",
+   "region": 0,
+   "lang": "Java",
+   "merge": "1a0cfd9a060c70f1cfe863416db61a068608a49a",
+   "date": "2026-11-06T17:37:16Z",
+   "path": "stroom-processor/stroom-processor-impl/src/main/java/stroom/processor/impl/MockProcessorFilterDao.java"
+  },
+  {
+   "id": "stroom@852de58ed2e1:stroom-credentials/stroom-credentials-impl/src/main/java/stroom/credentials/impl/CredentialsService.java",
+   "region": 1,
+   "lang": "Java",
+   "merge": "852de58ed2e1f071aa63e235126f094ed7d78362",
+   "date": "2026-11-05T12:19:06Z",
+   "path": "stroom-credentials/stroom-credentials-impl/src/main/java/stroom/credentials/impl/CredentialsService.java"
+  },
+  {
+   "id": "stroom@852de58ed2e1:stroom-explorer/stroom-explorer-impl/src/main/java/stroom/explorer/impl/PermissionChangeResourceImpl.java",
+   "region": 0,
+   "lang": "Java",
+   "merge": "852de58ed2e1f071aa63e235126f094ed7d78362",
+   "date": "2026-11-05T12:19:06Z",
+   "path": "stroom-explorer/stroom-explorer-impl/src/main/java/stroom/explorer/impl/PermissionChangeResourceImpl.java"
+  },
+  {
+   "id": "stroom@8aaef288dfc1:stroom-pathways/stroom-pathways-impl/src/main/java/stroom/pathways/impl/PathwaysStoreImpl.java",
+   "region": 0,
+   "lang": "Java",
+   "merge": "8aaef288dfc15ca43a5454005615144ef3d64892",
+   "date": "2026-11-04T15:29:34Z",
+   "path": "stroom-pathways/stroom-pathways-impl/src/main/java/stroom/pathways/impl/PathwaysStoreImpl.java"
+  },
+  {
+   "id": "stroom@49468389f3d3:stroom-core-client/src/main/java/stroom/dashboard/client/table/TableColumnValuesDataSupplier.java",
+   "region": 0,
+   "lang": "Java",
+   "merge": "49468389f3d3e8c7c7f259369400ce269c3e0137",
+   "date": "2026-11-04T13:48:58Z",
+   "path": "stroom-core-client/src/main/java/stroom/dashboard/client/table/TableColumnValuesDataSupplier.java"
+  },
+  {
+   "id": "stroom@49468389f3d3:stroom-core-shared/src/main/java/stroom/dashboard/shared/ColumnValues.java",
+   "region": 1,
+   "lang": "Java",
+   "merge": "49468389f3d3e8c7c7f259369400ce269c3e0137",
+   "date": "2026-11-04T13:48:58Z",
+   "path": "stroom-core-shared/src/main/java/stroom/dashboard/shared/ColumnValues.java"
+  },
+  {
+   "id": "stroom@47398133b2fc:stroom-dashboard-gwt/src/main/java/stroom/dashboard/client/gin/DashboardAppModule.java",
+   "region": 1,
+   "lang": "Java",
+   "merge": "47398133b2fcd5a6e81ff547a885e96ffef10e98",
+   "date": "2026-11-02T13:48:14Z",
+   "path": "stroom-dashboard-gwt/src/main/java/stroom/dashboard/client/gin/DashboardAppModule.java"
+  },
+  {
+   "id": "stroom@f23107ca302c:stroom-data/stroom-data-store-impl-fs/src/main/java/stroom/data/store/impl/fs/PhysicalDeleteExecutor.java",
+   "region": 2,
+   "lang": "Java",
+   "merge": "f23107ca302c74a3d57aff366d8f067133c1fbd0",
+   "date": "2026-10-30T13:13:31Z",
+   "path": "stroom-data/stroom-data-store-impl-fs/src/main/java/stroom/data/store/impl/fs/PhysicalDeleteExecutor.java"
+  },
+  {
+   "id": "stroom@f23107ca302c:stroom-data/stroom-data-store-impl-fs/src/main/java/stroom/data/store/impl/fs/PhysicalDeleteExecutor.java",
+   "region": 3,
+   "lang": "Java",
+   "merge": "f23107ca302c74a3d57aff366d8f067133c1fbd0",
+   "date": "2026-10-30T13:13:31Z",
+   "path": "stroom-data/stroom-data-store-impl-fs/src/main/java/stroom/data/store/impl/fs/PhysicalDeleteExecutor.java"
+  },
+  {
+   "id": "stroom@fa64a971e87c:stroom-core-client/src/main/java/stroom/explorer/client/presenter/NavigationPresenter.java",
+   "region": 3,
+   "lang": "Java",
+   "merge": "fa64a971e87c7b8d85cfdd939a09f1dd731570e9",
+   "date": "2026-10-27T15:02:57Z",
+   "path": "stroom-core-client/src/main/java/stroom/explorer/client/presenter/NavigationPresenter.java"
+  },
+  {
+   "id": "stroom@fa64a971e87c:stroom-core-client/src/main/java/stroom/importexport/client/presenter/ExportConfigPresenter.java",
+   "region": 1,
+   "lang": "Java",
+   "merge": "fa64a971e87c7b8d85cfdd939a09f1dd731570e9",
+   "date": "2026-10-27T15:02:57Z",
+   "path": "stroom-core-client/src/main/java/stroom/importexport/client/presenter/ExportConfigPresenter.java"
+  },
+  {
+   "id": "stroom@02cbef8edb29:stroom-core-client-widget/src/main/java/stroom/widget/menu/client/presenter/Menu.java",
+   "region": 2,
+   "lang": "Java",
+   "merge": "02cbef8edb29e9d407a66a727706006bc68d44ac",
+   "date": "2026-10-24T16:26:17+01:00",
+   "path": "stroom-core-client-widget/src/main/java/stroom/widget/menu/client/presenter/Menu.java"
+  },
+  {
+   "id": "stroom@02cbef8edb29:stroom-core-client-widget/src/main/java/stroom/widget/menu/client/presenter/Menu.java",
+   "region": 4,
+   "lang": "Java",
+   "merge": "02cbef8edb29e9d407a66a727706006bc68d44ac",
+   "date": "2026-10-24T16:26:17+01:00",
+   "path": "stroom-core-client-widget/src/main/java/stroom/widget/menu/client/presenter/Menu.java"
+  },
+  {
+   "id": "stroom@02cbef8edb29:stroom-core-client-widget/src/main/java/stroom/widget/menu/client/presenter/MenuViewImpl.java",
+   "region": 1,
+   "lang": "Java",
+   "merge": "02cbef8edb29e9d407a66a727706006bc68d44ac",
+   "date": "2026-10-24T16:26:17+01:00",
+   "path": "stroom-core-client-widget/src/main/java/stroom/widget/menu/client/presenter/MenuViewImpl.java"
+  },
+  {
+   "id": "stroom@02cbef8edb29:stroom-core-client/src/main/java/stroom/analytics/client/presenter/DuplicateManagementListPresenter.java",
+   "region": 0,
+   "lang": "Java",
+   "merge": "02cbef8edb29e9d407a66a727706006bc68d44ac",
+   "date": "2026-10-24T16:26:17+01:00",
+   "path": "stroom-core-client/src/main/java/stroom/analytics/client/presenter/DuplicateManagementListPresenter.java"
+  },
+  {
+   "id": "stroom@02cbef8edb29:stroom-core-client/src/main/java/stroom/annotation/client/AnnotationEditPresenter.java",
+   "region": 0,
+   "lang": "Java",
+   "merge": "02cbef8edb29e9d407a66a727706006bc68d44ac",
+   "date": "2026-10-24T16:26:17+01:00",
+   "path": "stroom-core-client/src/main/java/stroom/annotation/client/AnnotationEditPresenter.java"
+  },
+  {
+   "id": "stroom@02cbef8edb29:stroom-core-client/src/main/java/stroom/annotation/client/AnnotationTagListPresenter.java",
+   "region": 0,
+   "lang": "Java",
+   "merge": "02cbef8edb29e9d407a66a727706006bc68d44ac",
+   "date": "2026-10-24T16:26:17+01:00",
+   "path": "stroom-core-client/src/main/java/stroom/annotation/client/AnnotationTagListPresenter.java"
+  },
+  {
+   "id": "stroom@02cbef8edb29:stroom-core-client/src/main/java/stroom/annotation/client/LinkedEventPresenter.java",
+   "region": 0,
+   "lang": "Java",
+   "merge": "02cbef8edb29e9d407a66a727706006bc68d44ac",
+   "date": "2026-10-24T16:26:17+01:00",
+   "path": "stroom-core-client/src/main/java/stroom/annotation/client/LinkedEventPresenter.java"
+  },
+  {
+   "id": "stroom@02cbef8edb29:stroom-core-client/src/main/java/stroom/cache/client/presenter/CacheListPresenter.java",
+   "region": 0,
+   "lang": "Java",
+   "merge": "02cbef8edb29e9d407a66a727706006bc68d44ac",
+   "date": "2026-10-24T16:26:17+01:00",
+   "path": "stroom-core-client/src/main/java/stroom/cache/client/presenter/CacheListPresenter.java"
+  },
+  {
+   "id": "stroom@02cbef8edb29:stroom-core-client/src/main/java/stroom/cache/client/presenter/CacheNodeListPresenter.java",
+   "region": 0,
+   "lang": "Java",
+   "merge": "02cbef8edb29e9d407a66a727706006bc68d44ac",
+   "date": "2026-10-24T16:26:17+01:00",
+   "path": "stroom-core-client/src/main/java/stroom/cache/client/presenter/CacheNodeListPresenter.java"
+  },
+  {
+   "id": "stroom@02cbef8edb29:stroom-core-client/src/main/java/stroom/config/global/client/presenter/ConfigPropertyClusterValuesListPresenter.java",
+   "region": 0,
+   "lang": "Java",
+   "merge": "02cbef8edb29e9d407a66a727706006bc68d44ac",
+   "date": "2026-10-24T16:26:17+01:00",
+   "path": "stroom-core-client/src/main/java/stroom/config/global/client/presenter/ConfigPropertyClusterValuesListPresenter.java"
+  },
+  {
+   "id": "stroom@02cbef8edb29:stroom-core-client/src/main/java/stroom/credentials/client/presenter/CredentialsListPresenter.java",
+   "region": 0,
+   "lang": "Java",
+   "merge": "02cbef8edb29e9d407a66a727706006bc68d44ac",
+   "date": "2026-10-24T16:26:17+01:00",
+   "path": "stroom-core-client/src/main/java/stroom/credentials/client/presenter/CredentialsListPresenter.java"
+  },
+  {
+   "id": "stroom@02cbef8edb29:stroom-core-client/src/main/java/stroom/dashboard/client/input/ColumnSelectionPresenter.java",
+   "region": 0,
+   "lang": "Java",
+   "merge": "02cbef8edb29e9d407a66a727706006bc68d44ac",
+   "date": "2026-10-24T16:26:17+01:00",
+   "path": "stroom-core-client/src/main/java/stroom/dashboard/client/input/ColumnSelectionPresenter.java"
+  },
+  {
+   "id": "stroom@02cbef8edb29:stroom-core-client/src/main/java/stroom/dashboard/client/query/QueryPresenter.java",
+   "region": 0,
+   "lang": "Java",
+   "merge": "02cbef8edb29e9d407a66a727706006bc68d44ac",
+   "date": "2026-10-24T16:26:17+01:00",
+   "path": "stroom-core-client/src/main/java/stroom/dashboard/client/query/QueryPresenter.java"
+  },
+  {
+   "id": "stroom@02cbef8edb29:stroom-core-client/src/main/java/stroom/dashboard/client/query/SelectionHandlerListPresenter.java",
+   "region": 0,
+   "lang": "Java",
+   "merge": "02cbef8edb29e9d407a66a727706006bc68d44ac",
+   "date": "2026-10-24T16:26:17+01:00",
+   "path": "stroom-core-client/src/main/java/stroom/dashboard/client/query/SelectionHandlerListPresenter.java"
+  },
+  {
+   "id": "stroom@02cbef8edb29:stroom-core-client/src/main/java/stroom/dashboard/client/table/TablePresenter.java",
+   "region": 0,
+   "lang": "Java",
+   "merge": "02cbef8edb29e9d407a66a727706006bc68d44ac",
+   "date": "2026-10-24T16:26:17+01:00",
+   "path": "stroom-core-client/src/main/java/stroom/dashboard/client/table/TablePresenter.java"
+  },
+  {
+   "id": "stroom@02cbef8edb29:stroom-core-client/src/main/java/stroom/dashboard/client/table/cf/RuleListPresenter.java",
+   "region": 1,
+   "lang": "Java",
+   "merge": "02cbef8edb29e9d407a66a727706006bc68d44ac",
+   "date": "2026-10-24T16:26:17+01:00",
+   "path": "stroom-core-client/src/main/java/stroom/dashboard/client/table/cf/RuleListPresenter.java"
+  },
+  {
+   "id": "stroom@02cbef8edb29:stroom-core-client/src/main/java/stroom/data/store/impl/fs/client/presenter/FsVolumeStatusListPresenter.java",
+   "region": 0,
+   "lang": "Java",
+   "merge": "02cbef8edb29e9d407a66a727706006bc68d44ac",
+   "date": "2026-10-24T16:26:17+01:00",
+   "path": "stroom-core-client/src/main/java/stroom/data/store/impl/fs/client/presenter/FsVolumeStatusListPresenter.java"
+  },
+  {
+   "id": "stroom@02cbef8edb29:stroom-core-client/src/main/java/stroom/dictionary/client/presenter/DocRefListPresenter.java",
+   "region": 0,
+   "lang": "Java",
+   "merge": "02cbef8edb29e9d407a66a727706006bc68d44ac",
+   "date": "2026-10-24T16:26:17+01:00",
+   "path": "stroom-core-client/src/main/java/stroom/dictionary/client/presenter/DocRefListPresenter.java"
+  },
+  {
+   "id": "stroom@02cbef8edb29:stroom-core-client/src/main/java/stroom/explorer/client/presenter/DocumentPermissionsListPresenter.java",
+   "region": 0,
+   "lang": "Java",
+   "merge": "02cbef8edb29e9d407a66a727706006bc68d44ac",
+   "date": "2026-10-24T16:26:17+01:00",
+   "path": "stroom-core-client/src/main/java/stroom/explorer/client/presenter/DocumentPermissionsListPresenter.java"
+  },
+  {
+   "id": "stroom@02cbef8edb29:stroom-core-client/src/main/java/stroom/explorer/client/presenter/TypeFilterPresenter.java",
+   "region": 0,
+   "lang": "Java",
+   "merge": "02cbef8edb29e9d407a66a727706006bc68d44ac",
+   "date": "2026-10-24T16:26:17+01:00",
+   "path": "stroom-core-client/src/main/java/stroom/explorer/client/presenter/TypeFilterPresenter.java"
+  },
+  {
+   "id": "stroom@02cbef8edb29:stroom-core-client/src/main/java/stroom/floormap/client/presenter/FloorMapFactListPresenter.java",
+   "region": 0,
+   "lang": "Java",
+   "merge": "02cbef8edb29e9d407a66a727706006bc68d44ac",
+   "date": "2026-10-24T16:26:17+01:00",
+   "path": "stroom-core-client/src/main/java/stroom/floormap/client/presenter/FloorMapFactListPresenter.java"
+  },
+  {
+   "id": "stroom@02cbef8edb29:stroom-core-client/src/main/java/stroom/floormap/client/presenter/FloorMapSettingsPresenter.java",
+   "region": 0,
+   "lang": "Java",
+   "merge": "02cbef8edb29e9d407a66a727706006bc68d44ac",
+   "date": "2026-10-24T16:26:17+01:00",
+   "path": "stroom-core-client/src/main/java/stroom/floormap/client/presenter/FloorMapSettingsPresenter.java"
+  },
+  {
+   "id": "stroom@02cbef8edb29:stroom-core-client/src/main/java/stroom/floormap/client/presenter/FloorMapTimeListPresenter.java",
+   "region": 0,
+   "lang": "Java",
+   "merge": "02cbef8edb29e9d407a66a727706006bc68d44ac",
+   "date": "2026-10-24T16:26:17+01:00",
+   "path": "stroom-core-client/src/main/java/stroom/floormap/client/presenter/FloorMapTimeListPresenter.java"
+  },
+  {
+   "id": "stroom@02cbef8edb29:stroom-core-client/src/main/java/stroom/job/client/presenter/JobNodeListPresenter.java",
+   "region": 0,
+   "lang": "Java",
+   "merge": "02cbef8edb29e9d407a66a727706006bc68d44ac",
+   "date": "2026-10-24T16:26:17+01:00",
+   "path": "stroom-core-client/src/main/java/stroom/job/client/presenter/JobNodeListPresenter.java"
+  },
+  {
+   "id": "stroom@02cbef8edb29:stroom-core-client/src/main/java/stroom/node/client/presenter/NodeGroupListPresenter.java",
+   "region": 0,
+   "lang": "Java",
+   "merge": "02cbef8edb29e9d407a66a727706006bc68d44ac",
+   "date": "2026-10-24T16:26:17+01:00",
+   "path": "stroom-core-client/src/main/java/stroom/node/client/presenter/NodeGroupListPresenter.java"
+  },
+  {
+   "id": "stroom@02cbef8edb29:stroom-core-client/src/main/java/stroom/node/client/presenter/NodeGroupStateListPresenter.java",
+   "region": 0,
+   "lang": "Java",
+   "merge": "02cbef8edb29e9d407a66a727706006bc68d44ac",
+   "date": "2026-10-24T16:26:17+01:00",
+   "path": "stroom-core-client/src/main/java/stroom/node/client/presenter/NodeGroupStateListPresenter.java"
+  },
+  {
+   "id": "stroom@02cbef8edb29:stroom-core-client/src/main/java/stroom/pipeline/client/presenter/DocRefSelectionPresenter.java",
+   "region": 0,
+   "lang": "Java",
+   "merge": "02cbef8edb29e9d407a66a727706006bc68d44ac",
+   "date": "2026-10-24T16:26:17+01:00",
+   "path": "stroom-core-client/src/main/java/stroom/pipeline/client/presenter/DocRefSelectionPresenter.java"
+  },
+  {
+   "id": "stroom@02cbef8edb29:stroom-core-client/src/main/java/stroom/pipeline/stepping/client/presenter/XPathListPresenter.java",
+   "region": 0,
+   "lang": "Java",
+   "merge": "02cbef8edb29e9d407a66a727706006bc68d44ac",
+   "date": "2026-10-24T16:26:17+01:00",
+   "path": "stroom-core-client/src/main/java/stroom/pipeline/stepping/client/presenter/XPathListPresenter.java"
+  },
+  {
+   "id": "stroom@02cbef8edb29:stroom-core-client/src/main/java/stroom/preferences/client/KeyBindingPreferencesPresenter.java",
+   "region": 1,
+   "lang": "Java",
+   "merge": "02cbef8edb29e9d407a66a727706006bc68d44ac",
+   "date": "2026-10-24T16:26:17+01:00",
+   "path": "stroom-core-client/src/main/java/stroom/preferences/client/KeyBindingPreferencesPresenter.java"
+  },
+  {
+   "id": "stroom@02cbef8edb29:stroom-core-client/src/main/java/stroom/query/client/presenter/QueryResultTablePresenter.java",
+   "region": 0,
+   "lang": "Java",
+   "merge": "02cbef8edb29e9d407a66a727706006bc68d44ac",
+   "date": "2026-10-24T16:26:17+01:00",
+   "path": "stroom-core-client/src/main/java/stroom/query/client/presenter/QueryResultTablePresenter.java"
+  },
+  {
+   "id": "stroom@02cbef8edb29:stroom-core-client/src/main/java/stroom/script/client/presenter/ScriptDependencyListPresenter.java",
+   "region": 0,
+   "lang": "Java",
+   "merge": "02cbef8edb29e9d407a66a727706006bc68d44ac",
+   "date": "2026-10-24T16:26:17+01:00",
+   "path": "stroom-core-client/src/main/java/stroom/script/client/presenter/ScriptDependencyListPresenter.java"
+  },
+  {
+   "id": "stroom@02cbef8edb29:stroom-core-client/src/main/java/stroom/search/elastic/client/presenter/ElasticIndexFieldListPresenter.java",
+   "region": 0,
+   "lang": "Java",
+   "merge": "02cbef8edb29e9d407a66a727706006bc68d44ac",
+   "date": "2026-10-24T16:26:17+01:00",
+   "path": "stroom-core-client/src/main/java/stroom/search/elastic/client/presenter/ElasticIndexFieldListPresenter.java"
+  },
+  {
+   "id": "stroom@02cbef8edb29:stroom-core-client/src/main/java/stroom/search/solr/client/presenter/SolrIndexFieldListPresenter.java",
+   "region": 0,
+   "lang": "Java",
+   "merge": "02cbef8edb29e9d407a66a727706006bc68d44ac",
+   "date": "2026-10-24T16:26:17+01:00",
+   "path": "stroom-core-client/src/main/java/stroom/search/solr/client/presenter/SolrIndexFieldListPresenter.java"
+  },
+  {
+   "id": "stroom@02cbef8edb29:stroom-core-client/src/main/java/stroom/security/client/presenter/AppPermissionsEditPresenter.java",
+   "region": 0,
+   "lang": "Java",
+   "merge": "02cbef8edb29e9d407a66a727706006bc68d44ac",
+   "date": "2026-10-24T16:26:17+01:00",
+   "path": "stroom-core-client/src/main/java/stroom/security/client/presenter/AppPermissionsEditPresenter.java"
+  },
+  {
+   "id": "stroom@02cbef8edb29:stroom-core-client/src/main/java/stroom/security/client/presenter/UserSessionsListPresenter.java",
+   "region": 0,
+   "lang": "Java",
+   "merge": "02cbef8edb29e9d407a66a727706006bc68d44ac",
+   "date": "2026-10-24T16:26:17+01:00",
+   "path": "stroom-core-client/src/main/java/stroom/security/client/presenter/UserSessionsListPresenter.java"
+  },
+  {
+   "id": "stroom@02cbef8edb29:stroom-gwt/stroom-gwt-workbench/src/main/java/stroom/gwt/workbench/client/app/screen/ScreenHarness.java",
+   "region": 0,
+   "lang": "Java",
+   "merge": "02cbef8edb29e9d407a66a727706006bc68d44ac",
+   "date": "2026-10-24T16:26:17+01:00",
+   "path": "stroom-gwt/stroom-gwt-workbench/src/main/java/stroom/gwt/workbench/client/app/screen/ScreenHarness.java"
+  },
+  {
+   "id": "stroom@02cbef8edb29:stroom-gwt/stroom-gwt-workbench/src/main/java/stroom/gwt/workbench/client/widgets/display/CopyTextStories.java",
+   "region": 0,
+   "lang": "Java",
+   "merge": "02cbef8edb29e9d407a66a727706006bc68d44ac",
+   "date": "2026-10-24T16:26:17+01:00",
+   "path": "stroom-gwt/stroom-gwt-workbench/src/main/java/stroom/gwt/workbench/client/widgets/display/CopyTextStories.java"
+  },
+  {
+   "id": "stroom@02cbef8edb29:stroom-gwt/stroom-gwt-workbench/src/main/java/stroom/gwt/workbench/client/widgets/display/CopyTextStories.java",
+   "region": 1,
+   "lang": "Java",
+   "merge": "02cbef8edb29e9d407a66a727706006bc68d44ac",
+   "date": "2026-10-24T16:26:17+01:00",
+   "path": "stroom-gwt/stroom-gwt-workbench/src/main/java/stroom/gwt/workbench/client/widgets/display/CopyTextStories.java"
+  },
+  {
+   "id": "stroom@3f854789d330:stroom-app-gwt/src/main/java/stroom/app/client/gin/AppModule.java",
+   "region": 1,
+   "lang": "Java",
+   "merge": "3f854789d33076a553a90b03d2eca0dde051e8bf",
+   "date": "2026-10-24T15:46:39+01:00",
+   "path": "stroom-app-gwt/src/main/java/stroom/app/client/gin/AppModule.java"
+  },
+  {
+   "id": "stroom@3f854789d330:stroom-core-client-widget/src/main/java/stroom/widget/menu/client/presenter/MenuViewImpl.java",
+   "region": 0,
+   "lang": "Java",
+   "merge": "3f854789d33076a553a90b03d2eca0dde051e8bf",
+   "date": "2026-10-24T15:46:39+01:00",
+   "path": "stroom-core-client-widget/src/main/java/stroom/widget/menu/client/presenter/MenuViewImpl.java"
+  },
+  {
+   "id": "stroom@3f854789d330:stroom-core-client-widget/src/main/java/stroom/widget/menu/client/presenter/MenuViewImpl.java",
+   "region": 1,
+   "lang": "Java",
+   "merge": "3f854789d33076a553a90b03d2eca0dde051e8bf",
+   "date": "2026-10-24T15:46:39+01:00",
+   "path": "stroom-core-client-widget/src/main/java/stroom/widget/menu/client/presenter/MenuViewImpl.java"
+  },
+  {
+   "id": "stroom@3f854789d330:stroom-gwt/stroom-gwt-workbench/src/main/java/stroom/gwt/workbench/client/app/screen/ScreenHarness.java",
+   "region": 0,
+   "lang": "Java",
+   "merge": "3f854789d33076a553a90b03d2eca0dde051e8bf",
+   "date": "2026-10-24T15:46:39+01:00",
+   "path": "stroom-gwt/stroom-gwt-workbench/src/main/java/stroom/gwt/workbench/client/app/screen/ScreenHarness.java"
+  },
+  {
+   "id": "stroom@3f854789d330:stroom-gwt/stroom-gwt-workbench/src/main/java/stroom/gwt/workbench/client/app/screen/ScreenHarness.java",
+   "region": 1,
+   "lang": "Java",
+   "merge": "3f854789d33076a553a90b03d2eca0dde051e8bf",
+   "date": "2026-10-24T15:46:39+01:00",
+   "path": "stroom-gwt/stroom-gwt-workbench/src/main/java/stroom/gwt/workbench/client/app/screen/ScreenHarness.java"
+  },
+  {
+   "id": "stroom@d1957883ae69:stroom-core-client/src/main/java/stroom/explorer/client/presenter/NavigationPresenter.java",
+   "region": 0,
+   "lang": "Java",
+   "merge": "d1957883ae694f616052631987c3ba43d962c9fa",
+   "date": "2026-10-23T16:26:52+01:00",
+   "path": "stroom-core-client/src/main/java/stroom/explorer/client/presenter/NavigationPresenter.java"
+  },
+  {
+   "id": "stroom@fbf30f796752:stroom-core-shared/src/main/java/stroom/pathways/shared/TracesDoc.java",
+   "region": 0,
+   "lang": "Java",
+   "merge": "fbf30f796752b7eaf8a0a822ccb606374664caf9",
+   "date": "2026-10-23T14:51:13+01:00",
+   "path": "stroom-core-shared/src/main/java/stroom/pathways/shared/TracesDoc.java"
+  },
+  {
+   "id": "stroom@e548405a351b:stroom-core-client-widget/src/main/java/stroom/data/grid/client/PagerViewWithHeadingImpl.java",
+   "region": 0,
+   "lang": "Java",
+   "merge": "e548405a351ba544bd1ed11d76c9a453f02a95f4",
+   "date": "2026-10-23T14:37:48+01:00",
+   "path": "stroom-core-client-widget/src/main/java/stroom/data/grid/client/PagerViewWithHeadingImpl.java"
+  },
+  {
+   "id": "stroom@e548405a351b:stroom-core-client/src/main/java/stroom/analytics/client/presenter/ScheduledProcessHistoryListPresenter.java",
+   "region": 0,
+   "lang": "Java",
+   "merge": "e548405a351ba544bd1ed11d76c9a453f02a95f4",
+   "date": "2026-10-23T14:37:48+01:00",
+   "path": "stroom-core-client/src/main/java/stroom/analytics/client/presenter/ScheduledProcessHistoryListPresenter.java"
+  },
+  {
+   "id": "stroom@e548405a351b:stroom-core-client/src/main/java/stroom/analytics/client/presenter/ScheduledProcessListPresenter.java",
+   "region": 0,
+   "lang": "Java",
+   "merge": "e548405a351ba544bd1ed11d76c9a453f02a95f4",
+   "date": "2026-10-23T14:37:48+01:00",
+   "path": "stroom-core-client/src/main/java/stroom/analytics/client/presenter/ScheduledProcessListPresenter.java"
+  },
+  {
+   "id": "stroom@e548405a351b:stroom-core-client/src/main/java/stroom/config/global/client/presenter/ConfigPropertyClusterValuesListPresenter.java",
+   "region": 0,
+   "lang": "Java",
+   "merge": "e548405a351ba544bd1ed11d76c9a453f02a95f4",
+   "date": "2026-10-23T14:37:48+01:00",
+   "path": "stroom-core-client/src/main/java/stroom/config/global/client/presenter/ConfigPropertyClusterValuesListPresenter.java"
+  },
+  {
+   "id": "stroom@e548405a351b:stroom-core-client/src/main/java/stroom/config/global/client/presenter/ManageGlobalPropertyListPresenter.java",
+   "region": 0,
+   "lang": "Java",
+   "merge": "e548405a351ba544bd1ed11d76c9a453f02a95f4",
+   "date": "2026-10-23T14:37:48+01:00",
+   "path": "stroom-core-client/src/main/java/stroom/config/global/client/presenter/ManageGlobalPropertyListPresenter.java"
+  },
+  {
+   "id": "stroom@e548405a351b:stroom-core-client/src/main/java/stroom/credentials/client/presenter/CredentialsListPresenter.java",
+   "region": 0,
+   "lang": "Java",
+   "merge": "e548405a351ba544bd1ed11d76c9a453f02a95f4",
+   "date": "2026-10-23T14:37:48+01:00",
+   "path": "stroom-core-client/src/main/java/stroom/credentials/client/presenter/CredentialsListPresenter.java"
+  },
+  {
+   "id": "stroom@e548405a351b:stroom-core-client/src/main/java/stroom/dashboard/client/query/QueryFavouritesPresenter.java",
+   "region": 0,
+   "lang": "Java",
+   "merge": "e548405a351ba544bd1ed11d76c9a453f02a95f4",
+   "date": "2026-10-23T14:37:48+01:00",
+   "path": "stroom-core-client/src/main/java/stroom/dashboard/client/query/QueryFavouritesPresenter.java"
+  },
+  {
+   "id": "stroom@e548405a351b:stroom-core-client/src/main/java/stroom/dashboard/client/table/ColumnValuesFilterPresenter.java",
+   "region": 0,
+   "lang": "Java",
+   "merge": "e548405a351ba544bd1ed11d76c9a453f02a95f4",
+   "date": "2026-10-23T14:37:48+01:00",
+   "path": "stroom-core-client/src/main/java/stroom/dashboard/client/table/ColumnValuesFilterPresenter.java"
+  },
+  {
+   "id": "stroom@e548405a351b:stroom-core-client/src/main/java/stroom/dashboard/client/table/cf/RuleListPresenter.java",
+   "region": 0,
+   "lang": "Java",
+   "merge": "e548405a351ba544bd1ed11d76c9a453f02a95f4",
+   "date": "2026-10-23T14:37:48+01:00",
+   "path": "stroom-core-client/src/main/java/stroom/dashboard/client/table/cf/RuleListPresenter.java"
+  },
+  {
+   "id": "stroom@e548405a351b:stroom-core-client/src/main/java/stroom/dashboard/client/vis/VisViewImpl.java",
+   "region": 0,
+   "lang": "Java",
+   "merge": "e548405a351ba544bd1ed11d76c9a453f02a95f4",
+   "date": "2026-10-23T14:37:48+01:00",
+   "path": "stroom-core-client/src/main/java/stroom/dashboard/client/vis/VisViewImpl.java"
+  },
+  {
+   "id": "stroom@e548405a351b:stroom-core-client/src/main/java/stroom/data/client/presenter/MarkerListPresenter.java",
+   "region": 0,
+   "lang": "Java",
+   "merge": "e548405a351ba544bd1ed11d76c9a453f02a95f4",
+   "date": "2026-10-23T14:37:48+01:00",
+   "path": "stroom-core-client/src/main/java/stroom/data/client/presenter/MarkerListPresenter.java"
+  },
+  {
+   "id": "stroom@e548405a351b:stroom-core-client/src/main/java/stroom/data/store/impl/fs/client/presenter/FsVolumeStatusListPresenter.java",
+   "region": 0,
+   "lang": "Java",
+   "merge": "e548405a351ba544bd1ed11d76c9a453f02a95f4",
+   "date": "2026-10-23T14:37:48+01:00",
+   "path": "stroom-core-client/src/main/java/stroom/data/store/impl/fs/client/presenter/FsVolumeStatusListPresenter.java"
+  },
+  {
+   "id": "stroom@e548405a351b:stroom-core-client/src/main/java/stroom/dictionary/client/presenter/DocRefListPresenter.java",
+   "region": 0,
+   "lang": "Java",
+   "merge": "e548405a351ba544bd1ed11d76c9a453f02a95f4",
+   "date": "2026-10-23T14:37:48+01:00",
+   "path": "stroom-core-client/src/main/java/stroom/dictionary/client/presenter/DocRefListPresenter.java"
+  },
+  {
+   "id": "stroom@e548405a351b:stroom-core-client/src/main/java/stroom/document/asset/client/presenter/DocumentAssetChooserPresenter.java",
+   "region": 0,
+   "lang": "Java",
+   "merge": "e548405a351ba544bd1ed11d76c9a453f02a95f4",
+   "date": "2026-10-23T14:37:48+01:00",
+   "path": "stroom-core-client/src/main/java/stroom/document/asset/client/presenter/DocumentAssetChooserPresenter.java"
+  },
+  {
+   "id": "stroom@e548405a351b:stroom-core-client/src/main/java/stroom/document/asset/client/view/DocumentAssetViewImpl.java",
+   "region": 0,
+   "lang": "Java",
+   "merge": "e548405a351ba544bd1ed11d76c9a453f02a95f4",
+   "date": "2026-10-23T14:37:48+01:00",
+   "path": "stroom-core-client/src/main/java/stroom/document/asset/client/view/DocumentAssetViewImpl.java"
+  },
+  {
+   "id": "stroom@e548405a351b:stroom-core-client/src/main/java/stroom/explorer/client/presenter/TypeFilterPresenter.java",
+   "region": 1,
+   "lang": "Java",
+   "merge": "e548405a351ba544bd1ed11d76c9a453f02a95f4",
+   "date": "2026-10-23T14:37:48+01:00",
+   "path": "stroom-core-client/src/main/java/stroom/explorer/client/presenter/TypeFilterPresenter.java"
+  },
+  {
+   "id": "stroom@e548405a351b:stroom-core-client/src/main/java/stroom/floormap/client/presenter/FloorMapSettingsPresenter.java",
+   "region": 0,
+   "lang": "Java",
+   "merge": "e548405a351ba544bd1ed11d76c9a453f02a95f4",
+   "date": "2026-10-23T14:37:48+01:00",
+   "path": "stroom-core-client/src/main/java/stroom/floormap/client/presenter/FloorMapSettingsPresenter.java"
+  },
+  {
+   "id": "stroom@e548405a351b:stroom-core-client/src/main/java/stroom/floormap/client/presenter/FloorMapSettingsPresenter.java",
+   "region": 1,
+   "lang": "Java",
+   "merge": "e548405a351ba544bd1ed11d76c9a453f02a95f4",
+   "date": "2026-10-23T14:37:48+01:00",
+   "path": "stroom-core-client/src/main/java/stroom/floormap/client/presenter/FloorMapSettingsPresenter.java"
+  },
+  {
+   "id": "stroom@e548405a351b:stroom-core-client/src/main/java/stroom/job/client/presenter/JobNodeListPresenter.java",
+   "region": 0,
+   "lang": "Java",
+   "merge": "e548405a351ba544bd1ed11d76c9a453f02a95f4",
+   "date": "2026-10-23T14:37:48+01:00",
+   "path": "stroom-core-client/src/main/java/stroom/job/client/presenter/JobNodeListPresenter.java"
+  },
+  {
+   "id": "stroom@e548405a351b:stroom-core-client/src/main/java/stroom/main/client/view/MainViewImpl.java",
+   "region": 2,
+   "lang": "Java",
+   "merge": "e548405a351ba544bd1ed11d76c9a453f02a95f4",
+   "date": "2026-10-23T14:37:48+01:00",
+   "path": "stroom-core-client/src/main/java/stroom/main/client/view/MainViewImpl.java"
+  },
+  {
+   "id": "stroom@e548405a351b:stroom-core-client/src/main/java/stroom/pipeline/client/presenter/DocRefSelectionPresenter.java",
+   "region": 0,
+   "lang": "Java",
+   "merge": "e548405a351ba544bd1ed11d76c9a453f02a95f4",
+   "date": "2026-10-23T14:37:48+01:00",
+   "path": "stroom-core-client/src/main/java/stroom/pipeline/client/presenter/DocRefSelectionPresenter.java"
+  },
+  {
+   "id": "stroom@e548405a351b:stroom-core-client/src/main/java/stroom/pipeline/stepping/client/presenter/SteppingFilterPresenter.java",
+   "region": 1,
+   "lang": "Java",
+   "merge": "e548405a351ba544bd1ed11d76c9a453f02a95f4",
+   "date": "2026-10-23T14:37:48+01:00",
+   "path": "stroom-core-client/src/main/java/stroom/pipeline/stepping/client/presenter/SteppingFilterPresenter.java"
+  },
+  {
+   "id": "stroom@e548405a351b:stroom-core-client/src/main/java/stroom/pipeline/stepping/client/presenter/XPathListPresenter.java",
+   "region": 0,
+   "lang": "Java",
+   "merge": "e548405a351ba544bd1ed11d76c9a453f02a95f4",
+   "date": "2026-10-23T14:37:48+01:00",
+   "path": "stroom-core-client/src/main/java/stroom/pipeline/stepping/client/presenter/XPathListPresenter.java"
+  },
+  {
+   "id": "stroom@e548405a351b:stroom-core-client/src/main/java/stroom/preferences/client/ThemePreferencesPresenter.java",
+   "region": 0,
+   "lang": "Java",
+   "merge": "e548405a351ba544bd1ed11d76c9a453f02a95f4",
+   "date": "2026-10-23T14:37:48+01:00",
+   "path": "stroom-core-client/src/main/java/stroom/preferences/client/ThemePreferencesPresenter.java"
+  },
+  {
+   "id": "stroom@e548405a351b:stroom-core-client/src/main/java/stroom/preferences/client/ThemePreferencesViewImpl.java",
+   "region": 0,
+   "lang": "Java",
+   "merge": "e548405a351ba544bd1ed11d76c9a453f02a95f4",
+   "date": "2026-10-23T14:37:48+01:00",
+   "path": "stroom-core-client/src/main/java/stroom/preferences/client/ThemePreferencesViewImpl.java"
+  },
+  {
+   "id": "stroom@e548405a351b:stroom-core-client/src/main/java/stroom/query/client/presenter/QueryResultTablePresenter.java",
+   "region": 0,
+   "lang": "Java",
+   "merge": "e548405a351ba544bd1ed11d76c9a453f02a95f4",
+   "date": "2026-10-23T14:37:48+01:00",
+   "path": "stroom-core-client/src/main/java/stroom/query/client/presenter/QueryResultTablePresenter.java"
+  },
+  {
+   "id": "stroom@e548405a351b:stroom-core-client/src/main/java/stroom/query/client/presenter/ResultStoreListPresenter.java",
+   "region": 0,
+   "lang": "Java",
+   "merge": "e548405a351ba544bd1ed11d76c9a453f02a95f4",
+   "date": "2026-10-23T14:37:48+01:00",
+   "path": "stroom-core-client/src/main/java/stroom/query/client/presenter/ResultStoreListPresenter.java"
+  },
+  {
+   "id": "stroom@e548405a351b:stroom-core-client/src/main/java/stroom/search/elastic/client/view/ElasticClusterSettingsViewImpl.java",
+   "region": 1,
+   "lang": "Java",
+   "merge": "e548405a351ba544bd1ed11d76c9a453f02a95f4",
+   "date": "2026-10-23T14:37:48+01:00",
+   "path": "stroom-core-client/src/main/java/stroom/search/elastic/client/view/ElasticClusterSettingsViewImpl.java"
+  },
+  {
+   "id": "stroom@e548405a351b:stroom-core-client/src/main/java/stroom/security/client/presenter/AppPermissionsEditPresenter.java",
+   "region": 0,
+   "lang": "Java",
+   "merge": "e548405a351ba544bd1ed11d76c9a453f02a95f4",
+   "date": "2026-10-23T14:37:48+01:00",
+   "path": "stroom-core-client/src/main/java/stroom/security/client/presenter/AppPermissionsEditPresenter.java"
+  },
+  {
+   "id": "stroom@e548405a351b:stroom-gwt/stroom-gwt-workbench/src/main/java/stroom/gwt/workbench/client/app/gin/editors/FloorMapScreenModule.java",
+   "region": 0,
+   "lang": "Java",
+   "merge": "e548405a351ba544bd1ed11d76c9a453f02a95f4",
+   "date": "2026-10-23T14:37:48+01:00",
+   "path": "stroom-gwt/stroom-gwt-workbench/src/main/java/stroom/gwt/workbench/client/app/gin/editors/FloorMapScreenModule.java"
+  },
+  {
+   "id": "stroom@e548405a351b:stroom-gwt/stroom-gwt-workbench/src/main/java/stroom/gwt/workbench/client/app/screen/ScreenHarness.java",
+   "region": 0,
+   "lang": "Java",
+   "merge": "e548405a351ba544bd1ed11d76c9a453f02a95f4",
+   "date": "2026-10-23T14:37:48+01:00",
+   "path": "stroom-gwt/stroom-gwt-workbench/src/main/java/stroom/gwt/workbench/client/app/screen/ScreenHarness.java"
+  },
+  {
+   "id": "stroom@af568fa38a11:stroom-core-client/src/main/java/stroom/search/elastic/client/view/ElasticClusterSettingsViewImpl.java",
+   "region": 4,
+   "lang": "Java",
+   "merge": "af568fa38a11b3c6c36179d1bd1e621709545b2b",
+   "date": "2026-10-22T14:45:58+01:00",
+   "path": "stroom-core-client/src/main/java/stroom/search/elastic/client/view/ElasticClusterSettingsViewImpl.java"
+  },
+  {
+   "id": "stroom@af568fa38a11:stroom-search/stroom-search-elastic/src/main/java/stroom/search/elastic/ElasticClientFactory.java",
+   "region": 0,
+   "lang": "Java",
+   "merge": "af568fa38a11b3c6c36179d1bd1e621709545b2b",
+   "date": "2026-10-22T14:45:58+01:00",
+   "path": "stroom-search/stroom-search-elastic/src/main/java/stroom/search/elastic/ElasticClientFactory.java"
+  },
+  {
+   "id": "stroom@52ec6e3b1cb2:stroom-core-client-widget/src/main/java/stroom/widget/popup/client/view/ResizableCreateOkCancelContent.java",
+   "region": 0,
+   "lang": "Java",
+   "merge": "52ec6e3b1cb27535a837484f996479f52b253ace",
+   "date": "2026-10-21T12:14:36+01:00",
+   "path": "stroom-core-client-widget/src/main/java/stroom/widget/popup/client/view/ResizableCreateOkCancelContent.java"
+  },
+  {
+   "id": "stroom@55689ef0d5c6:stroom-core-client-widget/src/main/java/stroom/widget/dropdowntree/client/view/QuickFilter.java",
+   "region": 0,
+   "lang": "Java",
+   "merge": "55689ef0d5c65c15ad8e10f4954864d26da5907b",
+   "date": "2026-10-20T18:20:52+01:00",
+   "path": "stroom-core-client-widget/src/main/java/stroom/widget/dropdowntree/client/view/QuickFilter.java"
+  },
+  {
+   "id": "stroom@b5954cde083a:stroom-core-client-widget/src/main/java/stroom/widget/menu/client/presenter/ShowMenuEvent.java",
+   "region": 0,
+   "lang": "Java",
+   "merge": "b5954cde083a43f61c2bdd1302cf8acce70cdba5",
+   "date": "2026-10-19T14:45:23+01:00",
+   "path": "stroom-core-client-widget/src/main/java/stroom/widget/menu/client/presenter/ShowMenuEvent.java"
+  },
+  {
+   "id": "stroom@b5954cde083a:stroom-core-client-widget/src/main/java/stroom/widget/menu/client/presenter/ShowMenuEvent.java",
+   "region": 3,
+   "lang": "Java",
+   "merge": "b5954cde083a43f61c2bdd1302cf8acce70cdba5",
+   "date": "2026-10-19T14:45:23+01:00",
+   "path": "stroom-core-client-widget/src/main/java/stroom/widget/menu/client/presenter/ShowMenuEvent.java"
+  },
+  {
+   "id": "stroom@b5954cde083a:stroom-core-client/src/main/java/stroom/pipeline/stepping/client/presenter/SteppingPresenter.java",
+   "region": 0,
+   "lang": "Java",
+   "merge": "b5954cde083a43f61c2bdd1302cf8acce70cdba5",
+   "date": "2026-10-19T14:45:23+01:00",
+   "path": "stroom-core-client/src/main/java/stroom/pipeline/stepping/client/presenter/SteppingPresenter.java"
+  },
+  {
+   "id": "stroom@b5954cde083a:stroom-core-client/src/main/java/stroom/pipeline/structure/client/view/PipelineElementBox.java",
+   "region": 1,
+   "lang": "Java",
+   "merge": "b5954cde083a43f61c2bdd1302cf8acce70cdba5",
+   "date": "2026-10-19T14:45:23+01:00",
+   "path": "stroom-core-client/src/main/java/stroom/pipeline/structure/client/view/PipelineElementBox.java"
+  },
+  {
+   "id": "stroom@cb326aea3a2c:stroom-gwt/stroom-gwt-workbench/src/main/java/stroom/gwt/workbench/client/widgets/query/ExpressionBuilderStories.java",
+   "region": 0,
+   "lang": "Java",
+   "merge": "cb326aea3a2cf0c0069c23c245d36bf1fad91b15",
+   "date": "2026-10-19T11:47:02+01:00",
+   "path": "stroom-gwt/stroom-gwt-workbench/src/main/java/stroom/gwt/workbench/client/widgets/query/ExpressionBuilderStories.java"
+  },
+  {
+   "id": "stroom@416267d1aff8:stroom-core-client/src/main/java/stroom/index/client/presenter/IndexFieldEditPresenter.java",
+   "region": 0,
+   "lang": "Java",
+   "merge": "416267d1aff8038957026ed468683295e13fdce7",
+   "date": "2026-10-16T16:12:50+01:00",
+   "path": "stroom-core-client/src/main/java/stroom/index/client/presenter/IndexFieldEditPresenter.java"
+  },
+  {
+   "id": "stroom@416267d1aff8:stroom-core-client/src/main/java/stroom/index/client/presenter/IndexFieldEditPresenter.java",
+   "region": 1,
+   "lang": "Java",
+   "merge": "416267d1aff8038957026ed468683295e13fdce7",
+   "date": "2026-10-16T16:12:50+01:00",
+   "path": "stroom-core-client/src/main/java/stroom/index/client/presenter/IndexFieldEditPresenter.java"
+  },
+  {
+   "id": "stroom@e8181bfe6e1d:stroom-gwt/stroom-gwt-workbench/src/main/java/stroom/gwt/workbench/client/app/main/AppShellStories.java",
+   "region": 0,
+   "lang": "Java",
+   "merge": "e8181bfe6e1de97b074df5f8ed308fc4c835dd3c",
+   "date": "2026-10-16T15:57:55+01:00",
+   "path": "stroom-gwt/stroom-gwt-workbench/src/main/java/stroom/gwt/workbench/client/app/main/AppShellStories.java"
+  },
+  {
+   "id": "stroom@e8181bfe6e1d:stroom-gwt/stroom-gwt-workbench/src/main/java/stroom/gwt/workbench/client/app/main/AppShellStories.java",
+   "region": 1,
+   "lang": "Java",
+   "merge": "e8181bfe6e1de97b074df5f8ed308fc4c835dd3c",
+   "date": "2026-10-16T15:57:55+01:00",
+   "path": "stroom-gwt/stroom-gwt-workbench/src/main/java/stroom/gwt/workbench/client/app/main/AppShellStories.java"
+  },
+  {
+   "id": "stroom@a79c58198646:stroom-core-client-widget/src/main/java/stroom/widget/popup/client/view/PopupUtil.java",
+   "region": 0,
+   "lang": "Java",
+   "merge": "a79c58198646ff2535b53d8441ee5a24cf22aea4",
+   "date": "2026-10-15T13:14:47+01:00",
+   "path": "stroom-core-client-widget/src/main/java/stroom/widget/popup/client/view/PopupUtil.java"
+  },
+  {
+   "id": "stroom@fe7c7068e229:stroom-core-client/src/main/java/stroom/pipeline/structure/client/presenter/PipelineReferenceListPresenter.java",
+   "region": 0,
+   "lang": "Java",
+   "merge": "fe7c7068e229cd7a7b3d96bca2b3ed4bc6367533",
+   "date": "2026-10-14T12:46:22+01:00",
+   "path": "stroom-core-client/src/main/java/stroom/pipeline/structure/client/presenter/PipelineReferenceListPresenter.java"
+  },
+  {
+   "id": "stroom@ab56020e67f7:stroom-pipeline/src/main/java/stroom/pipeline/xsltfunctions/PointIsInsideXYPolygon.java",
+   "region": 0,
+   "lang": "Java",
+   "merge": "ab56020e67f72c68ba4b8396abeb4769888ae5eb",
+   "date": "2026-10-14T12:32:49+01:00",
+   "path": "stroom-pipeline/src/main/java/stroom/pipeline/xsltfunctions/PointIsInsideXYPolygon.java"
+  },
+  {
+   "id": "stroom@81ceff59c027:stroom-core-client/src/main/java/stroom/config/global/client/presenter/ManageGlobalPropertyListPresenter.java",
+   "region": 0,
+   "lang": "Java",
+   "merge": "81ceff59c0277b95c131e6f090510df7fa833079",
+   "date": "2026-10-13T15:45:25+01:00",
+   "path": "stroom-core-client/src/main/java/stroom/config/global/client/presenter/ManageGlobalPropertyListPresenter.java"
+  },
+  {
+   "id": "stroom@81ceff59c027:stroom-core-client/src/main/java/stroom/importexport/client/presenter/ExportConfigPresenter.java",
+   "region": 0,
+   "lang": "Java",
+   "merge": "81ceff59c0277b95c131e6f090510df7fa833079",
+   "date": "2026-10-13T15:45:25+01:00",
+   "path": "stroom-core-client/src/main/java/stroom/importexport/client/presenter/ExportConfigPresenter.java"
+  },
+  {
+   "id": "stroom@81ceff59c027:stroom-core-client/src/main/java/stroom/security/client/presenter/UserPermissionReportPresenter.java",
+   "region": 0,
+   "lang": "Java",
+   "merge": "81ceff59c0277b95c131e6f090510df7fa833079",
+   "date": "2026-10-13T15:45:25+01:00",
+   "path": "stroom-core-client/src/main/java/stroom/security/client/presenter/UserPermissionReportPresenter.java"
+  },
+  {
+   "id": "stroom@81ceff59c027:stroom-core-client/src/main/java/stroom/security/identity/client/presenter/AccountsListPresenter.java",
+   "region": 0,
+   "lang": "Java",
+   "merge": "81ceff59c0277b95c131e6f090510df7fa833079",
+   "date": "2026-10-13T15:45:25+01:00",
+   "path": "stroom-core-client/src/main/java/stroom/security/identity/client/presenter/AccountsListPresenter.java"
+  },
+  {
+   "id": "stroom@5c9aef6249a2:stroom-gwt/stroom-gwt-workbench/src/main/java/stroom/gwt/workbench/client/WidgetsStories.java",
+   "region": 0,
+   "lang": "Java",
+   "merge": "5c9aef6249a26fdcad4d12915868403036575583",
+   "date": "2026-10-13T12:42:02+01:00",
+   "path": "stroom-gwt/stroom-gwt-workbench/src/main/java/stroom/gwt/workbench/client/WidgetsStories.java"
+  },
+  {
+   "id": "stroom@641ac00cf42d:stroom-bytebuffer/src/main/java/stroom/bytebuffer/impl6/ByteBufferPoolImpl7.java",
+   "region": 0,
+   "lang": "Java",
+   "merge": "641ac00cf42d2c4cfe857dd15b73076289bab1a4",
+   "date": "2026-10-09T16:41:24+01:00",
+   "path": "stroom-bytebuffer/src/main/java/stroom/bytebuffer/impl6/ByteBufferPoolImpl7.java"
+  },
+  {
+   "id": "stroom@641ac00cf42d:stroom-bytebuffer/src/main/java/stroom/bytebuffer/impl6/ByteBufferPoolOutput.java",
+   "region": 1,
+   "lang": "Java",
+   "merge": "641ac00cf42d2c4cfe857dd15b73076289bab1a4",
+   "date": "2026-10-09T16:41:24+01:00",
+   "path": "stroom-bytebuffer/src/main/java/stroom/bytebuffer/impl6/ByteBufferPoolOutput.java"
+  },
+  {
+   "id": "stroom@66d835340e13:stroom-core-client/src/main/java/stroom/security/client/presenter/ApiKeysListPresenter.java",
+   "region": 1,
+   "lang": "Java",
+   "merge": "66d835340e1352bc513d6ec55d754eb7b8cdeb0d",
+   "date": "2026-10-08T16:32:54+01:00",
+   "path": "stroom-core-client/src/main/java/stroom/security/client/presenter/ApiKeysListPresenter.java"
+  },
+  {
+   "id": "stroom@ba8004cd384c:stroom-core-client/src/main/java/stroom/floormap/client/presenter/FloorMapCanvasPresenter.java",
+   "region": 0,
+   "lang": "Java",
+   "merge": "ba8004cd384c215bdd50eb4ea44dd4e7c8f2fe91",
+   "date": "2026-10-06T09:08:01+01:00",
+   "path": "stroom-core-client/src/main/java/stroom/floormap/client/presenter/FloorMapCanvasPresenter.java"
+  },
+  {
+   "id": "stroom@ba8004cd384c:stroom-core-client/src/main/java/stroom/floormap/client/presenter/FloorMapObjectEditPresenter.java",
+   "region": 0,
+   "lang": "Java",
+   "merge": "ba8004cd384c215bdd50eb4ea44dd4e7c8f2fe91",
+   "date": "2026-10-06T09:08:01+01:00",
+   "path": "stroom-core-client/src/main/java/stroom/floormap/client/presenter/FloorMapObjectEditPresenter.java"
+  },
+  {
+   "id": "stroom@ba8004cd384c:stroom-core-shared/src/main/java/stroom/floormap/shared/FloorMapDoc.java",
+   "region": 3,
+   "lang": "Java",
+   "merge": "ba8004cd384c215bdd50eb4ea44dd4e7c8f2fe91",
+   "date": "2026-10-06T09:08:01+01:00",
+   "path": "stroom-core-shared/src/main/java/stroom/floormap/shared/FloorMapDoc.java"
+  },
+  {
+   "id": "stroom@cbf46d4c9bfa:stroom-aws/stroom-aws-s3-impl/src/main/java/stroom/aws/s3/impl/S3ConfigModule.java",
+   "region": 0,
+   "lang": "Java",
+   "merge": "cbf46d4c9bfa2abd7c0fbc96776436e3dda2e5d8",
+   "date": "2026-10-05T17:33:15+01:00",
+   "path": "stroom-aws/stroom-aws-s3-impl/src/main/java/stroom/aws/s3/impl/S3ConfigModule.java"
+  },
+  {
+   "id": "stroom@a8ccfad51e72:stroom-lmdb/src/main/java/stroom/lmdb/LmdbEnv.java",
+   "region": 0,
+   "lang": "Java",
+   "merge": "a8ccfad51e72fa8290a0a39bdbcbeeaa7ccfc194",
+   "date": "2026-10-02T19:01:11+01:00",
+   "path": "stroom-lmdb/src/main/java/stroom/lmdb/LmdbEnv.java"
+  },
+  {
+   "id": "stroom@a8ccfad51e72:stroom-lmdb/src/main/java/stroom/lmdb/LmdbEnv.java",
+   "region": 1,
+   "lang": "Java",
+   "merge": "a8ccfad51e72fa8290a0a39bdbcbeeaa7ccfc194",
+   "date": "2026-10-02T19:01:11+01:00",
+   "path": "stroom-lmdb/src/main/java/stroom/lmdb/LmdbEnv.java"
+  },
+  {
+   "id": "stroom@a8ccfad51e72:stroom-lmdb/src/test/java/stroom/lmdb/TestLmdbEnv.java",
+   "region": 1,
+   "lang": "Java",
+   "merge": "a8ccfad51e72fa8290a0a39bdbcbeeaa7ccfc194",
+   "date": "2026-10-02T19:01:11+01:00",
+   "path": "stroom-lmdb/src/test/java/stroom/lmdb/TestLmdbEnv.java"
+  },
+  {
+   "id": "stroom@a8ccfad51e72:stroom-pipeline/src/main/java/stroom/pipeline/refdata/ReferenceDataConfig.java",
+   "region": 1,
+   "lang": "Java",
+   "merge": "a8ccfad51e72fa8290a0a39bdbcbeeaa7ccfc194",
+   "date": "2026-10-02T19:01:11+01:00",
+   "path": "stroom-pipeline/src/main/java/stroom/pipeline/refdata/ReferenceDataConfig.java"
+  },
+  {
+   "id": "stroom@a8ccfad51e72:stroom-pipeline/src/main/java/stroom/pipeline/refdata/ReferenceDataLmdbConfig.java",
+   "region": 0,
+   "lang": "Java",
+   "merge": "a8ccfad51e72fa8290a0a39bdbcbeeaa7ccfc194",
+   "date": "2026-10-02T19:01:11+01:00",
+   "path": "stroom-pipeline/src/main/java/stroom/pipeline/refdata/ReferenceDataLmdbConfig.java"
+  },
+  {
+   "id": "stroom@a8ccfad51e72:stroom-pipeline/src/main/java/stroom/pipeline/refdata/store/offheapstore/RefDataOffHeapStore.java",
+   "region": 0,
+   "lang": "Java",
+   "merge": "a8ccfad51e72fa8290a0a39bdbcbeeaa7ccfc194",
+   "date": "2026-10-02T19:01:11+01:00",
+   "path": "stroom-pipeline/src/main/java/stroom/pipeline/refdata/store/offheapstore/RefDataOffHeapStore.java"
+  },
+  {
+   "id": "stroom@a8ccfad51e72:stroom-pipeline/src/main/java/stroom/pipeline/refdata/store/offheapstore/serdes/RefDataProcessingInfoSerde.java",
+   "region": 1,
+   "lang": "Java",
+   "merge": "a8ccfad51e72fa8290a0a39bdbcbeeaa7ccfc194",
+   "date": "2026-10-02T19:01:11+01:00",
+   "path": "stroom-pipeline/src/main/java/stroom/pipeline/refdata/store/offheapstore/serdes/RefDataProcessingInfoSerde.java"
+  },
+  {
+   "id": "stroom@a8ccfad51e72:stroom-pipeline/src/test/java/stroom/pipeline/refdata/store/offheapstore/TestRefDataOffHeapStore.java",
+   "region": 3,
+   "lang": "Java",
+   "merge": "a8ccfad51e72fa8290a0a39bdbcbeeaa7ccfc194",
+   "date": "2026-10-02T19:01:11+01:00",
+   "path": "stroom-pipeline/src/test/java/stroom/pipeline/refdata/store/offheapstore/TestRefDataOffHeapStore.java"
+  },
+  {
+   "id": "stroom@a8ccfad51e72:stroom-receive/stroom-receive-common/src/main/java/stroom/receive/common/StreamTargetStreamHandler.java",
+   "region": 1,
+   "lang": "Java",
+   "merge": "a8ccfad51e72fa8290a0a39bdbcbeeaa7ccfc194",
+   "date": "2026-10-02T19:01:11+01:00",
+   "path": "stroom-receive/stroom-receive-common/src/main/java/stroom/receive/common/StreamTargetStreamHandler.java"
+  },
+  {
+   "id": "stroom@332795a51398:stroom-pipeline/src/main/java/stroom/pipeline/xsltfunctions/Random.java",
+   "region": 0,
+   "lang": "Java",
+   "merge": "332795a513981acfee995c0daf628ce8d7a7ecbc",
+   "date": "2026-10-02T16:07:59+01:00",
+   "path": "stroom-pipeline/src/main/java/stroom/pipeline/xsltfunctions/Random.java"
+  },
+  {
+   "id": "stroom@332795a51398:stroom-test-common/src/main/java/stroom/test/common/docs/StroomDocsUtil.java",
+   "region": 1,
+   "lang": "Java",
+   "merge": "332795a513981acfee995c0daf628ce8d7a7ecbc",
+   "date": "2026-10-02T16:07:59+01:00",
+   "path": "stroom-test-common/src/main/java/stroom/test/common/docs/StroomDocsUtil.java"
+  },
+  {
+   "id": "stroom@f7ff1c345e15:stroom-proxy/stroom-proxy-app/src/main/java/stroom/proxy/app/handler/ZipSplitter.java",
+   "region": 1,
+   "lang": "Java",
+   "merge": "f7ff1c345e15def3683e9ccaa06df2729222b809",
+   "date": "2026-09-30T14:39:43+01:00",
+   "path": "stroom-proxy/stroom-proxy-app/src/main/java/stroom/proxy/app/handler/ZipSplitter.java"
+  },
+  {
+   "id": "stroom@f7ff1c345e15:stroom-proxy/stroom-proxy-app/src/main/java/stroom/proxy/app/handler/ZipSplitter.java",
+   "region": 2,
+   "lang": "Java",
+   "merge": "f7ff1c345e15def3683e9ccaa06df2729222b809",
+   "date": "2026-09-30T14:39:43+01:00",
+   "path": "stroom-proxy/stroom-proxy-app/src/main/java/stroom/proxy/app/handler/ZipSplitter.java"
+  },
+  {
+   "id": "stroom@f27ccffc267d:stroom-core-shared/src/main/java/stroom/pathways/shared/otel/trace/TraceRoot.java",
+   "region": 0,
+   "lang": "Java",
+   "merge": "f27ccffc267d0a915326ffeffb997d7fe9517e86",
+   "date": "2026-09-23T14:23:30+01:00",
+   "path": "stroom-core-shared/src/main/java/stroom/pathways/shared/otel/trace/TraceRoot.java"
+  },
+  {
+   "id": "stroom@f27ccffc267d:stroom-core-shared/src/main/java/stroom/pathways/shared/otel/trace/TraceRoot.java",
+   "region": 1,
+   "lang": "Java",
+   "merge": "f27ccffc267d0a915326ffeffb997d7fe9517e86",
+   "date": "2026-09-23T14:23:30+01:00",
+   "path": "stroom-core-shared/src/main/java/stroom/pathways/shared/otel/trace/TraceRoot.java"
+  },
+  {
+   "id": "stroom@f27ccffc267d:stroom-proxy/stroom-proxy-app/src/main/java/stroom/proxy/app/handler/ZipSplitter.java",
+   "region": 0,
+   "lang": "Java",
+   "merge": "f27ccffc267d0a915326ffeffb997d7fe9517e86",
+   "date": "2026-09-23T14:23:30+01:00",
+   "path": "stroom-proxy/stroom-proxy-app/src/main/java/stroom/proxy/app/handler/ZipSplitter.java"
+  },
+  {
+   "id": "stroom@f27ccffc267d:stroom-proxy/stroom-proxy-app/src/main/java/stroom/proxy/app/handler/ZipSplitter.java",
+   "region": 2,
+   "lang": "Java",
+   "merge": "f27ccffc267d0a915326ffeffb997d7fe9517e86",
+   "date": "2026-09-23T14:23:30+01:00",
+   "path": "stroom-proxy/stroom-proxy-app/src/main/java/stroom/proxy/app/handler/ZipSplitter.java"
+  },
+  {
+   "id": "stroom@884fe4fce46e:stroom-core-shared/src/main/java/stroom/pathways/shared/TracesResultPage.java",
+   "region": 0,
+   "lang": "Java",
+   "merge": "884fe4fce46ed7808e671d0c62b0269efa0f1a5e",
+   "date": "2026-09-18T15:16:29+01:00",
+   "path": "stroom-core-shared/src/main/java/stroom/pathways/shared/TracesResultPage.java"
+  },
+  {
+   "id": "stroom@71a4c9fd357f:stroom-data/stroom-data-store-impl-fs/src/main/java/stroom/data/store/impl/fs/dao/FsVolumeGroupDaoImpl.java",
+   "region": 0,
+   "lang": "Java",
+   "merge": "71a4c9fd357fbaf9c9c16bed71891415988a1b6f",
+   "date": "2026-09-18T12:35:14+01:00",
+   "path": "stroom-data/stroom-data-store-impl-fs/src/main/java/stroom/data/store/impl/fs/dao/FsVolumeGroupDaoImpl.java"
+  }
+ ]
+}
