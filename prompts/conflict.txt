@@ -1,0 +1,14 @@
+Language: {lang}
+
+Context before the conflict:
+{before}
+Conflict:
+<<<<<<< ours
+{a}||||||| base
+{base}=======
+{b}>>>>>>> theirs
+
+Context after the conflict:
+{after}
+Reply with the resolved code for the conflicting region only, inside <resolution></resolution> tags.
+Do not include the context lines, conflict markers or markdown fences. If the region should be empty, reply with <resolution></resolution>.

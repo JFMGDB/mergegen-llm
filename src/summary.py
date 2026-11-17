@@ -13,8 +13,9 @@ code, so the output can be versioned even for private datasets.
 
 Example (from the mergegen-llm folder):
   python3 src/summary.py --models claude-opus-5-5 claude-sonnet-5-5 --out results/summary.md \
-    --dataset "MergeBERT (MergeGen trained on it)" ../ase-merge \
-        ../ase-merge/OUTPUT/mergegen_course_bos/results.jsonl ../ase-merge/OUTPUT/mergegen_course/limits.jsonl \
+    --dataset "MergeBERT (MergeGen trained on it)" ../datasets/mergebert \
+        ../datasets/mergebert/OUTPUT/mergegen_course_bos/results.jsonl \
+        ../datasets/mergebert/OUTPUT/mergegen_course/limits.jsonl \
     --dataset "Java, last 2 months" ../datasets/java-2m \
         ../datasets/java-2m/OUTPUT/mergegen/results.jsonl ../datasets/java-2m/OUTPUT/mergegen_course/limits.jsonl
 """
