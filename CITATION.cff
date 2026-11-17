@@ -4,6 +4,7 @@ title: "mergegen-llm: MergeGen versus large language models for merge conflict r
 type: software
 authors:
   - given-names: "José Felipe"
+    family-names: "Guerra"
     affiliation: "Centro de Informática, Universidade Federal de Pernambuco"
   - given-names: "Rafael"
     family-names: "Figueirôa"
