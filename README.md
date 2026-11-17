@@ -51,7 +51,7 @@ The tables can be checked without calling the API or running MergeGen: `reproduc
 
 1. **MergeBERT** (Java, [Zenodo 6366908](https://zenodo.org/record/6366908)): the data of the MergeGen paper, first 400 Java conflicts. MergeGen was trained on it, so it only serves as a reference point.
 2. **Recent Java merges:** merge commits since 2026-09-16 (two months before mining) in Java projects of the MergeBERT dataset (jackson-databind, accumulo, sis, spring-boot, stroom and rumble), at most 150 conflicts per project. They are years newer than MergeGen's training data and newer than the training cutoff of the Claude models used.
-3. **Private projects** (JavaScript/TypeScript): conflicts from two private repositories, which no model can have seen. Their code and conflicts are never versioned; only aggregate numbers are reported.
+3. **Private projects** (JavaScript/TypeScript): every conflict of the whole history of two private repositories (merges from 2022-08 to 2026-10), which no model can have seen because the code was never public. Their code and conflicts are never versioned; only aggregate numbers are reported.
 
 See [`data/README.md`](data/README.md) for the folder layout and how each dataset is built.
 

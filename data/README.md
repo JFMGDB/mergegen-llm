@@ -26,7 +26,7 @@ the resolution is the developer's resolution of the region only.
 |---|---|---|
 | MergeBERT, 400 Java conflicts | [Zenodo 6366908](https://zenodo.org/record/6366908), extracted (has `automated-analysis-data/`) | `prepare_mergebert.py --langs Java --limit 400` |
 | Java, last 2 months, 509 conflicts | full clones of jackson-databind, accumulo, sis, spring-boot, stroom, rumble, ontop and ditto | `mine_conflicts.py --langs Java --since 2024-01-01`, then `sample_conflicts.py --since 2026-09-16 --until 2026-11-16 --per-repo 150 --seed 42` |
-| Private JS/TS, 341 conflicts | two private repositories | `mine_conflicts.py --since 2024-01-01` |
+| Private JS/TS, 341 conflicts | two private repositories | `mine_conflicts.py` over the whole history (no `--since`), no sampling; merges from 2022-08 to 2026-10 |
 
 ## Published samples
 
