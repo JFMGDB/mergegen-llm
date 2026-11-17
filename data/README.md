@@ -1,7 +1,8 @@
 # Data
 
-No conflict data or model weights are versioned in this repository. The scripts read and write
-**run folders**, kept outside the repository (the examples use `../datasets/<name>`).
+The conflicts' code and the model weights are not versioned in this repository; only the list of
+conflicts of each public sample is (`samples/`). The scripts read and write **run folders**, kept
+outside the repository (the examples use `../datasets/<name>`).
 
 ## Run folder layout
 
@@ -24,8 +25,18 @@ the resolution is the developer's resolution of the region only.
 | Dataset | Source | Build |
 |---|---|---|
 | MergeBERT, 400 Java conflicts | [Zenodo 6366908](https://zenodo.org/record/6366908), extracted (has `automated-analysis-data/`) | `prepare_mergebert.py --langs Java --limit 400` |
-| Java, last 2 months, 509 conflicts | full clones of jackson-databind, accumulo, sis, spring-boot, stroom, rumble, ontop and ditto | `mine_conflicts.py --langs Java --since 2024-01-01`, then `sample_conflicts.py --since 2026-09-16 --per-repo 150 --seed 42` |
+| Java, last 2 months, 509 conflicts | full clones of jackson-databind, accumulo, sis, spring-boot, stroom, rumble, ontop and ditto | `mine_conflicts.py --langs Java --since 2024-01-01`, then `sample_conflicts.py --since 2026-09-16 --until 2026-11-16 --per-repo 150 --seed 42` |
 | Private JS/TS, 341 conflicts | two private repositories | `mine_conflicts.py --since 2024-01-01` |
+
+## Published samples
+
+`samples/` lists the conflicts of each public sample, in run-folder order (the `index` of the
+answers in `results/answers/`):
+
+- `mergebert-java-400.json`: MergeBERT file id and conflict index of each conflict.
+- `java-2m.json`: repository URLs, mining and sampling parameters, and for each conflict the
+  merge commit, its date, the file and the region. `sample_conflicts.py --ids` rebuilds exactly
+  this sample from a newly mined run folder, even if the repositories got new merges since.
 
 `mine_conflicts.py` needs full clones (`git clone --no-checkout <url>`); the clones can be deleted
 after mining. In the private dataset, 4 conflicts are larger than the Claude context window (a data
