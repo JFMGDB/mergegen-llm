@@ -29,7 +29,7 @@ Exact match after collapsing whitespace, the metric of the MergeGen paper. It pe
 - MergeGen drops from the data it was trained on to the recent merges; Claude does not. MergeGen's split mixes commits in time (temporal leakage), so its accuracy on MergeBERT is optimistic: when the developer kept side B, MergeGen goes from 68.5% to 39.3%.
 - The largest gap is when the developer **combined both sides** or wrote new code (Java, recent: Opus 85.7%, MergeGen 36.3%), which is what generation was proposed for.
 - Claude's typical error is the opposite: **combining both sides when the developer kept one** (e.g. keeping an extra import).
-- Claude's spread between runs was at most 2 percentage points. A run of Opus costs about US$ 4 per 500 conflicts (3.6 s per call); MergeGen takes 2 to 4 s per conflict on CPU.
+- Claude was run 3 times per model and dataset; the accuracy of the runs differed by 1.3 percentage points on average (largest spread 2.1 points, private dataset with Opus; mean standard deviation 0.7). A run of Opus costs about US$ 4 per 500 conflicts (3.6 s per call); MergeGen takes 2 to 4 s per conflict on CPU.
 
 Details:
 
@@ -154,7 +154,7 @@ python3 src/demo.py --run ../datasets/java-2m --name java-2m --models claude-opu
 - **Mining:** a conflict enters the recent and private datasets only when its resolution can be located without ambiguity in the merge commit; conflicts whose surrounding lines were also changed are dropped.
 - **Private dataset:** JavaScript/TypeScript; the MergeGen paper trains and evaluates per language, so the drop there mixes language and project effects.
 - **Sample size:** 400, 509 and 337 conflicts, from a few projects; 95% confidence intervals are in `results/summary.md`.
-- **LLM variability:** 3 runs per model; the spread was at most 2 percentage points.
+- **LLM variability:** 3 runs per model; the runs differed by 1.3 points on average and at most 2.1 points.
 
 ## Next steps
 
