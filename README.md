@@ -23,7 +23,7 @@ Share of conflicts where the tool gave the developer's resolution. Claude: mean 
 | **Java, merges of the last 2 months** | 509 | **38.9%** | **80.1%** | **73.7%** |
 | Private JavaScript/TypeScript projects | 337 | 30.0% | 51.5% | 45.7% |
 
-Exact match after collapsing whitespace, the metric of the MergeGen paper. Ignoring comments, MergeGen goes to 49.0%, 41.8% and 30.0%, and Opus to 75.3%, 80.7% and 52.4%.
+Exact match after collapsing whitespace, the metric of the MergeGen paper. It penalizes MergeGen for formatting (its output joins tokens where the developer broke the line), so the results are also given ignoring formatting (same code tokens): MergeGen 54.8%, 45.0% and 37.4%, Opus 75.8%, 81.3% and 53.9%, Sonnet 72.5%, 75.6% and 48.5%. The conclusions do not change.
 
 - Claude is ahead on every dataset (exact McNemar test, p < 0.001). Opus is ahead for every kind of developer resolution.
 - MergeGen drops from the data it was trained on to the recent merges; Claude does not. MergeGen's split mixes commits in time (temporal leakage), so its accuracy on MergeBERT is optimistic: when the developer kept side B, MergeGen goes from 68.5% to 39.3%.
@@ -140,6 +140,7 @@ python3 src/demo.py --run ../datasets/java-2m --name java-2m --models claude-opu
 
 - **Exact match:** equal to the developer resolution after collapsing whitespace, as in the MergeGen paper. Equivalent answers written differently count as wrong.
 - **Ignoring comments** (`summary.py`): the same, without `//` and `/* */` comments.
+- **Ignoring formatting** (`summary.py`): both texts reduced to code tokens (identifiers, literals, operators; comments, whitespace and line breaks dropped) and compared as sequences. Same tokens in another order still count as different.
 - **MergeGen output** has no line breaks, so where a `//` comment ends is unknown: comparisons with MergeGen ignore only `/* */` comments.
 - **Context:** Claude answers only the conflict region; the course MergeGen model answers the context lines plus the region. The same context is put around the developer resolution and Claude's answer before comparing them with MergeGen.
 - **Length limits:** MergeGen cuts the input at 500 tokens and generates at most 200 (53 of the 509 recent Java conflicts are beyond them). They are counted as MergeGen errors, and the tables also show the conflicts within the limits.
@@ -149,7 +150,7 @@ python3 src/demo.py --run ../datasets/java-2m --name java-2m --models claude-opu
 ## Threats to validity
 
 - **The LLM may have seen the code.** The recent Java merges are newer than the models' training cutoff, and the private projects were never public, which reduces this risk; models can still be updated after their cutoff.
-- **Exact match** counts equivalent resolutions (another order, an extra unused import) as wrong; ignoring comments only removes comments. A structural (AST) comparison, building and running the tests are left for the next iteration.
+- **Exact match** counts equivalent resolutions (another order, an extra unused import) as wrong; the comparison ignoring formatting only removes comments and layout. A structural (AST) comparison, building and running the tests are left for the next iteration.
 - **Mining:** a conflict enters the recent and private datasets only when its resolution can be located without ambiguity in the merge commit; conflicts whose surrounding lines were also changed are dropped.
 - **Private dataset:** JavaScript/TypeScript; the MergeGen paper trains and evaluates per language, so the drop there mixes language and project effects.
 - **Sample size:** 400, 509 and 337 conflicts, from a few projects; 95% confidence intervals are in `results/summary.md`.

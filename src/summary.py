@@ -123,10 +123,12 @@ def main():
 
     exact = [r for r in (summarize(*d, args.models, "") for d in args.dataset) if r]
     loose = [r for r in (summarize(*d, args.models, "_nocomments") for d in args.dataset) if r]
+    same_tokens = [r for r in (summarize(*d, args.models, "_tokens") for d in args.dataset) if r]
     lines = ["# MergeGen x Claude: summary", "",
              "'Right' = equal to the developer resolution after collapsing whitespace.", ""]
     lines += report(exact, args.models, "Exact match")
     lines += [""] + report(loose, args.models, "Ignoring comments")
+    lines += [""] + report(same_tokens, args.models, "Ignoring formatting (same code tokens)")
     lines += ["", "## Cost and time per run", "",
               "| Dataset | Model | Input tokens | Output tokens | Cost (USD) | Claude s/call | MergeGen s/conflict (CPU) |",
               "|---|---|---|---|---|---|---|"]

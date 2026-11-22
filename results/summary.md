@@ -40,6 +40,25 @@ Consistency across Claude runs and paired comparison with MergeGen (Claude = rig
 | Private JS/TS | claude-opus-5-5 | 166 | 20 | 151 | 85 | 93 | 16 | 143 | 0.0000 |
 | Private JS/TS | claude-sonnet-5-5 | 145 | 26 | 166 | 77 | 78 | 24 | 158 | 0.0000 |
 
+## Ignoring formatting (same code tokens)
+
+| Dataset | Conflicts | MergeGen | claude-opus-5-5 (mean of runs, min-max) | claude-sonnet-5-5 (mean of runs, min-max) |
+|---|---|---|---|---|
+| MergeBERT (MergeGen trained on it) | 400 | 54.8% (50%-60%) | 75.8% (75.5%-76.2%), 3 runs | 72.5% (72.0%-73.0%), 3 runs |
+| Java, last 2 months | 509 | 45.0% (41%-49%) | 81.3% (80.6%-82.1%), 3 runs | 75.6% (75.0%-76.0%), 3 runs |
+| Private JS/TS | 337 | 37.4% (32%-43%) | 53.9% (53.1%-55.2%), 3 runs | 48.5% (47.8%-49.6%), 3 runs |
+
+Consistency across Claude runs and paired comparison with MergeGen (Claude = right in the majority of its runs):
+
+| Dataset | Model | Right in every run | In some runs | In none | Both right | Only Claude | Only MergeGen | Neither | McNemar p |
+|---|---|---|---|---|---|---|---|---|---|
+| MergeBERT (MergeGen trained on it) | claude-opus-5-5 | 300 | 6 | 94 | 197 | 107 | 22 | 74 | 0.0000 |
+| MergeBERT (MergeGen trained on it) | claude-sonnet-5-5 | 281 | 17 | 102 | 187 | 104 | 32 | 77 | 0.0000 |
+| Java, last 2 months | claude-opus-5-5 | 403 | 20 | 86 | 211 | 205 | 18 | 75 | 0.0000 |
+| Java, last 2 months | claude-sonnet-5-5 | 360 | 49 | 100 | 207 | 179 | 22 | 101 | 0.0000 |
+| Private JS/TS | claude-opus-5-5 | 171 | 20 | 146 | 110 | 73 | 16 | 138 | 0.0000 |
+| Private JS/TS | claude-sonnet-5-5 | 151 | 26 | 160 | 100 | 62 | 26 | 149 | 0.0002 |
+
 ## Cost and time per run
 
 | Dataset | Model | Input tokens | Output tokens | Cost (USD) | Claude s/call | MergeGen s/conflict (CPU) |

@@ -7,7 +7,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(ROOT / "src"))
 
-from compare import mcnemar_exact, wilson  # noqa: E402
+from compare import code_tokens, mcnemar_exact, wilson  # noqa: E402
 
 
 def test_mcnemar_known_values():
@@ -15,6 +15,15 @@ def test_mcnemar_known_values():
     assert abs(mcnemar_exact(5, 5) - 1.0) < 1e-12
     assert abs(mcnemar_exact(0, 5) - 0.0625) < 1e-12   # 2 * (1/32)
     assert abs(mcnemar_exact(1, 9) - 0.021484375) < 1e-9
+
+
+def test_code_tokens_ignore_formatting_and_comments():
+    dev = "Caches.getInstance().createNewBuilder(name, true)\n    .expireAfterWrite(d) // cache"
+    mergegen = "Caches.getInstance().createNewBuilder(name, true).expireAfterWrite(d)"
+    assert code_tokens(dev) == code_tokens(mergegen)
+    assert code_tokens('s = "a // b";') == ["s", "=", '"a // b"', ";"]
+    assert code_tokens("import b;\nimport a;") != code_tokens("import a;\nimport b;")
+    assert "/" in code_tokens("a; // b", line_comments=False)  # MergeGen: line comments kept
 
 
 def test_wilson_bounds():
