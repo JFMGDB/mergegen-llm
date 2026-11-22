@@ -20,6 +20,10 @@ Each comparison is also shown ignoring comments (// and /* */, as in Java, JavaS
 TypeScript), since a resolution that differs only in a comment is the same code. MergeGen
 outputs a token stream without line breaks, so where a // comment ends is unknown: comparisons
 with MergeGen ignore only /* */ comments. An exact match always counts as equal here too.
+A third comparison ignores formatting: both texts are reduced to code tokens (identifiers,
+literals, operators; comments, whitespace and line breaks dropped) and compared as sequences.
+It matters most for MergeGen, whose output joins tokens where the developer broke the line
+(e.g. "true)" + newline + ".expireAfterWrite" becomes "true).expireAfterWrite").
 MergeGen is only evaluated on the test split.
 
 The course MergeGen model (--mergegen-jsonl) answers the conflict region WITH the context
@@ -33,6 +37,7 @@ import argparse
 import csv
 import json
 import math
+import re
 from pathlib import Path
 
 from conflict_context import split_context, with_context
@@ -70,6 +75,18 @@ def strip_comments(s: str, line_comments: bool = True) -> str:
 
 def loose(s: str, line_comments: bool = True) -> str:
     return norm(strip_comments(s, line_comments))
+
+
+_TOKEN_BODY = (r'/\*.*?\*/|"(?:\\.|[^"\\\n])*"|\'(?:\\.|[^\'\\\n])*\'|`(?:\\.|[^`\\])*`'
+               r'|[A-Za-z_$][A-Za-z0-9_$]*|\d[A-Za-z0-9_.]*|\S')
+_TOKEN = re.compile(r'//[^\n]*|' + _TOKEN_BODY, re.S)
+_TOKEN_NO_LINE_COMMENTS = re.compile(_TOKEN_BODY, re.S)
+
+
+def code_tokens(s: str, line_comments: bool = True) -> list:
+    """Code tokens of s (Java, JavaScript, TypeScript), without comments and formatting."""
+    rx = _TOKEN if line_comments else _TOKEN_NO_LINE_COMMENTS
+    return [t for t in rx.findall(s) if not t.startswith("/*") and not (line_comments and t.startswith("//"))]
 
 
 def wilson(k: int, n: int, z: float = 1.96):
@@ -113,7 +130,7 @@ def read_mergegen(run: Path) -> dict:
 
 def print_paired(both: list, title: str, suffix: str = ""):
     """Claude x MergeGen x dataset on the conflicts both tools answered
-    (suffix "_nocomments" uses the comparisons that ignore comments)."""
+    (suffix "_nocomments" or "_tokens" uses the comparisons that ignore comments or formatting)."""
     m = len(both)
     print(f"--- {title} ---")
     if not m:
@@ -170,6 +187,7 @@ def build_rows(run: Path, model: str, split: str = "test", mergegen_jsonl=None,
         c_out = norm(c["output"])
         m_out = norm(mergegen[i]) if i in mergegen else None
         m_loose = loose(mergegen[i], False) if i in mergegen else None
+        m_tokens = code_tokens(mergegen[i], False) if i in mergegen else None
         before, after = (split_context(bases[i], a_s[i], b_s[i], mergegen_context_lines)
                          if mergegen_jsonl and mergegen_context_lines else ("", ""))
         m_ref = with_context(before, refs[i], after)
@@ -188,6 +206,11 @@ def build_rows(run: Path, model: str, split: str = "test", mergegen_jsonl=None,
                                               if m_out is not None else "",
             "claude_eq_mergegen_nocomments": (norm(c_ctx) == m_out or loose(c_ctx, False) == m_loose)
                                              if m_out is not None else "",
+            "claude_eq_dataset_tokens": c_out == ref or code_tokens(c["output"]) == code_tokens(refs[i]),
+            "mergegen_eq_dataset_tokens": (m_out == norm(m_ref) or m_tokens == code_tokens(m_ref, False))
+                                          if m_out is not None else "",
+            "claude_eq_mergegen_tokens": (norm(c_ctx) == m_out or code_tokens(c_ctx, False) == m_tokens)
+                                         if m_out is not None else "",
             "time_s": c.get("time_s", ""), "input_tokens": c["input_tokens"],
             "output_tokens": c["output_tokens"], "model": c.get("model", ""),
             "claude_parse_error": c.get("parse_error", ""), "claude_stop_reason": c.get("stop_reason", ""),
@@ -235,10 +258,13 @@ def main():
     print(f"Claude   = dataset : {fmt(cd, n)}")
     cdl = sum(r["claude_eq_dataset_nocomments"] for r in rows)
     print(f"Claude   = dataset, ignoring comments: {fmt(cdl, n)}")
+    cdt = sum(r["claude_eq_dataset_tokens"] for r in rows)
+    print(f"Claude   = dataset, ignoring formatting (same code tokens): {fmt(cdt, n)}")
     both = [r for r in rows if r["mergegen_eq_dataset"] != ""]
     if both:
         print_paired(both, f"Same {len(both)} conflicts for both tools (the fair comparison)")
         print_paired(both, "Same conflicts, ignoring comments", "_nocomments")
+        print_paired(both, "Same conflicts, ignoring formatting (same code tokens)", "_tokens")
         inside = [r for r in both if r["within_mergegen_limits"] is True]
         if args.mergegen_limits:
             print_paired(inside, f"Only the {len(inside)} of them within the MergeGen limits "

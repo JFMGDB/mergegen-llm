@@ -68,6 +68,6 @@ MergeGen also fails when the conflict is longer than its limits (500 input / 200
 
 - Exact match counts equivalent resolutions (import order, an extra unused import) as wrong; a
   structural comparison (AST) and build/test checks are planned for the next iteration.
-- 3 runs per Claude model; the spread between runs was at most 2 percentage points.
+- 3 runs per Claude model; the runs differed by 1.3 percentage points on average and at most 2.1.
 - The private dataset is JavaScript/TypeScript, so its drop mixes language and project effects;
   TypeScript was not evaluated in the MergeGen paper.
